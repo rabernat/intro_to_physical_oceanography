@@ -2,6 +2,30 @@
 
 Course materials for EESC4925
 
+Also see [my python tutorials](http://github.com/rabernat/python_teaching).
+
+## How To Use This Site ##
+
+The best way to get the materials (including homework) is the use [git](https://git-scm.com/) to [clone this repository](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository). If you don't have git already on you computer, it is easy to install on all platforms following [these instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
+
+From the command line, run the command
+
+```bash
+git clone https://github.com/rabernat/intro_to_physical_oceanography
+```
+
+If you are not a fan of the command line, there are plent of [graphical interfaces to git](https://git-scm.com/download/gui/linux) available.
+
+Once you have the repository cloned, you can update it as new lectures come out by running
+
+```bash
+git pull
+```
+
+If for some reason you can't get git working, the alternative is to use the link to the right to "Download Zip". The disadvantage here is that you will have to re-download every time the repo is updated.
+
+I welcome your feedback on these instructions.
+
 ## Why Python ##
 
 A great deal has been written on [this subject](http://cyrille.rossant.net/why-using-python-for-scientific-computing/).
