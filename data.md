@@ -46,3 +46,13 @@ derived from ARGO
 lots of options. It is not clear which one is best.
 * [Ocean Surface Current Analysis (OSCAR)](http://www.oscar.noaa.gov/) - Similar
 to AVISO but including wind effects.
+
+### Models
+
+* [CMIP5 Archive](https://pcmdi9.llnl.gov/projects/cmip5/) - The latest suite
+of comprehensive global climate models
+
+### Other
+
+* [Coherent Mesoscale Eddy Census (Chelton)](http://cioss.coas.oregonstate.edu/eddies/)
+* [Coherent Mesoscale Eddy Census (Faghmous)](http://www.nature.com/articles/sdata201528)
