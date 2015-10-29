@@ -6,6 +6,7 @@
 
 These sources are relatively unprocessed raw data.
 
+* [CLIVAR Hydrographic Data](http://cchdo.ucsd.edu/)
 * WOCE Hydrographic Data (ship-based measurements)
   * [Southern Ocean](http://woceatlas.tamu.edu/)
   * [Pacific](http://www-pord.ucsd.edu/whp_atlas/pacific_index.html)
