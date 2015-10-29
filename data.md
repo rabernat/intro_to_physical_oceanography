@@ -40,6 +40,8 @@ inhomogeneous data.
 Seas
 * [Roemmich-Gilson ARGO Climatology](http://sio-argo.ucsd.edu/RG_Climatology.html) - Temperature and
 Salinity from ARGO on a nice grid. Monthly.
+* [Holte and Talley Mixed Layer Depth Atlas](http://mixedlayer.ucsd.edu/) -
+derived from ARGO
 * [Overview of ocean reanalysis products](https://reanalyses.org/ocean/overview-current-reanalyses) - There are
 lots of options. It is not clear which one is best.
 * [Ocean Surface Current Analysis (OSCAR)](http://www.oscar.noaa.gov/) - Similar
