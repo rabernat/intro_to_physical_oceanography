@@ -1,0 +1,252 @@
+%! program = pdflatex
+\documentclass[12pt]{article}
+\usepackage{geometry} 
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{booktabs}
+\usepackage{natbib}
+\usepackage{amsmath,bm}
+\usepackage{cancel}
+\usepackage[colorlinks=true,
+            linkcolor=red,
+            urlcolor=blue,
+            citecolor=black]{hyper ref}
+%\usepackage{url, multicol}
+%\usepackage{MnSymbol}
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+
+% style for partial derivative
+\newcommand{\pd}[2]{ \frac{\partial #1}{\partial #2} }
+%\newcommand{\pd}[2]{ \partial_{#2}#1 }
+\newcommand{\od}[2]{\ensuremath{\frac{d #1}{d #2}}}
+\newcommand{\td}[2]{\ensuremath{\frac{D #1}{D #2}}}
+\newcommand{\ab}[1]{\ensuremath{\langle #1 \rangle}}
+%\newcommand{\dab}[1]{\ensuremath{\llangle #1 \rrangle}}
+\newcommand{\bss}[1]{\textsf{\textbf{#1}}}
+\newcommand{\ol}{\ensuremath{\overline}}
+\newcommand{\olx}[1]{\ensuremath{\overline{#1}^x}}
+\newcommand{\nms}{\ensuremath{\mbox{ N m}^{-2}}}
+\newcommand{\wms}{\ensuremath{\mbox{ W m}^{-2}}}
+\newcommand{\mms}{\ensuremath{\mbox{ m}^2 \mbox{ s}^{-1}}}
+\newcommand{\mss}{\ensuremath{\mbox{ m s}^{-2}}}
+\newcommand{\ihat}{\hat{\textbf{\i}}}
+\newcommand{\jhat}{\hat{\textbf{\j}}}
+\newcommand{\orho}{\frac{1}{\rho_0}}
+
+\geometry{letterpaper}
+
+\title{ Southern Ocean Circulation }
+\author{Ryan Abernathey}
+\date{} % delete this line to display the current date
+
+\begin{document} \maketitle \tableofcontents
+
+\section{Equations and Problem Setup}
+
+We will use the Boussinesq momentum equations to describe a simple model for the southern ocean circulation. For simplicity, we will use Cartesian coordinates. We will be focused particularly on the zonal momentum balance, which reads
+
+\begin{equation}
+\td{u}{t}  - f v = - \pd{\phi}{x} + \frac{1}{\rho_0}\pd{\tau^x}{z} 
+\end{equation}
+where $\tau_x$ is the zonal component of the frictional stress. For completeness, we also note the incompressibility equation
+\begin{equation}
+\pd{u}{x} + \pd{v}{y} + \pd{w}{z} = 0 
+\end{equation}
+hydrostatic balance
+\begin{equation}
+\pd{\phi}{z} = b
+\end{equation}
+and the buoyancy equation
+\begin{equation}
+\td{b}{t} = \pd{B}{z}
+\label{eq:b}
+\end{equation}
+where $B$ represents a vertical non-advective buoyancy flux due to air-sea forcing and turbulent mixing.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=5in]{cartoon/cartoon.pdf}
+\caption{Cartoon showing the domain of the idealized ACC problem.}
+\label{fig:cartoon}
+\end{center}
+\end{figure}
+
+\section{Zonal Momentum Balance in Barotropic Model}
+If we assume the density is constant ($b=0$), then the hydrostatic balance tells us that pressure doesn't vary with depth. This situation is called {\em barotropic}: ``baro'' means pressure and ``tropic'' means constant. Pressure gradients can come only from the free surface $\eta$: $\phi = g \eta$.
+
+Now consider an integral over the full depth of the water column and across a closed circumpolar path in the $x$ direction. (For simplicity, we assume this path is a latitude circle, but the results generalize to any circumpolar contour.) Assuming a steady state, we find
+\begin{equation}
+- f \oint \int_{-H}^0 v dz dx = -\oint \int_{-H}^\eta \pd{}{y}(uv) dx dz - \oint \int_{-H}^\eta \pd{\phi}{x} dx dz + \frac{1}{\rho_0}\oint \tau^x_s - \tau^x_b dx
+\end{equation}
+where $\tau^x_s$ is the frictional stress at the surface and $\tau^x_b$ is the frictional stress at the bottom.
+Mass conservations requires that the term on the left-hand side vanish; otherwise mass would be flowing into or out of the Southern Ocean. The first term on the right-hand side is a Reynolds stress; this is generally negligible on the planetary scale, and we will neglect it from here on. However, it may play an important role on smaller scales, such as within the multiple jets of the ACC.
+
+A key question is whether the bottom is flat ($H = const$) or rather depends on $x$ ($H = H(x)$). Application of Leibnitz rule allows us to simplify the pressure term into
+\begin{equation}
+-\oint \int_{-H}^\eta \pd{\phi}{x} dx dz = -\cancelto{0}{\oint \pd{}{x} \left ( \int_{-H}^\eta \pd{\phi}{x} dz \right ) dx} + \cancelto{0}{\oint \phi_s \pd{\eta}{x} dx} - \oint \phi_b \pd{}{x}(-H)dx 
+\end{equation}
+where $\phi_s$ is the surface pressure and $\psi_b$ is the bottom pressure. The first term cancels exactly via the fundamental theorem of calculus, since the integral is around a closed path. The second term cancels approximately because the surface pressure (the atmospheric load) is negligible. We are left with only the final term, the {\em topographic form stress}.
+
+We can simplify our notation a lot by defining a {\em zonal average}, i.e.
+\begin{equation}
+\ab{ \ } = \frac{1}{L_x} \oint ( \ ) dx
+\end{equation}
+which allows us to write the vertically and zonally integrated momentum balance as
+\begin{equation}
+\ab{\tau^x_s} = - \rho_0 \ab{\phi_b \pd{H}{x}} + \ab{\tau^x_b}
+\label{eq:mom}
+\end{equation}
+
+The balance in \eqref{eq:mom} was first considered by \citet{MunkPalmen1951}. They wondered whether friction played a strong role in the momentum balance of the ACC. If the bottom were flat, then the bottom frictional stress would have to balance the surface wind stress exactly. To see the consequences of this, we need an explicit formula for the bottom stress. We can use the same quadratic drag law that we used for surface stress, namely
+\begin{equation}
+\tau_b = \rho_0 C_D u_b^2
+\end{equation}
+where $u_b$ is the flow in the bottom boundary layer. We can use this to make an estimate for the zonal transport of the ACC. Since the flow was assumed to be barotropic, it cannot vary with depth; $u(z) = u_b$. The zonal transport of the ACC can then be approximated as
+\begin{equation}
+T_{ACC} = H L_y \sqrt{ \frac{ \ab{\tau^x_s} }{ \rho_0 C_D } }
+\end{equation}
+where $L_y$ is the meridional extent of the current. Plugging in some rough numbers $H = 4000$ m, $L_y = 800$ km, $\tau_0 = 0.2 \nms$, $\rho_0 = 1030$ kg m$^{-3}$, $C_D = 1.2 \time 10^{-3}$, we find $T_{ACC} \simeq 1200 $ Sv. This is about ten times larger than the observed ACC transport! Although just a rough estimate, this calculation tells us that bottom friction can't be the main sink of momentum in the ACC; it has to be topographic form stress. 
+
+Now assuming that $\tau^x_b$ is negligible, what does \eqref{eq:mom} tell us about the relationship between bottom pressure and topography? Since the wind stress is westerly ($\tau^x_s > 0$) over the ACC, we must have a negative correlation between $\phi_b$ and $\partial H / partial x$. In other words, we need high pressure where the bottom is sloping up towards the east, and low pressure where the bottom is sloping down. A configuration that fulfills this requirement is shown in Fig.~\ref{fig:cartoon}. This configuration generates a form stress term that transfers eastward momentum from the ocean to the solid earth below.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=5in]{cartoon/side.pdf}
+\caption{View of the barotropic ACC model from the south, looking towards the equator.}
+\label{fig:cartoon_side}
+\end{center}
+\end{figure}
+
+
+\section{The Wind-Driven Overturning}
+
+Although we eliminated the coriolis force on the meridional flow ($-fv$) from our budget by integrating over the full depth of the water column, \eqref{eq:mom} also tells us a lot about the meridional overturning circulation. Let's now decompose the vertical integral into three regions: the surface Ekman layer, the interior below the Ekman layer and above the topography, and the abyss below the topographic level.
+
+\begin{alignat}{3}
+-f \int_{-h_{Ek}}^\eta \ab{v} dz&& = -f \ab{V_{Ek}} =&& \frac{1}{\rho_0} \ab{\tau^x_s} \\ 
+-f \int_{-H_{min}}^{-h_{Ek}} \ab{v} dz&& =&& 0  \\
+-f \int_{-H_{max}}^{-H_{min}} \ab{v} dz&& = -f \ab{V_g} =&& \ab{\phi_b \pd{H}{x}}
+\end{alignat}
+where $\ab{V_{Ek}}$ is the zonally averaged Ekman transport and $\ab{V_g}$ is the zonally averaged geostrophic transport below topography. Mass conservation can be expressed as $\ab{V_{Ek}} + \ab{V_g} = 0$; the Ekman transport near the surface must be returned by an equal and opposite geostrophic flow in the abyss.
+
+The zonal wind stress is not constant with latitude, but rather decreases southward over the ACC latitudes from its maximum around 50S. This means that $\ab{V_{Ek}}$ also decreases southward, and Ekman pumping is required to supply mass from below. This implies a zonal-mean overturning circulation as shown in Fig.~\ref{fig:cartoon_side}. Mass conservation of the zonally-averaged flow means that $\partial \ab{v} / \partial y + \partial \ab{w} / \partial z$. Consequently, we can express the overturning circulation using a single scalar {\em streamfunction}:
+\begin{equation}
+\ab{v} = - \pd{}{z}\psi_{Ek} \ , \ \ \ab{w} = \pd{}{y}\psi_{Ek} \ .
+\end{equation}
+In the ocean interior (i.e.~$-H_{max} < z < h_{Ek}$),
+\begin{equation}
+\psi_{Ek} = -\frac{\tau_0}{f \rho_0} \ .
+\end{equation}
+The subscript $_{Ek}$ reminds us that this overturning circulation is fundamentally {\em wind driven} and proportional to the Ekman transport.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=5in]{I8_gam_with_winds.pdf}
+\caption{Neutral density surfaces in the Southern Indian Ocean (WOCE line I8), superimposed with arrows showing the sense of the wind-driven Ekman circulation.}
+\label{fig:gamma}
+\end{center}
+\end{figure}
+
+
+\section{Stratification and Eddy Flux}
+This wind-driven overturning circulation $\psi_{Ek}$ describes very strong upwelling in the ACC latitudes. Using typical values of wind stress and other parameters, we can estimate $w_{Ek} \simeq 2.5 \times 10^{-6}$ m/s or about 75 m / year. This upwelling takes place over a strong stratified pycnocline. The question therefore arises: how is this strong advective flux of buoyancy balanced?
+
+In our discussion of advection and diffusion, we considered a one-dimensional balance between vertical advection and diffusion. The zonally-averaged version of this balance is
+\begin{equation}
+\ab{w} \pd{}{z} \ab{b} = \kappa_v \pd{^2}{z^2} \ab{b}
+\label{eq:b1d}
+\end{equation}
+We found that such a system can be satisfied by a profile of the form
+\begin{equation}
+\ab{b} = b_0 e^{z/z^\ast} 
+\end{equation}
+where $z^\ast = \kappa_v / \ab{w}$ is a {\em scale depth} parameter, describing how rapidly the stratification changes with depth.
+
+One important characteristic of the Southern Ocean is the relatively deep scale depth of both its stratification and associated thermal wind currents. A section of density in the Southern Indian Ocean (Fig.~\ref{fig:gamma}) illustrates this well. An exponential profile is actually not a bad fit; the ``scale depth'' can be estimated to be approx.~800 m. Plugging in our estimate of $w_{Ek} \simeq 2.5 \times 10^{-6}$ m/s implies that a value of $\kappa_v \simeq 2 \times 10^{-3} \mms$ would be required to satisfy the balance in \eqref{eq:b1d}. Clearly such a value is far beyond the typical level of turbulent mixing in the thermocline ($\kappa_v \simeq 1 \times 10^{-5} \mms$). Therefore another mechanism is required to balance the wind-driven vertical advection of buoyancy.
+
+That other mechanism is widely believed to be mesoscale eddy transport. It turns out that \eqref{eq:b1d} is an inadequate description of the buoyancy budget in the Southern Ocean; it neglects strong correlations between transient and small-scale motions which can contribute substantial buoyancy fluxes. To understand how these correlations arise, we must use a buoyancy budget that properly accounts for eddy fluxes.
+
+We start by taking a time and zonal average of \eqref{eq:b}. After some algebra, we can reduce the result to
+\begin{equation}
+\ab{\ol{v}} \pd{}{y} \ab{\ol{b}} + \ab{\ol{w}} \pd{}{z} \ab{\ol{b}} = - \pd{F^y_b}{y}  - \pd{F^z_b}{z} + \pd{}{z}\ab{\ol{B}}
+\label{eq:b1}
+\end{equation}
+where 
+\begin{align}
+F^y_b = &\ab{\ol{v'b'}} + \ab{v^\dagger b^\dagger} \\
+F^z_b = & \ab{\ol{w'b'}} + \ab{w^\dagger b^\dagger}
+\end{align}
+are the eddy fluxes of buoyancy in the meridional and zonal directions. We have introduced the symbol $\ol{( \ )}$ to indicate a time average. The deviations from the time average are indicated by a prime, and the deviations from the time and zonal average are indicated by a dagger, i.e.
+\begin{equation}
+a' = a - \ol{a} \ , \ \ \ a^\dagger = \ab{\ol{a}} - \ol{a} \ .
+\end{equation}
+The prime terms are associated with {\em transient} eddy fluctuations (turbulent flow), while the dagger terms are associated with {\em stationary} eddies, a.k.a.~steady meanders of the ACC. Both types of motion can transport buoyancy meridionally and vertically. If the zonal average is reinterpreted as a ``streamwise'' average around a circumpolar contour which follows the ACC path, the dagger terms will vanish. In practice, the buoyancy budget is generally dominated by the vertical flux terms, i.e.
+\begin{equation}
+\ab{\ol{w}} \ab{\ol{b}} \simeq -\ab{\ol{w'b'}} \ .
+\end{equation}
+
+In our discussion of advection and diffusion, we learned that mesoscale eddies tend to transport properties {\em along} rather than across isopycnals. This results from fundamental dynamical and energetic constrains on the eddy motion. As a result, the eddy buoyancy flux is oriented {\em perpendicular} to the mean buoyancy gradient, i.e.
+\begin{equation}
+\frac{F^z_b}{F^y_b} \simeq - \frac{\pd{}{y} \ab{\ol{b}}}{\pd{}{z} \ab{\ol{b}} } \ .
+\label{eq:adiabatic}
+\end{equation}
+When \eqref{eq:adiabatic} is satisfied, the eddy fluxes are usually termed ``adiabatic.'' Given this fact, an ingenious way to simplify \eqref{eq:b1} emerges if we make the following definitions:
+\begin{equation}
+\psi_{eddy} = - \frac{F^z_b}{\pd{}{y} \ab{\ol{b}}}
+\label{eq:psi_eddy}
+\end{equation}
+and
+\begin{equation}
+\psi_{res} = \psi_{Ek} + \psi_{eddy} \ , \ \ v_{res} = - \pd{}{z}\psi_{res} \ , \ \ w_{res} = \pd{}{y}\psi_{res} 
+\end{equation}
+Using \eqref{eq:adiabatic}, we can now write \eqref{eq:b1} as
+\begin{equation}
+v_{res} \pd{}{y} \ab{\ol{b}} + w_{res} \pd{}{z} \ab{\ol{b}} =  \pd{}{z}\ab{\ol{B}} \ .
+\label{eq:bres}
+\end{equation}
+
+In \eqref{eq:psi_eddy}, we defined an {\em eddy-induced} overturning streamfunction $\psi_{eddy}$. We then defined a {\em residual} overturning streamfunction $\psi_{res}$ as the sum of this and the wind-driven overturning. What this means is that, when the eddy fluxes are adiabatic and \eqref{eq:adiabatic} is satisfied, we can represent their contribution to the buoyancy budget as {\em advection}, not diffusion! The eddy-induced overturning has the opposite sense as the wind-driven component; hence the net overturning is a small residual ($\psi_{res}$ between the two opposing terms. 
+
+It was clear that the wind stress determines $\psi_{Ek}$, but it is not so clear what determines $\psi_{res}$. In general this is a difficult problem, since in involves mesoscale eddy turbulence. However, there is one powerful constraint we can use: the air-sea buoyancy flux.
+
+
+Assume there is a surface mixed layer of depth $h_m > h_{Ek}$, within which $\partial b / \partial z = 0$. At the surface ($z=0$), both $\psi_{Ek}$ and $\psi_{eddy}$ go to zero. We will further assume that $B$, the vertical buoyancy flux due to mixing, is vanishingly small in the interior---this is consistent with weak values of $\kappa_v$ that have been measured in the upper Southern Ocean. We can then integrate \eqref{eq:bres} in the vertical over the surface mixed layer to find
+\begin{equation}
+\psi_{res}(z=h_m) \pd{}{y} \ab{\ol{b_s}} = \ab{\ol{B_s}}
+\label{eq:psi}
+\end{equation}
+where $b_s$ is the surface buoyancy and $B_s$ is the surface air-sea buoyancy flux.
+
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=5in]{moc.png}
+\caption{Idealized view of Southern Ocean residual circulation and mixing.}
+\label{fig:cartoon_side}
+\end{center}
+\end{figure}
+
+This equation is very powerful: it tells us that {\em the strength of the residual circulation as the base of the mixed layer is proportional to the air-sea buoyancy flux}. This actually expresses something quite intuitive: that the residual overturning can only cross isopycnals where forcing / mixing processes can modify its density. To see this more clearly, first consider \eqref{eq:bres} in the ocean interior, where $B \simeq 0$. In that case we have
+\begin{equation}
+v_{res} \pd{}{y} \ab{\ol{b}} + w_{res} \pd{}{z} \ab{\ol{b}} = 0 \ .
+\end{equation}
+The residual flow vector in the $(y, z)$ plane is {\em parallel} to the buoyancy surfaces; the flow cannot cross isopycnals without mixing. Instead, in the surface layer, the presence of air-sea forcing allows water to become lighter or denser as it moves through the MOC.
+
+As depicted in Fig.~\ref{fig:cartoon_side}, there are generally three different regions of buoyancy flux in the Southern Ocean.
+\begin{itemize}
+\item Closest to Antarctica, there is net buoyancy loss due to strong cooling as well as ice-driven freshwater export (brine rejection). Much of this buoyancy flux occurs in winter polynyas and is consequently extremely hard to observe directly. Nevertheless, we know it must exist, because of the existence of the Antarctic Bottom Water (AABW) cell, which requires such a buoyancy flux in order for lighter waters to be transformed to dense abyssal water.
+\item Over the ACC, there is a net buoyancy gain, largely due to latent and sensible warming of the ocean. One way of explaining this heat flux is that the Ekman upwelling brings cold deep water into contact with warm surface water; this explanation is only partially satisfying, since we have seen that the residual overturning also includes an eddy contribution. Precipitation also freshens the surface. In any case, water indisputably gains buoyancy in the ACC latitudes, which allows the residual MOC to flow north, across the surface buoyancy gradient.
+\item North of the ACC, there is another region of buoyancy loss. This buoyancy loss is associated with the formation and subduction of mode and intermediate waters.
+\end{itemize}
+
+\section{Observations}
+
+The model we have considered here is extremely simple. This simplicity allowed us to reach a physical description of how the Southern Ocean overturning circulation works. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{ametsoc}
+\bibliography{references}
+\end{document}
