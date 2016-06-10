@@ -19,7 +19,7 @@ If you are not a fan of the command line, there are plent of [graphical interfac
 Once you have the repository cloned, you can update it as new lectures come out by running
 
 ```bash
-git pull
+git pull origin master
 ```
 
 If for some reason you can't get git working, the alternative is to use the link to the right to "Download Zip". The disadvantage here is that you will have to re-download every time the repo is updated.
