@@ -1,0 +1,31 @@
+name: geo_scipy
+channels:
+    - conda-forge
+    - defaults
+    - ioam
+dependencies:
+    - python=3.6    # Python version 3.6
+    - bottleneck    # C-optimized array functions for NumPy
+    - cartopy       # Geographic plotting toolkit
+    - cython        # Transpile Python->C
+    - dask          # Parallel processing library
+    - future        # Python 2/3 compatibility
+    - h5py          # Wrapper for HDF5
+    - ipython       # IPython interpreter and tools
+    - jupyter       # Jupyter federation architecture
+    - matplotlib    # 2D plotting library
+    - netcdf4       # Wrapper for netcdf4
+    - notebook      # Notebook interface
+    - numpy         # N-d array and numerics
+    - pandas        # Labeled array library
+    - pyresample    # Geographic resampling tools
+    - scipy         # Common math/stats/science functions
+    - scikit-learn  # Macine learning library
+    - scikit-image  # Image processing routines
+    - statsmodels   # Regression/modeling toolkit
+    - seaborn       # Statistical visualizations
+    - six           # Python 2/3 compatibility
+    - tqdm          # Nice progressbar for longer computations
+    - xarray        # N-d labeled array library
+    - holoviews
+    - geoviews
