@@ -1,4 +1,4 @@
-name: geo_scipy
+name: phys_ocean
 channels:
     - conda-forge
     - defaults
@@ -29,3 +29,4 @@ dependencies:
     - xarray        # N-d labeled array library
     - holoviews
     - geoviews
+    - gsw
