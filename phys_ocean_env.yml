@@ -27,6 +27,7 @@ dependencies:
     - six           # Python 2/3 compatibility
     - tqdm          # Nice progressbar for longer computations
     - xarray        # N-d labeled array library
+    - nb_conda
     - holoviews
     - geoviews
     - gsw
