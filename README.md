@@ -6,7 +6,7 @@ Course materials for EESC4925
 
 * [1: Ocean Bathymetry](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/01_ocean_bathymetry.ipynb)
 * 2: Physical Properties of Seawater
-  * [2a: Thermodynamics of Seawater](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/02a-a_thermodynamics_of_seawater.ipynb)
+  * [2a: Thermodynamics of Seawater](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/02-a_thermodynamics_of_seawater.ipynb)
   * [2b: The Water Column](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/02-b_the_water_column.ipynb)
   * [2c: Global Temperature Salinity and Stratification](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/02-c_ocean_temperature_salinity_stratification.ipynb)
 
