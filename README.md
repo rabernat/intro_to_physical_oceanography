@@ -1,8 +1,10 @@
 # Intro to Physical Oceanography #
 
-Course materials for EESC4925
+This repository contains course materials for EESC4925. The lecture notes are in the form of interactive [Jupyter Notebooks](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/What%20is%20the%20Jupyter%20Notebook.html).
 
 ## View the lecture notes online ##
+
+The links below will render the notebooks via the [nbviewer](http://nbviewer.jupyter.org/) service, which allows some of the fancy interactive graphics to be viewed online. If you browse directly to the notebooks on github, they may not show up properly. So please use these links.
 
 * [1: Ocean Bathymetry](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/01_ocean_bathymetry.ipynb)
 * 2: Physical Properties of Seawater
@@ -33,7 +35,35 @@ git pull
 
 If for some reason you can't get git working, the alternative is to use the link to the right to "Download Zip". The disadvantage here is that you will have to re-download every time the repo is updated.
 
-I welcome your feedback on these instructions.
+In order to actually execute the code in the notebooks, you need to have the necessary python packages installed.
+The recommended way to do this is to install the [anaconda python distribution](https://www.anaconda.com/download/) together with the [conda package management utility](https://conda.io/docs/).
+For more depth, you can read my [detailed intstructions for installing python](https://rabernat.github.io/research_computing/python.html).
+
+This repository includes an [environment file](https://github.com/rabernat/intro_to_physical_oceanography/blob/master/phys_ocean_env.yml) which you can use to set up your python environment. To install this environment, type the following
+
+```bash
+cd intro_to_physical_oceanography
+conda env create -f phys_ocean_env.yml
+```
+
+This will create a new environment called `phys_ocean`. To activate this environment, type
+
+```bash
+source activate phys_ocean
+```
+
+The notebooks can be viewed and run using the [jupyter notebook](https://jupyter-notebook.readthedocs.io/en/stable/notebook.html) application. To launch the notebook interface, just type
+
+```bash
+jupyter notebook
+```
+
+When you are done working with the notebooks, close the notebook app and, if you wish, deactive the environment by typing
+
+```bash
+source deactivate
+```
+
 
 ## Why Python ##
 
