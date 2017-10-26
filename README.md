@@ -15,6 +15,7 @@ The links below will render the notebooks via the [nbviewer](http://nbviewer.jup
 * [4: Advection and Diffusion](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/04_advection_diffusion_continuity.ipynb)
 * [Mesoscale Mixing Processes](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/mesoscale_mixing.ipynb)
 * [Equations of motion](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/equations_of_motion.ipynb)
+* [Hydrostatic, Geostrophic, Ekman](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/hydrostatic_geostrophic_ekman.ipynb)
 
 ## Run the lecture notes interactively ##
 
