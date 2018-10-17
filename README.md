@@ -13,7 +13,7 @@ The links below will render the notebooks via the [nbviewer](http://nbviewer.jup
   * [2b: The Water Column](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/02-b_the_water_column.ipynb)
   * [2c: Global Temperature Salinity and Stratification](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/02-c_ocean_temperature_salinity_stratification.ipynb)
 * [3: Air-Sea Interaction](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/03_air_sea_exchange.ipynb)
-* [4: Advection, Diffusion, and Transport](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/04_advection_diffusion_continuity.ipynb)
+* [4: Advection, Diffusion, and Continuity](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/04_advection_diffusion_continuity.ipynb)
 ### Dynamics
 * [Equations of motion](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/05_equations_of_motion.ipynb)
 * [Hydrostatic and Geostrophic Balance](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/06_hydrostatic_geostrophic.ipynb)
