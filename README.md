@@ -6,17 +6,18 @@ This repository contains course materials for EESC4925. The lecture notes are in
 
 The links below will render the notebooks via the [nbviewer](http://nbviewer.jupyter.org/) service, which allows some of the fancy interactive graphics to be viewed online. If you browse directly to the notebooks on github, they may not show up properly. So please use these links.
 
+### Foundations
 * [1: Ocean Bathymetry](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/01_ocean_bathymetry.ipynb)
 * 2: Physical Properties of Seawater
   * [2a: Thermodynamics of Seawater](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/02-a_thermodynamics_of_seawater.ipynb)
   * [2b: The Water Column](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/02-b_the_water_column.ipynb)
   * [2c: Global Temperature Salinity and Stratification](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/02-c_ocean_temperature_salinity_stratification.ipynb)
 * [3: Air-Sea Interaction](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/03_air_sea_exchange.ipynb)
-* [4: Advection and Diffusion](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/04_advection_diffusion_continuity.ipynb)
-* [Mesoscale Mixing Processes](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/mesoscale_mixing.ipynb)
-* [Equations of motion](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/equations_of_motion.ipynb)
-* [Hydrostatic, Geostrophic, Ekman](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/hydrostatic_geostrophic_ekman.ipynb)
-* [Vorticity and Sverdrup Transport]((http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/vorticity_sverdrup_transport_and_gyres.ipynb)
+* [4: Advection, Diffusion, and Transport](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/04_advection_diffusion_continuity.ipynb)
+### Dynamics
+* [Equations of motion](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/05_equations_of_motion.ipynb)
+* [Hydrostatic and Geostrophic Balance](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/06_hydrostatic_geostrophic.ipynb)
+* [Ekman Transport and Pumping](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/07_ekman.ipynb)
 
 ## Run the lecture notes interactively ##
 
