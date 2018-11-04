@@ -18,6 +18,8 @@ The links below will render the notebooks via the [nbviewer](http://nbviewer.jup
 * [Equations of motion](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/05_equations_of_motion.ipynb)
 * [Hydrostatic and Geostrophic Balance](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/06_hydrostatic_geostrophic.ipynb)
 * [Ekman Transport and Pumping](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/07_ekman.ipynb)
+* [Vorticity and Sverdrup Balance](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/vorticity_sverdrup_transport_and_gyres.ipynb)
+
 
 ## Run the lecture notes interactively ##
 
