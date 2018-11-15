@@ -19,7 +19,7 @@ The links below will render the notebooks via the [nbviewer](http://nbviewer.jup
 * [Hydrostatic and Geostrophic Balance](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/06_hydrostatic_geostrophic.ipynb)
 * [Ekman Transport and Pumping](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/07_ekman.ipynb)
 * [Vorticity and Sverdrup Balance](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/vorticity_sverdrup_transport_and_gyres.ipynb)
-
+* [Theory of deep ocean circulation](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/spencer_AMOC_theory.ipynb)
 
 ## Run the lecture notes interactively ##
 
