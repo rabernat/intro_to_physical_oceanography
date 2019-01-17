@@ -7,6 +7,7 @@ dependencies:
     - numpy         # N-d array and numerics
     - xarray        # N-d labeled array library
     - intake        # allows installation of datasets
+    - intake-xarray #xarray plugin for intake
     - pyviz::datashader #needed for holoviews visualization
     - netcdf4       # Wrapper for netcdf4
     - holoviews
