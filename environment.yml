@@ -7,3 +7,4 @@ dependencies:
     - numpy         # N-d array and numerics
     - xarray        # N-d labeled array library
     - holoviews
+    - gsw
