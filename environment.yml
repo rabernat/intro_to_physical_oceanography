@@ -6,6 +6,7 @@ dependencies:
     - matplotlib    # 2D plotting library    
     - numpy         # N-d array and numerics
     - xarray        # N-d labeled array library
-    - pyviz::datashader
+    - pyviz::datashader #needed for holoviews visualization
+    - netcdf4       # Wrapper for netcdf4
     - holoviews
     - gsw
