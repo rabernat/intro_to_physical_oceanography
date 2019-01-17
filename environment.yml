@@ -3,3 +3,5 @@ channels:
     - conda-forge
 dependencies:
     - python=3.6    # Python version 3.6
+    - numpy         # N-d array and numerics
+    - xarray        # N-d labeled array library
