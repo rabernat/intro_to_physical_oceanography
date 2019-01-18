@@ -19,7 +19,7 @@ The links below will render the notebooks via the [nbviewer](http://nbviewer.jup
 * [Hydrostatic and Geostrophic Balance](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/06_hydrostatic_geostrophic.ipynb)
 * [Ekman Transport and Pumping](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/07_ekman.ipynb)
 * [Vorticity and Sverdrup Balance](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/vorticity_sverdrup_transport_and_gyres.ipynb)
-* [Theory of deep ocean circulation](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/spencer_AMOC_theory.ipynb)
+* [Theory of deep ocean circulation](http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/AMOC_theory.ipynb)
 
 ## Run the lecture notes interactively ##
 
@@ -36,7 +36,7 @@ If you are not a fan of the command line, there are plent of [graphical interfac
 Once you have the repository cloned, you can update it as new lectures come out by running
 
 ```bash
-git pull
+git pull origin master
 ```
 
 If for some reason you can't get git working, the alternative is to use the link to the right to "Download Zip". The disadvantage here is that you will have to re-download every time the repo is updated.
