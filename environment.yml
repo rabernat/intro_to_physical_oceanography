@@ -5,6 +5,9 @@ dependencies:
     - python=3.6    # Python version 3.6
     - matplotlib    # 2D plotting library    
     - numpy         # N-d array and numerics
+    - scipy         # Common math/stats/science functions
+    - seaborn       # Statistical visualizations
+    - pandas	    # Labeled array library
     - xarray        # N-d labeled array library
     - intake        # allows installation of datasets
     - intake-xarray #xarray plugin for intake
