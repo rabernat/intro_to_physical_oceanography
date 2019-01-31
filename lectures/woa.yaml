@@ -11,6 +11,12 @@ sources:
     args:
       urlpath: 'http://iridl.ldeo.columbia.edu/SOURCES/.NOAA/.NODC/.WOA09/.Grid-1x1/.Annual/.salinity/.s_an/dods'
       chunks: 1000
+  woa_nobs:
+    description: WOA temp number of obs
+    driver: netcdf
+    args:
+      urlpath: 'http://iridl.ldeo.columbia.edu/SOURCES/.NOAA/.NODC/.WOA09/.Grid-1x1/.Annual/.temperature/.t_dd/dods'
+      chunks: 1000
   woa_heat:
     description: WOA heat content
     driver: netcdf
