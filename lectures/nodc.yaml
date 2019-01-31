@@ -1,0 +1,10 @@
+plugins:
+  source:
+    - module: intake_xarray
+sources:
+  nodc:
+    description: Argo data
+    driver: netcdf
+    args:
+      urlpath: 'https://data.nodc.noaa.gov/thredds/dodsC/argo/gadr/data/atlantic/2015/09/nodc_D1901358_079.nc'
+      chunks: {}

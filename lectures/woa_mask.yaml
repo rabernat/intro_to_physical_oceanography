@@ -1,0 +1,7 @@
+sources:
+  woa_mask:
+    description: WOA land masks
+    driver: netcdf
+    args:
+      urlpath: 'http://iridl.ldeo.columbia.edu/SOURCES/.NOAA/.NODC/.WOA09/.Masks/.basin/dods/'
+      chunks: 1000

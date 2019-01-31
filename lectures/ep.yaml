@@ -1,0 +1,13 @@
+sources:
+  evap:
+    description: Evaporation data
+    driver: netcdf
+    args:
+      urlpath: 'http://kage.ldeo.columbia.edu:81/expert/home/.OTHER/.richard/.whoi/.oaflux/.data_v3/.monthly/.evaporation/.evapr.nc%5BT%5Daverage/dods'
+      chunks: 1000
+  precip:
+    description: Evaporation data
+    driver: netcdf
+    args:
+      urlpath: 'http://iridl.ldeo.columbia.edu/SOURCES/.NASA/.GPCP/.V2p1/.multi-satellite/.prcp/%5BT%5D/average/dods'
+      chunks: 1000

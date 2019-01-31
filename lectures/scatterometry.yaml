@@ -1,0 +1,7 @@
+sources:
+  scow:
+    description: QuikSCAT scatterometry
+    driver: netcdf
+    args:
+      urlpath: 'https://wilson.coas.oregonstate.edu/thredds/dodsC/CIOSS/SCOW/Monthly/scow_monthly_maps.nc'
+      chunks: 1000

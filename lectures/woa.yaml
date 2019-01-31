@@ -1,0 +1,26 @@
+sources:
+  woa_temp:
+    description: WOA temp
+    driver: netcdf
+    args:
+      urlpath: 'http://iridl.ldeo.columbia.edu/SOURCES/.NOAA/.NODC/.WOA09/.Grid-1x1/.Annual/.temperature/.t_an/dods'
+      chunks: 1000
+  woa_salt:
+    description: WOA salt
+    driver: netcdf
+    args:
+      urlpath: 'http://iridl.ldeo.columbia.edu/SOURCES/.NOAA/.NODC/.WOA09/.Grid-1x1/.Annual/.salinity/.s_an/dods'
+      chunks: 1000
+  woa_nobs:
+    description: WOA temp number of obs
+    driver: netcdf
+    args:
+      urlpath: 'http://iridl.ldeo.columbia.edu/SOURCES/.NOAA/.NODC/.WOA09/.Grid-1x1/.Annual/.temperature/.t_dd/dods'
+      chunks: 1000
+  woa_heat:
+    description: WOA heat content
+    driver: netcdf
+    args:
+      urlpath: 'https://data.nodc.noaa.gov/thredds/dodsC/woa/heat_content/heat_content/heat_content_anomaly_0-700_pentad.nc'
+      chunks: 1000
+      decode_times: False

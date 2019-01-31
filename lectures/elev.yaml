@@ -1,0 +1,7 @@
+sources:
+  elev:
+    description: Elevation data
+    driver: netcdf
+    args:
+      urlpath: 'http://iridl.ldeo.columbia.edu/SOURCES/.NOAA/.NGDC/.ETOPO5/dods'
+      chunks: 1000
