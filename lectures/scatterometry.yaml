@@ -3,5 +3,5 @@ sources:
     description: QuikSCAT scatterometry
     driver: netcdf
     args:
-      urlpath: 'http://wilson.coas.oregonstate.edu:8080/thredds/dodsC/CIOSS/SCOW/Monthly/scow_monthly_maps.nc'
+      urlpath: 'https://wilson.coas.oregonstate.edu/thredds/dodsC/CIOSS/SCOW/Monthly/scow_monthly_maps.nc'
       chunks: 1000
