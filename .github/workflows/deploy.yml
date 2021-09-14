@@ -42,3 +42,4 @@ jobs:
         publish_branch: gh-pages
         publish_dir: book/_build/html
         full_commit_message: "GitHub action book deploy"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
