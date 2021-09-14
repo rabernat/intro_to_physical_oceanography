@@ -1,0 +1,591 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The theory of the Atlantic Meridional Overturning Circulation (AMOC) &#8212; Intro to Physical Oceanography</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Vorticity, Sverdrup Transport, and Ocean Gyres" href="vorticity_sverdrup_transport_and_gyres.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Intro to Physical Oceanography</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction to Physical Oceanography
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Foundations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_ocean_bathymetry.html">
+   The Boundaries of the Ocean
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-a_thermodynamics_of_seawater.html">
+   Thermodynamics of Seawater
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-b_the_water_column.html">
+   The Water Column
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-c_ocean_temperature_salinity_stratification.html">
+   Temperature, Salinity, and Stratification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_air_sea_exchange.html">
+   Air Sea Exchange
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_advection_diffusion_continuity.html">
+   Advection, Diffusion, and Conservation Laws
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Dynamics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_equations_of_motion.html">
+   Equations of Motion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_hydrostatic_geostrophic.html">
+   Hydrostatic and Geostrophic Balances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_ekman.html">
+   Wind Driven Circulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vorticity_sverdrup_transport_and_gyres.html">
+   Vorticity, Sverdrup Transport, and Ocean Gyres
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   The theory of the Atlantic Meridional Overturning Circulation (AMOC)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/AMOC_theory.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rabernat/intro_to_physical_oceanography"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rabernat/intro_to_physical_oceanography/issues/new?title=Issue%20on%20page%20%2FAMOC_theory.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rabernat/intro_to_physical_oceanography/master?urlpath=tree/book/AMOC_theory.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#by-spencer-jones">
+   By Spencer Jones
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#munk-s-abyssal-recipes">
+   Munk’s Abyssal Recipes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stommel-arons-abyssal-flows">
+   Stommel-Arons abyssal flows
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#single-hemisphere-example">
+     Single Hemisphere example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#stommel-arons-in-a-global-geometry">
+     Stommel-Arons in a global geometry
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="the-theory-of-the-atlantic-meridional-overturning-circulation-amoc">
+<h1>The theory of the Atlantic Meridional Overturning Circulation (AMOC)<a class="headerlink" href="#the-theory-of-the-atlantic-meridional-overturning-circulation-amoc" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="by-spencer-jones">
+<h2>By <a class="reference external" href="http://pordlabs.ucsd.edu/csjones/">Spencer Jones</a><a class="headerlink" href="#by-spencer-jones" title="Permalink to this headline">¶</a></h2>
+<p>Deep water is formed in the Labrador and Greenland seas (in the North Atlantic), in the Ross and Weddell seas, and around Antarctica. In order to satisfy volume conservation, this water must return to the surface somewhere: the volume transported by deep-water formation must equal the volume transported by upwelling. The simplest thing to do is to assume a uniform upwelling <span class="math notranslate nohighlight">\(w\)</span> across the whole ocean, which has area <span class="math notranslate nohighlight">\(A=4 \times 10^{13} m^2\)</span>, and</p>
+<p><span class="math notranslate nohighlight">\(wA=Q_S\, , \)</span></p>
+<p>where <span class="math notranslate nohighlight">\(Q_s=15 \times 10^6 m^3/s\)</span> is the total rate of deep-water formation, with units of volume/time.</p>
+</div>
+<div class="section" id="munk-s-abyssal-recipes">
+<h2>Munk’s Abyssal Recipes<a class="headerlink" href="#munk-s-abyssal-recipes" title="Permalink to this headline">¶</a></h2>
+<p>Recall that the advection-diffusion equations for a temperature <span class="math notranslate nohighlight">\(T\)</span> and salinity <span class="math notranslate nohighlight">\(S\)</span> are</p>
+<div class="math notranslate nohighlight">
+\[ \frac{DT}{D t} =  \nabla \cdot (\kappa_T \nabla T )  - \frac{1}{\rho_0 c_p^0}\frac{\partial Q_{rad}}{\partial z} \, , \]</div>
+<div class="math notranslate nohighlight">
+\[  \rho \frac{DS}{Dt} =  \nabla \cdot ( \rho \kappa_S \nabla S ) \, .\]</div>
+<p>In the ocean, <span class="math notranslate nohighlight">\(\kappa_T\)</span> and <span class="math notranslate nohighlight">\(\kappa_S\)</span> usually refer to the turbulent diffusivity, not the molecular diffusivity. The turbulent diffusivity is the effective diffusivity of the ocean: it is larger than the molecular diffusivity because it includes the effects of small-scale turbulent motions, which ove temperature and sainity faster than the molecular diffusivity. Because these small-scale turbulent motions are controlled by the ocean conditions, the turbulent diffusivity cannot be measured in the lab.</p>
+<p>One of the biggest questions in physical oceanography is <em><strong>What is the effective vertical diffusivity of the ocean?</strong></em></p>
+<p>Far from the ocean surface, <span class="math notranslate nohighlight">\(Q_{rad}=0\)</span>, so assuming steady state and the Boussinesq approximation,</p>
+<div class="math notranslate nohighlight">
+\[ \left(u\frac{ \partial T}{\partial x}+v\frac{ \partial T}{\partial y}+w\frac{ \partial T}{\partial z}\right) = \nabla \cdot (\kappa_T \nabla T ) \, , \]</div>
+<div class="math notranslate nohighlight">
+\[\left(u\frac{ \partial S}{\partial x}+v\frac{ \partial S}{\partial y}+w\frac{ \partial S}{\partial z}\right) =  \nabla \cdot (\kappa_S \nabla S ) \, .\]</div>
+<p>Munk (1966) hypothesized that the below 1000m the flow obeys the vertical advection-diffusion equation, i.e. we can neglect horizontal transports of temperature and salinity. We set <span class="math notranslate nohighlight">\(\kappa_S\approx \kappa_T \approx K_v\)</span> as the vertical diffusivity, which we will assume is uniform over the whole ocean.</p>
+<p>\begin{equation*}
+\begin{aligned}
+w\frac{\partial T}{\partial z}=K_v \frac{\partial ^2 T}{\partial z^2} , , \
+w\frac{\partial S}{\partial z}=K_v \frac{\partial ^2 S}{\partial z^2} , .
+\end{aligned}
+\end{equation*}</p>
+<p>The solutions to the advection-diffusion equations take the form:</p>
+<p>\begin{equation*}
+\begin{aligned}
+T=T_0+T_1 e^{wz/K_v} \
+S=S_0+S_1 e^{wz/K_v}
+\end{aligned}
+\end{equation*}</p>
+<p>Munk fitted temperature and salinity data from the central Pacific with these functions to estimate <span class="math notranslate nohighlight">\(K_v\)</span>. The central Pacific is a good place because it has low horizontal velocities in the deep ocean. We can do the same thing here with some temperature profiles near the equator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>curl -O https://www.esrl.noaa.gov/psd/thredds/fileServer/Datasets/nodc.woa98/temperat/annual/otemp.raw1deg.nc
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 8357k  100 8357k    0     0  1875k      0  0:00:04  0:00:04 --:--:-- 1875k
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">netCDF4</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;otemp.raw1deg.nc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit a function to the data</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">optimize</span>
+
+<span class="k">def</span> <span class="nf">test_func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="n">c</span><span class="p">)</span>
+
+<span class="n">params</span><span class="p">,</span> <span class="n">params_covariance</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">curve_fit</span><span class="p">(</span><span class="n">test_func</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">level</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">otemp</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:,:]</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">ds</span><span class="o">.</span><span class="n">lon</span><span class="o">&gt;</span><span class="mi">160</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">lon</span><span class="o">&lt;</span><span class="mi">170</span><span class="p">))</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">),</span>
+                                               <span class="n">p0</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[   1.52028625   27.81975956  413.91084354]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">otemp</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:,:]</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">ds</span><span class="o">.</span><span class="n">lon</span><span class="o">&gt;</span><span class="mi">160</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">lon</span><span class="o">&lt;</span><span class="mi">170</span><span class="p">))</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">),</span><span class="n">ds</span><span class="o">.</span><span class="n">level</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">5.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">test_func</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">level</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">),</span><span class="n">ds</span><span class="o">.</span><span class="n">level</span><span class="p">,</span> <span class="s1">&#39;g--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">5.0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="s1">&#39;both&#39;</span><span class="p">,</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Depth (m)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperature ($^{\circ}C$)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5,0,&#39;Temperature ($^{\\circ}C$)&#39;)
+</pre></div>
+</div>
+<img alt="_images/AMOC_theory_19_1.png" src="_images/AMOC_theory_19_1.png" />
+</div>
+</div>
+<p>Based on this temperature profile,</p>
+<p>\begin{equation*}
+\frac{K_v}{w}=414m , .
+\end{equation*}</p>
+<p>The rate of deep water formation is about <span class="math notranslate nohighlight">\(Q_s=15Sv=15 \times 10^6 m^3/s\)</span> and the area of the oceans is about <span class="math notranslate nohighlight">\(A=4 \times 10^{13} m^2\)</span>, so <span class="math notranslate nohighlight">\(K_v \approx 1.5 \times 10^{-4}m^2/s\)</span>. This is close to Munk’s answer of <span class="math notranslate nohighlight">\(K_v \approx 1.3 \times 10^{-4}m^2/s\)</span>.</p>
+<p>According to Munk’s recipe, the upwelling of deep waters is drive by downward diffusion of heat from the surface.</p>
+</div>
+<div class="section" id="stommel-arons-abyssal-flows">
+<h2>Stommel-Arons abyssal flows<a class="headerlink" href="#stommel-arons-abyssal-flows" title="Permalink to this headline">¶</a></h2>
+<p>Remember the planetary vorticity equation:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial \omega}{\partial t}-f \frac{\partial w}{\partial z}+ \beta v=\frac{1}{\rho_0}\frac{\partial}{\partial z}\left(\frac{-\partial \tau_x}{\partial y}+\frac{\partial \tau_y}{\partial x}\right)\]</div>
+<p>In the interior of the deep ocean, we are away from boundaries so <span class="math notranslate nohighlight">\(\tau_x=\tau_y=0\)</span>. We assume that the flow is in steady state, so</p>
+<p>\begin{equation*}
+f\frac{\partial w}{\partial z} = \beta v , .
+\end{equation*}</p>
+<p>This is a form of Sverdrup balance: the left side represents vortex stretching and <span class="math notranslate nohighlight">\(\beta v\)</span> represents the production of vorticity due to advection across the planetary vorticity gradient. The upwelling stretches the bottom part of the water column, which must move poleward in order to conserve potential vorticity.</p>
+<p>Now we can solve for the meridional flow by dividing by <span class="math notranslate nohighlight">\(\beta\)</span> and integrating between the bottom, <span class="math notranslate nohighlight">\(z=-H\)</span>, and a point in the interior below the wind-driven flow, <span class="math notranslate nohighlight">\(z=z_I\)</span>:</p>
+<p>\begin{equation*}
+\int_{z=-H}^{z=z_I} v dz=\frac{f}{\beta} \left(w|<em>{z=z_I} -w|</em>{z=-H}\right)
+\end{equation*}</p>
+<p><span class="math notranslate nohighlight">\(w|_{z=z_I}\)</span> is the vertical velocity in the interior, which is <span class="math notranslate nohighlight">\(Q_s/A\)</span>. <span class="math notranslate nohighlight">\(w|_{z=-H}\)</span> is the vertical velocity at the bottom of the ocean, which is zero. So,</p>
+<p>\begin{equation*}
+V=\frac{f Q_s}{\beta A} , .
+\end{equation*}</p>
+<p>Here, <span class="math notranslate nohighlight">\(V\)</span> is the depth integrated meridional velocity in the deep ocean, which I’ve plotted below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>curl -O http://research.jisao.washington.edu/datasets/elevation/fractional_land.1-deg.nc
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  129k  100  129k    0     0   251k      0 --:--:-- --:--:-- --:--:--  251k
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">netCDF4</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;fractional_land.1-deg.nc&#39;</span><span class="p">,</span><span class="n">decode_times</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.Dataset&gt;
+Dimensions:  (lat: 180, lon: 360, time: 1)
+Coordinates:
+  * lat      (lat) float32 89.5 88.5 87.5 86.5 85.5 84.5 83.5 82.5 81.5 80.5 ...
+  * lon      (lon) float32 0.5 1.5 2.5 3.5 4.5 5.5 6.5 7.5 8.5 9.5 10.5 11.5 ...
+  * time     (time) float64 0.0
+Data variables:
+    data     (time, lat, lon) float32 ...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V</span><span class="o">=</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]))</span><span class="o">*</span><span class="mi">15</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span><span class="mi">10</span><span class="o">**</span><span class="mi">13</span>
+<span class="n">V</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">data</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vmin</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span><span class="mi">60</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted meridional velocity in the deep ocean, integrated vertically (units are $m^2/s$)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5,1,&#39;Predicted meridional velocity in the deep ocean, integrated vertically (units are $m^2/s$)&#39;)
+</pre></div>
+</div>
+<img alt="_images/AMOC_theory_36_1.png" src="_images/AMOC_theory_36_1.png" />
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(f\)</span> is positive in the northern hemisphere and negative in the southern hemisphere, so <span class="math notranslate nohighlight">\(V\)</span> is northward in the northern hemisphere and southward in the southern hemisphere.</p>
+<p>How do we find the zonal velocity? This flow is not barotropic, so we can’t just make a streamfunction. Instead, we can assume geostrophic balance:</p>
+<div class="math notranslate nohighlight">
+\[-fv_g=-\frac{\partial \phi}{\partial x}\]</div>
+<div class="math notranslate nohighlight">
+\[fu_g=-\frac{\partial \phi}{\partial y}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\phi\)</span> is the dynamic pressure. Hence,
+$<span class="math notranslate nohighlight">\(-fV=\int_{-H}^{z_I} \frac{\partial \phi}{\partial x} \, dz\)</span><span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(fU=\int_{-H}^{z_I}\frac{\partial \phi}{\partial y} \, dz\)</span>$</p>
+<p>Assuming there is no flow on the eastern boundary, we can set <span class="math notranslate nohighlight">\(\phi=\)</span>const on the eastern boundary of the basin, <span class="math notranslate nohighlight">\(x=x_e\)</span>, we can integrate <span class="math notranslate nohighlight">\(V\)</span> to find
+$<span class="math notranslate nohighlight">\(\int_{-H}^{z_I}\phi \, dz =\frac{f^2 Q_s}{\beta A}(x-x_e)\, , \)</span><span class="math notranslate nohighlight">\( 
+and then differentiate with respect to \)</span>y<span class="math notranslate nohighlight">\( to get
+\)</span><span class="math notranslate nohighlight">\(U=\frac{1}{f}\frac{\partial}{\partial y}\int_{-H}^{z_I} \phi \, dz =\frac{1}{f}\frac{2 \beta f Q_s}{\beta A}(x-x_e)=\frac{2 Q_s}{A}(x-x_e)\, . \)</span>$</p>
+<p>Sometimes <span class="math notranslate nohighlight">\(V\)</span> is towards a source of deep water. As in the upper ocean, volume must be conserved, which is enabled by <strong>western boundary currents</strong>.</p>
+<div class="section" id="single-hemisphere-example">
+<h3>Single Hemisphere example<a class="headerlink" href="#single-hemisphere-example" title="Permalink to this headline">¶</a></h3>
+<p>So for example, upwelling in the Northern Hemisphere of the Atlantic Ocean is associated with northward flow in the interior of the deep ocean. But there is a source of deep water in the far north of the Atlantic, so the net transport at depth must be southward. Therefore a southward western boundary current transports the water from the source of deep water <em>and</em> the water that flowed north in the interior southward towards the equator.</p>
+<p>If we think about a box that represents the North Atlantic and assume no flow crosses the equator (this isn’t realistic but it makes a nice example):</p>
+<p><img alt="Stommel_arons_box.001.jpeg" src="attachment:Stommel_arons_box.001.jpeg" /></p>
+<p>By conservation of mass, the amount of deep-water formation, <span class="math notranslate nohighlight">\(Q_s\)</span>, plus the northward transport in the interior, <span class="math notranslate nohighlight">\(Q_I\)</span>, must equal the transport removed by upwelling, <span class="math notranslate nohighlight">\(Q_u\)</span>, plus the transport of the western boundary current:
+$<span class="math notranslate nohighlight">\(Q_s+Q_I(y)=Q_W(y)+Q_u(y)\)</span>$</p>
+<p>By integrating <span class="math notranslate nohighlight">\(V\)</span> in the zonal direction,
+$<span class="math notranslate nohighlight">\(Q_I(y)=\int_{x_w}^{x_e}V \, dx = \frac{f Q_s}{\beta A}(x_e-x_w) \, . \)</span>$</p>
+<p>The upwelling lost is given by
+$<span class="math notranslate nohighlight">\(Q_u(y)=\int_{x_w}^{x_e}\int_y^{y_N}w \, dy \, dx=\frac{Q_s}{A}(x_e-x_w)(y_N-y) \, . \)</span>$</p>
+<p>Hence, we can find the transport of the western boundary current,
+$<span class="math notranslate nohighlight">\(Q_W(y)=Q_s+Q_I-Q_u=Q_s+\frac{f Q_s}{\beta A}(x_e-x_w)-\frac{Q_s}{A}(x_e-x_w)(y_N-y) \, .\)</span>$</p>
+<p>If the area over which upwelling occurs is <span class="math notranslate nohighlight">\(A=(x_e-x_w)y_N\)</span>,
+$<span class="math notranslate nohighlight">\(Q_W(y)=\frac{Q_s}{y_N}\left(\frac{f}{\beta}+y\right)\)</span>$</p>
+<p>Using the <span class="math notranslate nohighlight">\(\beta\)</span>-plane approximation <span class="math notranslate nohighlight">\(f=f_0+\beta y\)</span>, and taking <span class="math notranslate nohighlight">\(f_0=0\)</span>,
+$<span class="math notranslate nohighlight">\(Q_W(y)=2 Q_S\frac{y}{y_N}\)</span>$</p>
+<p>In this simplified example, the maximum transport of the western boundary current is twice the rate of deep-water formation.</p>
+</div>
+<div class="section" id="stommel-arons-in-a-global-geometry">
+<h3>Stommel-Arons in a global geometry<a class="headerlink" href="#stommel-arons-in-a-global-geometry" title="Permalink to this headline">¶</a></h3>
+<p>Sources of deep water are marked <span class="math notranslate nohighlight">\(S_1\)</span> and <span class="math notranslate nohighlight">\(S_2\)</span> in the figure below (from Stommel and Arons’ 1959 paper). Here, water can cross the equator. Remember that this figure assumes uniform upwelling of deep waters.</p>
+<p><img alt="stommel_arons.jpg" src="attachment:stommel_arons.jpg" /></p>
+<p>One feature of the solution is a deep western boundary current that flows southward in the Atlantic Ocean. This is consistent with observations. For example, high oxygen water is formed in the North Atlantic and flows southward in the deep western boundary current:</p>
+<p><img alt="gam2810_oxy.jpg" src="attachment:gam2810_oxy.jpg" /></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="vorticity_sverdrup_transport_and_gyres.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Vorticity, Sverdrup Transport, and Ocean Gyres</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan Abernathey<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

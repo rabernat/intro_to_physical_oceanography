@@ -1,0 +1,660 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Equations of Motion &#8212; Intro to Physical Oceanography</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Hydrostatic and Geostrophic Balances" href="06_hydrostatic_geostrophic.html" />
+    <link rel="prev" title="Advection, Diffusion, and Conservation Laws" href="04_advection_diffusion_continuity.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Intro to Physical Oceanography</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction to Physical Oceanography
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Foundations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_ocean_bathymetry.html">
+   The Boundaries of the Ocean
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-a_thermodynamics_of_seawater.html">
+   Thermodynamics of Seawater
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-b_the_water_column.html">
+   The Water Column
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-c_ocean_temperature_salinity_stratification.html">
+   Temperature, Salinity, and Stratification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_air_sea_exchange.html">
+   Air Sea Exchange
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_advection_diffusion_continuity.html">
+   Advection, Diffusion, and Conservation Laws
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Dynamics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Equations of Motion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_hydrostatic_geostrophic.html">
+   Hydrostatic and Geostrophic Balances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_ekman.html">
+   Wind Driven Circulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vorticity_sverdrup_transport_and_gyres.html">
+   Vorticity, Sverdrup Transport, and Ocean Gyres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="AMOC_theory.html">
+   The theory of the Atlantic Meridional Overturning Circulation (AMOC)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/05_equations_of_motion.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rabernat/intro_to_physical_oceanography"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rabernat/intro_to_physical_oceanography/issues/new?title=Issue%20on%20page%20%2F05_equations_of_motion.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rabernat/intro_to_physical_oceanography/master?urlpath=tree/book/05_equations_of_motion.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#newton-s-second-law-for-a-water-parcel">
+   Newton’s Second Law for a Water Parcel
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#forces">
+   Forces
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pressure-gradient-force">
+     Pressure Gradient Force
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gravitational-force">
+     Gravitational Force
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#viscous-force">
+   Viscous Force
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acceleration">
+   Acceleration
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#defining-position-velocity-and-acceleration">
+     Defining position, velocity and acceleration
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rotating-reference-frame">
+     Rotating Reference Frame
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#centrifugal-acceleration-force">
+     Centrifugal Acceleration / Force
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#coriolis-acceleration">
+     Coriolis Acceleration
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#putting-it-all-together">
+   Putting it all together
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#common-approximations">
+   Common Approximations
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hydrostatic-balance">
+     Hydrostatic Balance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#boussinesq-approximation">
+     Boussinesq Approximation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#coordinates-and-approximations-for-the-sphere">
+     Coordinates and Approximations for the Sphere
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="math notranslate nohighlight">
+\[ \newcommand{\pd}[2]{ \frac{\partial #1}{\partial #2} }
+\newcommand{\od}[2]{\frac{d #1}{d #2}}
+\newcommand{\td}[2]{\frac{D #1}{D #2}}
+\newcommand{\ab}[1]{\langle #1 \rangle}
+\newcommand{\bss}[1]{\textsf{\textbf{#1}}}
+\newcommand{\ol}{\overline}
+\newcommand{\olx}[1]{\overline{#1}^x}
+\]</div>
+<div class="section" id="equations-of-motion">
+<h1>Equations of Motion<a class="headerlink" href="#equations-of-motion" title="Permalink to this headline">¶</a></h1>
+<p>In this class, we will not undertake a formal derivation of the fluid equations of motion. That would take up too much time and require too much math. Interested students can consult Marshall and Plumb (sec. XX) for a more in-depth derivation. Instead, we will try to build an intuitive understanding of the equations of motion based on things we already all understand.</p>
+<div class="section" id="newton-s-second-law-for-a-water-parcel">
+<h2>Newton’s Second Law for a Water Parcel<a class="headerlink" href="#newton-s-second-law-for-a-water-parcel" title="Permalink to this headline">¶</a></h2>
+<p>The starting point for understanding the equations of motion is the notion of a “water parcel”. The water is hypothetical, infinitesimally small fluid element. We imagine the fluid to be composed of an infinite continuum of such parcels, each following its own unique path.</p>
+<p>The equation of fluid motion is basically just <a class="reference external" href="https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion#Newton.27s_second_law">Newton’s second law</a> applied to this parcel. Newton’s second law states that</p>
+<div class="math notranslate nohighlight">
+\[m \mathbf{a} = \mathbf{F}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{F}\)</span> represents the sum of all forces acting on the parcel, <span class="math notranslate nohighlight">\(m\)</span> is the parcel mass and <span class="math notranslate nohighlight">\(\mathbf{a}\)</span> is the acceleration of the parcel. Both sides of the equations have the units of N (Newtons; 1 N = 1 kg m s<span class="math notranslate nohighlight">\(^{-2}\)</span>).</p>
+<p>The expression above is valid for a finite-sized object, like a cannon ball. To move to an infintessimally small water parcel, we replace <span class="math notranslate nohighlight">\(m\)</span>, the mass, with <span class="math notranslate nohighlight">\(\rho\)</span>, the density, i.e.~the mass per unit volume:</p>
+<div class="math notranslate nohighlight">
+\[ \rho \mathbf{a} = \mathbf{f} \ .\]</div>
+<p>The force vector <span class="math notranslate nohighlight">\(\mathbf{f}\)</span> now represents the force per unit volume and has units N m<span class="math notranslate nohighlight">\(^{-3}\)</span>.</p>
+<p>In order to develop this equation into a useful form, we need to work on the following two problems:</p>
+<ol class="simple">
+<li><p>What is the acceleration of a fluid parcel on a rotating, spherical planet?</p></li>
+<li><p>What are the different forces that make up <span class="math notranslate nohighlight">\(\mathbf{f}\)</span>?</p></li>
+</ol>
+<p><img alt="water parcel" src="https://vectr.com/rabernat/b23Bl8h8uT.svg" /></p>
+<p><em>Cartoon of a water parcel moving through space along a path (black line). The colored arrows represent the different forces on and acceleration of the parcel.</em></p>
+<p>We will start with the forces, because they are easier. There are three forces we have to consider: the pressure gradient force (<span class="math notranslate nohighlight">\(\mathbf{f}_p\)</span>), the gravitational force (<span class="math notranslate nohighlight">\(\mathbf{f}_g\)</span>) and the viscous force (<span class="math notranslate nohighlight">\(\mathbf{f}_{visc}\)</span>). Together these sum to give the net force:</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf{f} = \mathbf{f}_p + \mathbf{f}_g + \mathbf{f}_{visc} \]</div>
+</div>
+<div class="section" id="forces">
+<h2>Forces<a class="headerlink" href="#forces" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="pressure-gradient-force">
+<h3>Pressure Gradient Force<a class="headerlink" href="#pressure-gradient-force" title="Permalink to this headline">¶</a></h3>
+<p>We all have an intuitive understanding of pressure. <a class="reference external" href="https://en.wikipedia.org/wiki/Pressure">Pressure</a> is the force the surrounding fluid exerts perpendicular to the water parcel surface. We denote pressure with the variable <span class="math notranslate nohighlight">\(p\)</span>: it has units of Pa (Pascals; 1 Pa = 1 N m<span class="math notranslate nohighlight">\(^{-2}\)</span>). Pressure is <em>isotropic</em>, i.e. it is the same in all directions.</p>
+<p>If the pressure field is uniform, there will be no net force exerted on the water parcel, because the force is exactly the same on all sides. Only if there is a <em>pressure gradient</em> does the parcel feel a force; the parcel is pushed away from the higher pressure towards the lower pressure. Mathematically, this becomes</p>
+<div class="math notranslate nohighlight">
+\[\mathbf{f}_p = - \nabla p \ .\]</div>
+</div>
+<div class="section" id="gravitational-force">
+<h3>Gravitational Force<a class="headerlink" href="#gravitational-force" title="Permalink to this headline">¶</a></h3>
+<p>The gravitational force per unit volume on the fluid parcel is given by</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf{f}_g = - g \rho \hat{\mathbf{k}} \]</div>
+<p>where <span class="math notranslate nohighlight">\(g \simeq\)</span> 9.8 m s<span class="math notranslate nohighlight">\(^{-2}\)</span> is the gravitational acceleration and <span class="math notranslate nohighlight">\(\hat{\mathbf{k}}\)</span> is the unit vector pointing “up”, i.e. away from Earth’s center of mass. A slightly more general form is to express this force in terms of the gravitational <a class="reference external" href="https://en.wikipedia.org/wiki/Geopotential">geopotential field</a> <span class="math notranslate nohighlight">\(\Phi_g\)</span> of earth:</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf{f}_g = - \rho \nabla \Phi_g \ .\]</div>
+<p>The gravitational vector <span class="math notranslate nohighlight">\(g \hat{\mathbf{k}}\)</span> is defined as the gradient of <span class="math notranslate nohighlight">\(\Phi_g\)</span>.</p>
+<p>The gravitational force acts to pull all fluid parcels “down” towards the Earth’s center of mass. However, because of the factor of <span class="math notranslate nohighlight">\(\rho\)</span>, it is less strong for less dense water. What matters is the relative difference of <span class="math notranslate nohighlight">\(\mathbf{f}_g\)</span> between different fluid parcels. This leads to the concept of <a class="reference external" href="https://en.wikipedia.org/wiki/Buoyancy">buoyancy</a> (discussed in more detail below), which can push water parcels both downward <em>and</em> upward.</p>
+</div>
+</div>
+<div class="section" id="viscous-force">
+<h2>Viscous Force<a class="headerlink" href="#viscous-force" title="Permalink to this headline">¶</a></h2>
+<p>Viscosity represents the molecular friction that occurs within the fluid as is moves. The viscous force is given by the formula</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf{f}_{visc} = \mu \nabla^2 \mathbf{u} \]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> is the fluid velocity and <span class="math notranslate nohighlight">\(\mu\)</span> is the <em>dynamic viscosity</em>, a molecular property of the fluid. A representiative value of <span class="math notranslate nohighlight">\(\mu\)</span> is 1.3 <span class="math notranslate nohighlight">\(\times 10^{-3}\)</span> N s m<span class="math notranslate nohighlight">\(^{-2}\)</span>.</p>
+<p>It can be easier to understand the viscous force if we consider flow in only one direction. Consider a zonal flow <span class="math notranslate nohighlight">\(u(y)\)</span> that varies in the y-dimension, as shown in the cartoon below. In this case, the viscous vorce in the x-direction is given by</p>
+<div class="math notranslate nohighlight">
+\[ \mu \frac{\partial^2 u}{\partial y^2} \ .\]</div>
+<p>Which is proportional to the <em>curvature</em> of the profile <span class="math notranslate nohighlight">\(u(y)\)</span>. The cartoon illustrates a typical jet, with enhanced velocity at the jet axis. The curvature of such a jet profile ensures that the viscous force is negatuve, such that it acts to <em>retard</em> the jet, with a maximum magnitude right at the jet core. One interpretation of this situation is that viscosity diffuses momentum away from the jet core towards the jet flanks.</p>
+<p><img alt="shear flow" src="https://vectr.com/rabernat/c4ThJXocdS.svg" /></p>
+<p>Viscosity is mathematically and physically analagous to diffusion.</p>
+</div>
+<div class="section" id="acceleration">
+<h2>Acceleration<a class="headerlink" href="#acceleration" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="defining-position-velocity-and-acceleration">
+<h3>Defining position, velocity and acceleration<a class="headerlink" href="#defining-position-velocity-and-acceleration" title="Permalink to this headline">¶</a></h3>
+<p>A water parcel’s position at a given time <span class="math notranslate nohighlight">\(t\)</span> is given by a three dimensional vector <span class="math notranslate nohighlight">\(\mathbf{x}(x,y,z,t)\)</span>. The instantaneous rate of change of the position of such a fluid element defines the fluid velocity:</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf{u}  = (u, v, w)\equiv \od{\mathbf{x}}{t} \ . \]</div>
+<p>The rate of change of velocity is acceleration:</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf{a}  = \od{\mathbf{u}}{t} \ . \]</div>
+<p>If we planned to use the Lagrangian approach for describing the fluid motion (following each water parcel around), we could leave it at that.
+But we intend to use the Eulerian approach (measuring quantities at fixed locations in space).
+We need to recall the definition of the <em>material derivative</em> from the advection / diffusion lecture.
+The rate of change of any water parcel property in the Eulerian frame is given by the material derivative</p>
+<div class="math notranslate nohighlight">
+\[ \td{}{t} = \pd{}{t} + \mathbf{u} \cdot \nabla . \]</div>
+<p>Applying this to acceleration gives</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf{a} = \td{\mathbf{u}}{t} = \pd{\mathbf{u}}{t} + \mathbf{u} \cdot \nabla \mathbf{u} \ .\]</div>
+</div>
+<div class="section" id="rotating-reference-frame">
+<h3>Rotating Reference Frame<a class="headerlink" href="#rotating-reference-frame" title="Permalink to this headline">¶</a></h3>
+<p>Newton’s second law only applies with an <a class="reference external" href="https://en.wikipedia.org/wiki/Inertial_frame_of_reference">inertial frame of reference</a>.
+Yet we make our observations of the ocean from on the rotating Earth, most definitely a non-inertial reference frame.
+This complicates matters significantly.
+In order to relate the velocity and acceleration we actually measure to the velocity in the inertial reference frame, we need to understand how to transform vectors from a rotating to a non-rotating reference frame.</p>
+<p><img alt="Earth's rotation axis" src="https://upload.wikimedia.org/wikipedia/commons/6/61/AxialTiltObliquity.png" /></p>
+<p><em><a class="reference external" href="https://upload.wikimedia.org/wikipedia/commons/6/61/AxialTiltObliquity.png">Dennis Nilsson CC BY 3.0 license, via Wikimedia Commons</a></em></p>
+<p>The rotating reference frame rotates at rotation rate <span class="math notranslate nohighlight">\(\mathbf{\Omega}\)</span> relative to the inertial frame.
+<span class="math notranslate nohighlight">\(\mathbf{\Omega}\)</span> is a vector which points along the axis of rotation, following the right-hand rule. The magnitude <span class="math notranslate nohighlight">\(|\mathbf{\Omega}|\)</span>, measured in radians / s, gives the rotation rate. For Earth <span class="math notranslate nohighlight">\(|\mathbf{\Omega}| \simeq 7.29 \times 10^{-5}\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(\mathbf{v}\)</span> denote an arbirary vector and <span class="math notranslate nohighlight">\(( d \mathbf{v} / dt )_R\)</span> its rate of change measured in the rotating reference frame. The rate of change of this vector in the inertial reference frame is given by</p>
+<div class="math notranslate nohighlight">
+\[ \left( \od{\mathbf{v}}{t} \right)_I = \left( \od{\mathbf{v}}{t} \right)_R + \mathbf{\Omega} \times \mathbf{v} \]</div>
+<p>The second term on the RHS, the cross product between <span class="math notranslate nohighlight">\(\mathbf{\Omega}\)</span> and <span class="math notranslate nohighlight">\(\mathbf{v}\)</span>, is due to the motion of the rotating reference frame relative to the inertial reference frame.</p>
+<p>We now apply this rule to velocity and acceleration. Our goal is to arrive an an expression for the acceleration in the inertial frame, but we start with the velocity. The velocity in the inertial frame is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{align}
+\mathbf{u}_I = \left( \od{\mathbf{x}}{t} \right)_I &amp;= \left( \od{\mathbf{x}}{t} \right)_R + \mathbf{\Omega} \times \mathbf{x} \\
+&amp;= \mathbf{u}_R + \mathbf{\Omega} \times \mathbf{x}
+\end{align} \end{split}\]</div>
+<p>The acceleration in the inertial frame is given by the rate of change of velocity in the inertial frame:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{align}
+\mathbf{a}_I = \left( \od{\mathbf{u}_I}{t} \right)_I &amp;= \left( \od{\mathbf{u}_I}{t} \right)_R + \mathbf{\Omega} \times \mathbf{u}_I \\
+&amp;= \left( \od{\mathbf{u}_R}{t} \right)_R + \mathbf{\Omega} \times \mathbf{u}_R
+   + \mathbf{\Omega} \times \mathbf{u}_R + \mathbf{\Omega} \times \mathbf{\Omega} \times \mathbf{x} \\
+&amp;= \mathbf{a}_R + 2 \mathbf{\Omega} \times \mathbf{u}_R + \mathbf{\Omega} \times \mathbf{\Omega} \times \mathbf{x}
+\end{align} \end{split}\]</div>
+<p>The derivation above shows that, when measuring acceleration in the rotating frame, we need to add two additional terms (both proportional to <span class="math notranslate nohighlight">\(\mathbf{\Omega}\)</span>) in order to recover the acceleration in the inertial frame (which is what we need for Newton’s second law).</p>
+</div>
+<div class="section" id="centrifugal-acceleration-force">
+<h3>Centrifugal Acceleration / Force<a class="headerlink" href="#centrifugal-acceleration-force" title="Permalink to this headline">¶</a></h3>
+<p>The term <span class="math notranslate nohighlight">\(\mathbf{\Omega} \times \mathbf{\Omega} \times \mathbf{x}\)</span> is called the centrifugal acceleration. It is a function of position only. Specifically, it is a function of the distance from the Earth’s rotation axis <span class="math notranslate nohighlight">\(r\)</span>, and it points outward away from the rotation axis:</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf{\Omega} \times \mathbf{\Omega} \times \mathbf{x}
+= |\mathbf{\Omega}|^2 r \hat{\mathbf{r}}
+= |\mathbf{\Omega}|^2 a \cos(\varphi) \]</div>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> is the Earth’s radius and <span class="math notranslate nohighlight">\(\varphi\)</span> is latitude. It is common pracise to move the centrifugual acceleration to the right hand side of equation of motion and call it the centrifugal force. It is a “fictious” force that is felt by observers in the rotating reference frame. We define this force as</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf{f}_{c} = - \mathbf{\Omega} \times \mathbf{\Omega} \times \mathbf{x} = - \nabla \Phi_{cent} \]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[ \Phi_{c} = \frac{|\mathbf{\Omega}|^2 a^2 \cos^2( \varphi)}{2} \ .\]</div>
+<p>We combine it with the gravitational potential to form a single “effective” geopotential:</p>
+<div class="math notranslate nohighlight">
+\[ \Phi = \Phi_g + \Phi_{c} \ .\]</div>
+<p>Because Earth’s surface naturally conforms to this geopotential, we don’t have to worry about it in practice. We simply treat <span class="math notranslate nohighlight">\(\Phi\)</span> as the gravitational field.</p>
+</div>
+<div class="section" id="coriolis-acceleration">
+<h3>Coriolis Acceleration<a class="headerlink" href="#coriolis-acceleration" title="Permalink to this headline">¶</a></h3>
+<p>The term <span class="math notranslate nohighlight">\(2 \mathbf{\Omega} \times \mathbf{u}_R\)</span> is called the <a class="reference external" href="https://en.wikipedia.org/wiki/Coriolis_force">Coriolis acceleration</a> (or, on the right hand side of the equation, the Coriolis force).
+It can be interpreted as another fictious force that is felt in the non-rotating reference frame.</p>
+<p>It is instructive to look at the equation of motion including only the acceleration and coriolis terms:</p>
+<div class="math notranslate nohighlight">
+\[ \od{\mathbf{u}}{t} = - 2 \Omega \times \mathbf{u} \ .\]</div>
+<p>(We have dropped the subscript <span class="math notranslate nohighlight">\(R\)</span>; everything is assumed to be measured in the rotating reference frame.) This equation tells us that the fluid will be accelerated in a direction perpendicular to it’s velocity. A fluid parcel that obeys this equation would appear to move in a straight line in the inertial frame, but follows a curved path in the rotating frame. This sort of motion is called an <em>inertial oscillation</em>.</p>
+<p><img alt="coriolis effect" src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Corioliskraftanimation.gif" /></p>
+</div>
+</div>
+<div class="section" id="putting-it-all-together">
+<h2>Putting it all together<a class="headerlink" href="#putting-it-all-together" title="Permalink to this headline">¶</a></h2>
+<p>The full equation of motion, in the rotating reference frame, can now be written as</p>
+<div class="math notranslate nohighlight">
+\[ \rho \left ( \td{\mathbf{u}}{t} + 2 \mathbf{\Omega} \times \mathbf{u} \right )
+= - \nabla p - \rho \nabla \Phi + \mu \nabla^2 \mathbf{u} \ . \]</div>
+<p>It is common to divide through by <span class="math notranslate nohighlight">\(\rho\)</span> to obtain the form</p>
+<div class="math notranslate nohighlight">
+\[ \td{\mathbf{u}}{t} + 2 \mathbf{\Omega} \times \mathbf{u}
+= - \frac{1}{\rho} \nabla p - \nabla \Phi + \nu \nabla^2 \mathbf{u} \]</div>
+<p>where <span class="math notranslate nohighlight">\(\nu = \mu / \rho\)</span> is called the <em>kinematic viscosity</em>.</p>
+</div>
+<div class="section" id="common-approximations">
+<h2>Common Approximations<a class="headerlink" href="#common-approximations" title="Permalink to this headline">¶</a></h2>
+<p>The full equations of motion are hard to solve and, in many cases, unnecessarily comlex for the study of large-scale ocean circulation. Below we review some of the common approximations used to simplify the equations.</p>
+<div class="section" id="hydrostatic-balance">
+<h3>Hydrostatic Balance<a class="headerlink" href="#hydrostatic-balance" title="Permalink to this headline">¶</a></h3>
+<p>The vertical component of the equation of motion is dominated by the effect of gravity. The dominant balance is between the gravitational force and the pressure gradient for;  this is called <em>hydrostatic balance</em>:</p>
+<div class="math notranslate nohighlight">
+\[ \pd{p}{z} = -\rho g \]</div>
+<p>where <span class="math notranslate nohighlight">\(g = | \nabla \Phi |\)</span> is the combined gravitational and centrifugal acceleration coefficient.</p>
+</div>
+<div class="section" id="boussinesq-approximation">
+<h3>Boussinesq Approximation<a class="headerlink" href="#boussinesq-approximation" title="Permalink to this headline">¶</a></h3>
+<p>We have already seen the Boussinesq approximation, which states that density variations <span class="math notranslate nohighlight">\(\delta \rho\)</span> are very small compared to the background density <span class="math notranslate nohighlight">\(\rho_0\)</span>, i.e.</p>
+<div class="math notranslate nohighlight">
+\[ \rho = \rho _0 + \delta \rho \ ; \ \ |\delta \rho| \ll \rho_0 \ . \]</div>
+<p>The background density <span class="math notranslate nohighlight">\(\rho_0\)</span> is in hydrostatic balance with a background pressure gradient, such that</p>
+<div class="math notranslate nohighlight">
+\[ \pd{}{z} p_{ref}(z)= - \rho_0 \pd{\Phi}{z} = - \rho_0 g \]</div>
+<p>What remains of the pressure is called the <em>dynamic pressure</em> <span class="math notranslate nohighlight">\(\phi\)</span>; it is usually normalized by <span class="math notranslate nohighlight">\(\rho_0\)</span>, for reasons that will become clear:</p>
+<div class="math notranslate nohighlight">
+\[ \delta p = p - p_{ref} \ ; \ \ \ \phi = \frac{\delta p}{\rho_0} \]</div>
+<p>We now examine what happens when we apply the boussinesq approximation to the equations of motion. The left-hand side becomes</p>
+<div class="math notranslate nohighlight">
+\[ (\rho_0 + \delta \rho) \left ( \td{\mathbf{u}}{t} + 2 \mathbf{\Omega} \times \mathbf{u} \right ) \ . \]</div>
+<p>Because <span class="math notranslate nohighlight">\(\rho_0\)</span> is so much greater than <span class="math notranslate nohighlight">\(\delta \rho\)</span>, we simply drop the $\delta \rho term to obtain</p>
+<div class="math notranslate nohighlight">
+\[ \rho_0 \left ( \td{\mathbf{u}}{t} + 2 \mathbf{\Omega} \times \mathbf{u} \right ) \ .\]</div>
+<p>We will divide the whole equation through by <span class="math notranslate nohighlight">\(\rho_0\)</span> to remove it from the left-hand side.
+Let’s now consider together the pressure and gravity terms on the right-hand side:</p>
+<div class="math notranslate nohighlight">
+\[ - \frac{1}{\rho_0} \nabla (p_{ref} + \delta p) - \frac{\rho_0 + \delta \rho}{\rho_0} \nabla \Phi \ . \]</div>
+<p>Because of how we defined <span class="math notranslate nohighlight">\(p_{ref}\)</span>, it cancels with the gravitational term proportional to <span class="math notranslate nohighlight">\(\rho_0\)</span>, leaving just</p>
+<div class="math notranslate nohighlight">
+\[ - \frac{1}{\rho_0} \nabla (\delta p) - \frac{\delta \rho}{\rho_0} \nabla \Phi \ . \]</div>
+<p>Using our definition of <span class="math notranslate nohighlight">\(\phi = \delta p / \rho_0\)</span>, and defining the <em>buoyancy</em> as</p>
+<div class="math notranslate nohighlight">
+\[ b = - g\frac{\delta \rho}{\rho_0} \ , \]</div>
+<p>we can rewrite these terms as</p>
+<div class="math notranslate nohighlight">
+\[ - \nabla \phi + b \hat{\mathbf{z}} \ . \]</div>
+<p>As for the viscous term, we simply approximate <span class="math notranslate nohighlight">\(\nu \simeq \mu / \rho_0\)</span>, leading to the final form of the Boussinesq equations of motion:</p>
+<div class="math notranslate nohighlight">
+\[ \td{\mathbf{u}}{t} + 2 \mathbf{\Omega} \times \mathbf{u}
+= - \nabla \phi + b \hat{\mathcal{z}} + \nu \nabla^2 \mathbf{u} \ . \]</div>
+<p>This is the equation we will use for our study of dynamical physical oceanography.</p>
+</div>
+<div class="section" id="coordinates-and-approximations-for-the-sphere">
+<h3>Coordinates and Approximations for the Sphere<a class="headerlink" href="#coordinates-and-approximations-for-the-sphere" title="Permalink to this headline">¶</a></h3>
+<p>For describing the global ocean circulation with the highest precision, one should work in spherical polar coordinates (longitude <span class="math notranslate nohighlight">\(\lambda\)</span>, latitude <span class="math notranslate nohighlight">\(\varphi\)</span>, and radial distace <span class="math notranslate nohighlight">\(r\)</span>). However, this turns out to be unnecessarily complicated for the things we will study in our class.</p>
+<p>Instead, we will use a <em>local tangent plane approximation</em>, as illustrated in the figure below.</p>
+<p><img alt="tangent plane" src="https://upload.wikimedia.org/wikipedia/commons/7/73/ECEF_ENU_Longitude_Latitude_relationships.svg" />
+<em>By Mike1024 [Public domain], via <a class="reference external" href="https://commons.wikimedia.org/wiki/File%3AECEF_ENU_Longitude_Latitude_relationships.svg">Wikimedia Commons</a></em></p>
+<p>In this approximation, we assume we are looking at region small enough that the Earth appears locally flat, such that we can use cartesian geometry. This region is centered around position <span class="math notranslate nohighlight">\(\lambda_{ref}\)</span>, <span class="math notranslate nohighlight">\(\varphi_{ref}\)</span>.
+The local cartesian coordinates are then defined as</p>
+<p>| name | direction | velocity | local coord | relation to spherical coord |
+|————|————-|———————–|
+| zonal | east | <span class="math notranslate nohighlight">\(u\)</span> | <span class="math notranslate nohighlight">\(x\)</span>   | <span class="math notranslate nohighlight">\((\lambda - \lambda_{ref}) \cos(\varphi) / a\)</span> |
+| meridional | north | <span class="math notranslate nohighlight">\(v\)</span> | <span class="math notranslate nohighlight">\(y\)</span> | <span class="math notranslate nohighlight">\((\varphi - \varphi_{ref}) / a\)</span> |
+| vertical | up | <span class="math notranslate nohighlight">\(w\)</span> | <span class="math notranslate nohighlight">\(z\)</span>     | <span class="math notranslate nohighlight">\(r - r_{ref} \)</span> |</p>
+<p>where <span class="math notranslate nohighlight">\(a\)</span> is the Earth’s radius.</p>
+<p>As a further approximation, we only keep the components of the Coriolis force that act in the horizontal plane on the horizontal velocities. This turns out to be a very good approximation, due to the small aspect ratio of the ocean and the relative smallness of the vertical flow.</p>
+<p>We can now write the Boussinesq equation of motion in component form:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{align}
+\td{u}{t} - f v &amp;= -\pd{\phi}{x} + \nu \nabla^2 u \\
+\td{v}{t} + f u &amp;= -\pd{\phi}{y} + \nu \nabla^2 v \\
+\td{w}{t}       &amp;= -\pd{\phi}{z} + b + \nu \nabla^2 w  \ .
+\end{align} \end{split}\]</div>
+<p>We have introduced the <em>Coriolis parameter</em> <span class="math notranslate nohighlight">\(f = 2 \Omega \sin(\varphi)\)</span>. The coriolis parameter varies from zero at the equator to its maximum value of <span class="math notranslate nohighlight">\(2 \Omega\)</span> at the pole. This reflects the cross product in the full Coriolis acceleration (<span class="math notranslate nohighlight">\(2 \mathbf{\Omega} \times \mathbf{u} \)</span>). At the equator, the horizontal flow occurs in a plane parallel to the rotation vector and thus experiences no effective Coriolis acceleration. At the pole, the horizontal flow is completely perpendicular to the rotation vector.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="04_advection_diffusion_continuity.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Advection, Diffusion, and Conservation Laws</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="06_hydrostatic_geostrophic.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Hydrostatic and Geostrophic Balances</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan Abernathey<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

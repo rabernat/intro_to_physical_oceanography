@@ -1,0 +1,1416 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Air Sea Exchange &#8212; Intro to Physical Oceanography</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Advection, Diffusion, and Conservation Laws" href="04_advection_diffusion_continuity.html" />
+    <link rel="prev" title="Temperature, Salinity, and Stratification" href="02-c_ocean_temperature_salinity_stratification.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Intro to Physical Oceanography</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction to Physical Oceanography
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Foundations
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_ocean_bathymetry.html">
+   The Boundaries of the Ocean
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-a_thermodynamics_of_seawater.html">
+   Thermodynamics of Seawater
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-b_the_water_column.html">
+   The Water Column
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-c_ocean_temperature_salinity_stratification.html">
+   Temperature, Salinity, and Stratification
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Air Sea Exchange
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_advection_diffusion_continuity.html">
+   Advection, Diffusion, and Conservation Laws
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Dynamics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_equations_of_motion.html">
+   Equations of Motion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_hydrostatic_geostrophic.html">
+   Hydrostatic and Geostrophic Balances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_ekman.html">
+   Wind Driven Circulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vorticity_sverdrup_transport_and_gyres.html">
+   Vorticity, Sverdrup Transport, and Ocean Gyres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="AMOC_theory.html">
+   The theory of the Atlantic Meridional Overturning Circulation (AMOC)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/03_air_sea_exchange.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rabernat/intro_to_physical_oceanography"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rabernat/intro_to_physical_oceanography/issues/new?title=Issue%20on%20page%20%2F03_air_sea_exchange.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rabernat/intro_to_physical_oceanography/master?urlpath=tree/book/03_air_sea_exchange.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mixed-layer">
+   Mixed Layer
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-model">
+   Simple Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#heat-exchange">
+   Heat Exchange
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#heat-exchange-approximate">
+   Heat Exchange (approximate)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#components-of-the-heat-flux">
+   Components of the Heat Flux
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#radiative-fluxes">
+   Radiative Fluxes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#shortwave-radiation">
+     Shortwave Radiation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#albedo">
+     Albedo
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#longwave-radiation">
+     Longwave Radiation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sensible-heat-flux">
+     Sensible Heat Flux
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#turbulent-exchange">
+     Turbulent Exchange
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bulk-formula">
+     Bulk Formula
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#drag-coefficient">
+     Drag Coefficient
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#latent-heat-flux">
+     Latent Heat Flux
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaporation-rate">
+     Evaporation Rate
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#saturation-specific-humidty">
+     Saturation Specific Humidty
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#freshwater-fluxes">
+   Freshwater Fluxes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#freshwater-and-salinity">
+     Freshwater and Salinity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conservation-of-mass-volume">
+     Conservation of Mass / Volume
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conservation-of-salt">
+     Conservation of Salt
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#virtual-salt-flux">
+     Virtual Salt Flux
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="air-sea-exchange">
+<h1>Air Sea Exchange<a class="headerlink" href="#air-sea-exchange" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">gsw</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;figure.figsize&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">18</span>
+<span class="c1">#plt.rcParams[&#39;lines.linewidth&#39;] = 3</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">SVG</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display_svg</span><span class="p">,</span> <span class="n">YouTubeVideo</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As anyone who has been to sea knows, the interface between ocean and atmosphere can be an incredibly violent place. Within a hurricane, for example, it is in fact impossible to draw a clear boundary between ocean and atmosphere; the extreme winds whip up a continuous emulsion of air and water. Nevertheless, outside of such extreme cases, there exist robust and relatively simple equations for describing the exchange of heat, freshwater, and momentum between atmosphere and ocean.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;BhduxaGtNJ8&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">640</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">480</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<iframe
+    width="640"
+    height="480"
+    src="https://www.youtube.com/embed/BhduxaGtNJ8"
+    frameborder="0"
+    allowfullscreen
+></iframe>
+</div></div>
+</div>
+<div class="section" id="mixed-layer">
+<h2>Mixed Layer<a class="headerlink" href="#mixed-layer" title="Permalink to this headline">¶</a></h2>
+<p>Our starting point is to consider the ocean surface <strong>mixed layer</strong> and its coupling with the atmosphere. An important property of the surface ocean is that it nearly always contains a layer of well-mixed (i.e. vertically homogeneous) water overlying the stratified interior (the <em>thermocline</em> / <em>pycnocline</em>). This is illustrated in the ARGO profiles shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#argo = xr.open_dataset(&#39;http://data.nodc.noaa.gov/opendap/argo/data/atlantic/2015/09/nodc_D1901358_079.nc&#39;)</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="s1">&#39;nodc_D1901358_079.nc&#39;</span>
+<span class="n">argo</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+<span class="n">SA</span> <span class="o">=</span> <span class="n">gsw</span><span class="o">.</span><span class="n">SA_from_SP</span><span class="p">(</span><span class="n">argo</span><span class="o">.</span><span class="n">psal</span><span class="p">,</span> <span class="n">argo</span><span class="o">.</span><span class="n">pres</span><span class="p">,</span> <span class="n">argo</span><span class="o">.</span><span class="n">longitude</span><span class="p">,</span> <span class="n">argo</span><span class="o">.</span><span class="n">latitude</span><span class="p">)</span>
+<span class="n">CT</span> <span class="o">=</span> <span class="n">gsw</span><span class="o">.</span><span class="n">CT_from_t</span><span class="p">(</span><span class="n">SA</span><span class="p">,</span> <span class="n">argo</span><span class="o">.</span><span class="n">temp</span><span class="p">,</span> <span class="n">argo</span><span class="o">.</span><span class="n">pres</span><span class="p">)</span>
+<span class="n">sig0</span> <span class="o">=</span> <span class="n">gsw</span><span class="o">.</span><span class="n">sigma0</span><span class="p">(</span><span class="n">SA</span><span class="p">,</span> <span class="n">CT</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">ncols</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">argo</span><span class="o">.</span><span class="n">temp</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">argo</span><span class="o">.</span><span class="n">pres</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">CT</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">argo</span><span class="o">.</span><span class="n">pres</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$^\circ$ C&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$T$, $\Theta$&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">argo</span><span class="o">.</span><span class="n">psal</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">argo</span><span class="o">.</span><span class="n">pres</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">SA</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">argo</span><span class="o">.</span><span class="n">pres</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;g/kg&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$S_p$, $S_A$&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">sig0</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">argo</span><span class="o">.</span><span class="n">pres</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;kg m$^{-3}$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\sigma_0$&#39;</span><span class="p">)</span>
+
+<span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">500</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">ax</span><span class="p">]</span>
+<span class="p">[</span><span class="n">a</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;p (dbar)&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">ax</span><span class="p">]</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03_air_sea_exchange_6_0.png" src="_images/03_air_sea_exchange_6_0.png" />
+</div>
+</div>
+<p>The mixed layer exists primarily because of the winds; the winds generate surface waves which break, and the resulting turbulence homogenizes the properties of the near-surface water.</p>
+<p>Generally speaking, the stronger the winds, the deeper the mixed layer. However, buoyancy fluxes can also help determine the mixed layer depth. In winter, strong cooling causes the surface water to become denser than the underlying water. This triggers turbulent convection which deepens the mixed layer.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Holte and Talley ARGO climatology of mixed layer depth</span>
+<span class="c1"># http://mixedlayer.ucsd.edu/</span>
+<span class="c1"># not available over opendap, so we have to download the data</span>
+<span class="o">!</span> mkdir -p 04_data
+<span class="o">!</span> curl -o 04_data/HolteTalley_MLD.nc http://mixedlayer.ucsd.edu/data/Argo_mixedlayers_monthlyclim_03192017.nc
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  100M  100  100M    0     0  9422k      0  0:00:10  0:00:10 --:--:-- 11.5M
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mld</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;04_data/HolteTalley_MLD.nc&#39;</span><span class="p">)</span>
+<span class="n">mld</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.Dataset&gt;
+Dimensions:        (iLAT: 180, iLON: 360, iMONTH: 12)
+Dimensions without coordinates: iLAT, iLON, iMONTH
+Data variables:
+    lat            (iLAT) float64 ...
+    lon            (iLON) float64 ...
+    month          (iMONTH) float64 ...
+    mld_da_mean    (iLAT, iLON, iMONTH) float64 ...
+    mld_dt_mean    (iLAT, iLON, iMONTH) float64 ...
+    mld_da_median  (iLAT, iLON, iMONTH) float64 ...
+    mld_dt_median  (iLAT, iLON, iMONTH) float64 ...
+    mld_da_std     (iLAT, iLON, iMONTH) float64 ...
+    mld_dt_std     (iLAT, iLON, iMONTH) float64 ...
+    mld_da_max     (iLAT, iLON, iMONTH) float64 ...
+    mld_dt_max     (iLAT, iLON, iMONTH) float64 ...
+    mlpd_da        (iLAT, iLON, iMONTH) float64 ...
+    mlpd_dt        (iLAT, iLON, iMONTH) float64 ...
+    mlt_da         (iLAT, iLON, iMONTH) float64 ...
+    mlt_dt         (iLAT, iLON, iMONTH) float64 ...
+    mls_da         (iLAT, iLON, iMONTH) float64 ...
+    mls_dt         (iLAT, iLON, iMONTH) float64 ...
+    num            (iLAT, iLON, iMONTH) float64 ...
+    longrid        (iLAT, iLON) float64 ...
+    latgrid        (iLAT, iLON) float64 ...
+Attributes:
+    description:  This file was created using \n matlab R2011b with NETCDF Li...
+    date:         [730848.53015047 730848.88790506 730849.28543982 ... 736751...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># January</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">mld</span><span class="o">.</span><span class="n">mld_da_max</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">mld</span><span class="o">.</span><span class="n">lon</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">mld</span><span class="o">.</span><span class="n">lon</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">mld</span><span class="o">.</span><span class="n">lat</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">mld</span><span class="o">.</span><span class="n">lat</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">yincrease</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">im</span><span class="o">.</span><span class="n">set_clim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;January Maximum Mixed Layer Depth&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03_air_sea_exchange_12_0.png" src="_images/03_air_sea_exchange_12_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># July</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">mld</span><span class="o">.</span><span class="n">mld_da_max</span><span class="p">[:,:,</span><span class="mi">6</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">mld</span><span class="o">.</span><span class="n">lon</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">mld</span><span class="o">.</span><span class="n">lon</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">mld</span><span class="o">.</span><span class="n">lat</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">mld</span><span class="o">.</span><span class="n">lat</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">yincrease</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">im</span><span class="o">.</span><span class="n">set_clim</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">500</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;July Maximum Mixed Layer Depth&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03_air_sea_exchange_14_0.png" src="_images/03_air_sea_exchange_14_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="simple-model">
+<h2>Simple Model<a class="headerlink" href="#simple-model" title="Permalink to this headline">¶</a></h2>
+<p>The mixed layer is the part of the ocean that is in direct contact with the atmosphere, and so our equations for air-sea interaction are equations for the evolution of the mixed layer. For the sake of simplicity, we will begin by considering just a one-dimensional model, where all exchange is in the vertical. (In other words, we will not consider lateral exchanges of heat and salt within the mixed layer.) Furthermore, we will assume that the mixed layer is totally isolated from the thermocline and does not exchange heat and salt with the water below. Both these assumptions are unrealistic, but they are a useful starting point.</p>
+<p>In this model, the mixed layer thermodynamic state is characterized by three fundamental state variables: <span class="math notranslate nohighlight">\(\Theta\)</span> (conservative temperature), <span class="math notranslate nohighlight">\(S_A\)</span> (absolute salinity),  and <span class="math notranslate nohighlight">\(h\)</span>, the mixed layer depth. Through the equation of state, <span class="math notranslate nohighlight">\(\Theta\)</span> and <span class="math notranslate nohighlight">\(S_A\)</span> determine the mixed layer potential density. (The pressure is irrelevant for now, but in this 1D model, it is simply proportional to depth.) We now describe how air-sea exchange influences the evolution of <span class="math notranslate nohighlight">\(\Theta\)</span> and <span class="math notranslate nohighlight">\(S_A\)</span>.</p>
+</div>
+<div class="section" id="heat-exchange">
+<h2>Heat Exchange<a class="headerlink" href="#heat-exchange" title="Permalink to this headline">¶</a></h2>
+<p>The heat content of the mixed layer (per unit area) is given by.</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{H} = h \rho c_p^0 \Theta \]</div>
+<p>If the mixed layer is isolated from the interior, the first law of thermodynamics can be written as</p>
+<div class="math notranslate nohighlight">
+\[ \frac{d \mathcal{H}}{dt} = Q \]</div>
+<p>where <span class="math notranslate nohighlight">\(Q\)</span> is the <strong>air-to-sea heat flux</strong>.</p>
+</div>
+<div class="section" id="heat-exchange-approximate">
+<h2>Heat Exchange (approximate)<a class="headerlink" href="#heat-exchange-approximate" title="Permalink to this headline">¶</a></h2>
+<p>Because density <span class="math notranslate nohighlight">\(\rho\)</span> only changes by a about 0.1% during air-sea interaction, it is reasonable to approximate <span class="math notranslate nohighlight">\(\rho \simeq \rho_0\)</span>. If we further assume that the mixed layer depth <span class="math notranslate nohighlight">\(h\)</span> doesn’t change, we can write the heat equation as</p>
+<div class="math notranslate nohighlight">
+\[ \frac{d \Theta}{d t} = \frac{Q}{h \rho_0 c_p^0} \]</div>
+</div>
+<div class="section" id="components-of-the-heat-flux">
+<h2>Components of the Heat Flux<a class="headerlink" href="#components-of-the-heat-flux" title="Permalink to this headline">¶</a></h2>
+<p>We divide the heat flux <span class="math notranslate nohighlight">\(Q\)</span> into four separate components associated with different physical processes.</p>
+<div class="math notranslate nohighlight">
+\[
+Q = \underbrace{Q_{sw}}_\text{shortwave radiation} + \underbrace{Q_{lw}}_\text{longwave radiation} + \underbrace{Q_{sh}}_\text{sensible heat flux} + \underbrace{Q_{lh}}_\text{latent heat flux} 
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># NOC 1.1a adjusted air sea heat flux</span>
+<span class="c1"># Grist, J. P. and S. A. Josey, 2003</span>
+<span class="c1"># Inverse analysis adjustment of the SOC air-sea flux climatology using ocean heat transport constraints.</span>
+<span class="c1"># J. Climate, 20, 3274-3295, DOI: 10.1175/1520-0442(2003)016%3C3274:IAAOTS%3E2.0.CO;2.</span>
+<span class="c1"># http://noc.ac.uk/science-technology/earth-ocean-system/atmosphere-ocean/air-sea-interaction/noc11a-flux-climatology</span>
+<span class="c1"># this is not available over opendap either</span>
+<span class="o">!</span> mkdir -p 04_data/noc_1.1a
+<span class="o">!</span> <span class="nb">cd</span> 04_data/noc_1.1a<span class="p">;</span> curl -O ftp://ftp.noc.soton.ac.uk/pub/sxj/clim/netcdf/hfns11a.nc.Z 
+<span class="o">!</span> <span class="nb">cd</span> 04_data/noc_1.1a<span class="p">;</span> curl -O ftp://ftp.noc.soton.ac.uk/pub/sxj/clim/netcdf/hfls11a.nc.Z 
+<span class="o">!</span> <span class="nb">cd</span> 04_data/noc_1.1a<span class="p">;</span> curl -O ftp://ftp.noc.soton.ac.uk/pub/sxj/clim/netcdf/hfss11a.nc.Z 
+<span class="o">!</span> <span class="nb">cd</span> 04_data/noc_1.1a<span class="p">;</span> curl -O ftp://ftp.noc.soton.ac.uk/pub/sxj/clim/netcdf/rss11a.nc.Z 
+<span class="o">!</span> <span class="nb">cd</span> 04_data/noc_1.1a<span class="p">;</span> curl -O ftp://ftp.noc.soton.ac.uk/pub/sxj/clim/netcdf/rls11a.nc.Z
+<span class="o">!</span> gunzip 04_data/noc_1.1a/*.Z
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 1922k  100 1922k    0     0   794k      0  0:00:02  0:00:02 --:--:--  794k
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 1845k  100 1845k    0     0   813k      0  0:00:02  0:00:02 --:--:--  813k
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 1929k  100 1929k    0     0   826k      0  0:00:02  0:00:02 --:--:--  826k
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0^C
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 1772k  100 1772k    0     0   713k      0  0:00:02  0:00:02 --:--:--  713k
+04_data/noc_1.1a/hfls11a.nc already exists -- do you wish to overwrite (y or n)? ^C
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">noca</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="s1">&#39;04_data/noc_1.1a/*.nc&#39;</span><span class="p">,</span> <span class="n">combine</span><span class="o">=</span><span class="s1">&#39;by_coords&#39;</span><span class="p">)</span>
+<span class="n">noca</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/rpa/miniconda3/envs/pangeo/lib/python3.6/site-packages/xarray/coding/times.py:465: SerializationWarning: Unable to decode time axis into full numpy.datetime64 objects, continuing using cftime.datetime objects instead, reason: dates out of range
+  dtype = _decode_cf_datetime_dtype(data, units, calendar, self.use_cftime)
+/Users/rpa/miniconda3/envs/pangeo/lib/python3.6/site-packages/numpy/core/_asarray.py:85: SerializationWarning: Unable to decode time axis into full numpy.datetime64 objects, continuing using cftime.datetime objects instead, reason: dates out of range
+  return array(a, dtype, copy=False, order=order)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.Dataset&gt;
+Dimensions:    (latitude: 170, longitude: 360, time: 12)
+Coordinates:
+  * time       (time) object 0002-01-01 00:00:00 ... 0002-12-01 00:00:00
+  * longitude  (longitude) float64 -179.5 -178.5 -177.5 ... 177.5 178.5 179.5
+  * latitude   (latitude) float64 -84.5 -83.5 -82.5 -81.5 ... 82.5 83.5 84.5
+Data variables:
+    hfls11a    (time, latitude, longitude) float32 dask.array&lt;chunksize=(12, 170, 360), meta=np.ndarray&gt;
+    hfns11a    (time, latitude, longitude) float32 dask.array&lt;chunksize=(12, 170, 360), meta=np.ndarray&gt;
+    hfss11a    (time, latitude, longitude) float32 dask.array&lt;chunksize=(12, 170, 360), meta=np.ndarray&gt;
+    rls11a     (time, latitude, longitude) float32 dask.array&lt;chunksize=(12, 170, 360), meta=np.ndarray&gt;
+    rss11a     (time, latitude, longitude) float32 dask.array&lt;chunksize=(12, 170, 360), meta=np.ndarray&gt;
+Attributes:
+    Conventions:  COARDS
+    calendar:     standard
+    comments:     Climatological estimate based on ship meteorological report...
+    model:        
+    center:       National Oceanography Centre, Southampton, UK
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="radiative-fluxes">
+<h2>Radiative Fluxes<a class="headerlink" href="#radiative-fluxes" title="Permalink to this headline">¶</a></h2>
+<p>The radiative fluxes in the earth system are often partitioned into a <strong>shortwave</strong> and <strong>longwave</strong> component. These names refer to the wavelength of the electromagnetic waves which constitute the radiation. These components occupy very distinct parts of the electromagnetic spectrum. Radiation emitted from the sun is shortwave radiation, while radiation emitted from the earth itself is longwave radiation. The dramatic difference in wavelengths emitted from each body is a result of <a class="reference external" href="http://en.wikipedia.org/wiki/Black-body_radiation">Planck’s law of blackbody radiation</a>, which describes how the emission wavelength depends on temperature. Solar radiation has a shorter wavelength than terrestrial because the sun is much hotter than the earth.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://upload.wikimedia.org/wikipedia/commons/7/7c/Atmospheric_Transmission.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Atmospheric_Transmission.png"/></div></div>
+</div>
+<p>Atmospheric Transmission. Licensed CC BY-SA 3.0 <a class="reference external" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-Share Alike 3.0</a></p>
+<p>Via <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Atmospheric_Transmission.png">Wikimedia Commons</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://upload.wikimedia.org/wikipedia/commons/b/bb/&quot;</span>
+      <span class="s2">&quot;The-NASA-Earth</span><span class="si">%27s</span><span class="s2">-Energy-Budget-Poster-Radiant-Energy-System-satellite-infrared-radiation-fluxes.jpg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/The-NASA-Earth%27s-Energy-Budget-Poster-Radiant-Energy-System-satellite-infrared-radiation-fluxes.jpg"/></div></div>
+</div>
+<p>By <a class="reference external" href="http://science-edu.larc.nasa.gov/energy_budget/">NASA</a>, Public domain. Via <a class="reference external" href="https://commons.wikimedia.org/wiki/File%3AThe-NASA-Earth%27s-Energy-Budget-Poster-Radiant-Energy-System-satellite-infrared-radiation-fluxes.jpg">Wikimedia Commons</a></p>
+<div class="section" id="shortwave-radiation">
+<h3>Shortwave Radiation<a class="headerlink" href="#shortwave-radiation" title="Permalink to this headline">¶</a></h3>
+<p>The average value of incoming solar radiation at the top of Earth’s atmosphere is 342 W m<span class="math notranslate nohighlight">\(^{-2}\)</span>, although this value varies considerably with latitude and season. Some of the solar radiation is absorbed by the atmosphere or reflected back to space by clouds and aerosols, never reaching the ocean. Furthermore, the ocean doesn’t absorb all of the shortwave radiation that reaches its surface; some is also reflected back to space. The <strong>albedo</strong> <span class="math notranslate nohighlight">\(\alpha\)</span> describes how much radiation is absorbed versus reflected. Therefore, the shortwave heating is given by</p>
+<div class="math notranslate nohighlight">
+\[ Q_{sw} = (1 - \alpha)Q^{inc}_{sw} \]</div>
+<p>where <span class="math notranslate nohighlight">\(Q^{inc}_{sw}\)</span> is the incident shortwave radiation.</p>
+</div>
+<div class="section" id="albedo">
+<h3>Albedo<a class="headerlink" href="#albedo" title="Permalink to this headline">¶</a></h3>
+<p>An albedo of 0 means that all of the incident radiation is absorbed. The ocean’s average albedo is about 0.06, although it does vary somewhat depending on sea state. This relatively low albedo means that the ocean is a very effective absorber of radiation, especially compared to ice. The strong change in albedo that occurs when the high-latitude ocean freezes is melts is therefore a significant climate feedback.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://upload.wikimedia.org/wikipedia/commons/e/e2/Ceres_2004_clear_sky_albedo.png&#39;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/Ceres_2004_clear_sky_albedo.png" width="800"/></div></div>
+</div>
+<p>By Giorgiogp2 (Own work). License <a class="reference external" href="http://creativecommons.org/licenses/by-sa/3.0">CC BY-SA 3.0</a> or <a class="reference external" href="http://www.gnu.org/copyleft/fdl.html">GFDL</a>, via <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Ceres_2004_clear_sky_albedo.png">Wikimedia Commons</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Qlims</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">250</span><span class="p">,</span><span class="mi">250</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">noca</span><span class="o">.</span><span class="n">rss11a</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yincrease</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">)</span>
+<span class="n">im</span><span class="o">.</span><span class="n">set_clim</span><span class="p">(</span><span class="n">Qlims</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;December Shortwave Radiation (W m$^{-2}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03_air_sea_exchange_32_0.png" src="_images/03_air_sea_exchange_32_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">noca</span><span class="o">.</span><span class="n">rss11a</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yincrease</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">)</span>
+<span class="n">im</span><span class="o">.</span><span class="n">set_clim</span><span class="p">(</span><span class="n">Qlims</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;June Shortwave Radiation (W m$^{-2}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03_air_sea_exchange_34_0.png" src="_images/03_air_sea_exchange_34_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">noca</span><span class="o">.</span><span class="n">rss11a</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yincrease</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">)</span>
+<span class="n">im</span><span class="o">.</span><span class="n">set_clim</span><span class="p">(</span><span class="n">Qlims</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Annual Mean Shortwave Radiation (W m$^{-2}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/rpa/miniconda3/envs/pangeo/lib/python3.6/site-packages/dask/array/numpy_compat.py:42: RuntimeWarning: invalid value encountered in true_divide
+  x = np.divide(x1, x2, out)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03_air_sea_exchange_36_0.png" src="_images/03_air_sea_exchange_36_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sw_zm</span> <span class="o">=</span> <span class="n">noca</span><span class="o">.</span><span class="n">rss11a</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">sw_zm</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Annual Zonal Mean Shortwave Radiation (W m$^{-2}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03_air_sea_exchange_38_0.png" src="_images/03_air_sea_exchange_38_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="longwave-radiation">
+<h3>Longwave Radiation<a class="headerlink" href="#longwave-radiation" title="Permalink to this headline">¶</a></h3>
+<p>Because of its much lower temperature, the earth emits radiation in the longwave (i.e. infrared) band. On a global scale, emission is the main way the planet balances the incoming solar radiation to maintain its thermal equilibrium. The power of emitted radiation is strongly dependent on temperature; specifically, the Stefan-Boltzman law states that</p>
+<div class="math notranslate nohighlight">
+\[ Q_{lw}^{emitted} = - \sigma T^4 \]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma = 5.67 \times 10^-8\)</span> W m<span class="math notranslate nohighlight">\(^{-2}\)</span> K<span class="math notranslate nohighlight">\(^{-4}\)</span> is the Stefan-Boltzman constant. (It is important to remember to use absolute temperature in deg. Kelvin when evaluating this formula.) Here we have chosen to maintain the same sign convention for longwave radiation as for shortwave.</p>
+<p><span class="math notranslate nohighlight">\(Q_{lw}^{emitted}\)</span> is not the only contribution to the longwave flux. The atmosphere also emits longwave radiation itself, and some of this radiation is absorbed by the ocean. There is a large amount of cancellation between these two components, but in the net
+The fact that <span class="math notranslate nohighlight">\(Q_{lw}\)</span> is negative definite means that longwave emissions acts to cool the ocean.</p>
+<p>Longwave cooling is indeed a significant sink of heat from the ocean. The mean value of the longwave cooling is around -50 W m<span class="math notranslate nohighlight">\(^{-2}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">noca</span><span class="o">.</span><span class="n">rls11a</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yincrease</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">)</span>
+<span class="n">im</span><span class="o">.</span><span class="n">set_clim</span><span class="p">(</span><span class="n">Qlims</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Annual Mean Longwave Radiation (W m$^{-2}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/rpa/miniconda3/envs/pangeo/lib/python3.6/site-packages/dask/array/numpy_compat.py:42: RuntimeWarning: invalid value encountered in true_divide
+  x = np.divide(x1, x2, out)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03_air_sea_exchange_42_0.png" src="_images/03_air_sea_exchange_42_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lw_zm</span> <span class="o">=</span> <span class="n">noca</span><span class="o">.</span><span class="n">rls11a</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">sw_zm</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;shortwave&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">lw_zm</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;longwave&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Annual Zonal Mean Fluxes (W m$^{-2}$)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03_air_sea_exchange_44_0.png" src="_images/03_air_sea_exchange_44_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="sensible-heat-flux">
+<h3>Sensible Heat Flux<a class="headerlink" href="#sensible-heat-flux" title="Permalink to this headline">¶</a></h3>
+<p>Radiative fluxes transmit heat energy over long distances, e.g.~from the sun to the earth. Sensible heat exchange instead depends on direct molecular contact between air and water. The molecules of the two fluids bump against each other, thereby exchanging heat energy. When the ocean and air temperature are the same, the sensible heat flux is therefore zero. When they differ, heat is exchanged in such as way as to homogenize the temperature. This is analogous to the phenomenon of “Newtonian cooling’’ commonly studied in introductory physics courses.</p>
+</div>
+<div class="section" id="turbulent-exchange">
+<h3>Turbulent Exchange<a class="headerlink" href="#turbulent-exchange" title="Permalink to this headline">¶</a></h3>
+<p>The rate of exchange is highly dependent on the sea state, and in particular on the winds, which generate breaking waves and turbulence. It is easy to imagine how breaking waves enhance the exchange of heat: they literally pull air down into the water (bubbles) and splash water up into the air (sea spray). It is much harder to quantify this process mathematically. Nevertheless, laboratory experiments and field campaigns have permitted us to develop empirical formulas to do so.</p>
+</div>
+<div class="section" id="bulk-formula">
+<h3>Bulk Formula<a class="headerlink" href="#bulk-formula" title="Permalink to this headline">¶</a></h3>
+<p>The commonly accepted formula for sensible heat flux is</p>
+<div class="math notranslate nohighlight">
+\[
+Q_s = \rho^{air} c_p^{air} C_H | \Delta \mathbf{u} | (T_{10} - T) \ .
+\]</div>
+<p>The subscript <span class="math notranslate nohighlight">\(_{10}\)</span> refers to the properties of air at 10 m altitude (<span class="math notranslate nohighlight">\(T_{10}\)</span> is air temperature at 10 m). Although this height is somewhat arbitrary, it is a widely-used convention. <span class="math notranslate nohighlight">\(\Delta \mathbf{u} = \mathbf{u}_{10} - \mathbf{u}\)</span> refers to the difference between the wind speed at 10 m and the ocean current speed. <span class="math notranslate nohighlight">\(c_p^{air} = 1030\)</span> J kg<span class="math notranslate nohighlight">\(^{-1}\)</span> K<span class="math notranslate nohighlight">\(^{-1}\)</span> is the specific heat of air and <span class="math notranslate nohighlight">\(\rho^{air}\)</span> is the density of air (approximately <span class="math notranslate nohighlight">\(1.3\)</span> kg m<span class="math notranslate nohighlight">\(^{-3}\)</span>). Note it is the in-situ temperature <span class="math notranslate nohighlight">\(T\)</span>, <em>not conservative temperature</em>, which appears in the bulk formula.</p>
+</div>
+<div class="section" id="drag-coefficient">
+<h3>Drag Coefficient<a class="headerlink" href="#drag-coefficient" title="Permalink to this headline">¶</a></h3>
+<p>All of the complexity and difficulty of turbulent air-sea exchange is absorbed into the parameter <span class="math notranslate nohighlight">\(C_H\)</span>, the turbulent <strong>transfer coefficient</strong> for sensible heat exchange. This non-dimensional coefficient is <span class="math notranslate nohighlight">\(O(1000)\)</span> but is a strongly nonlinear function of <span class="math notranslate nohighlight">\(|\Delta \mathbf{u}|\)</span>. It also depends on the stability of the stratification within the atmospheric boundary layer. The figure below illustrates this dependence.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s1">&#39;04_images/LY09_Drag_Coefficient.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="04_images/LY09_Drag_Coefficient.png"/></div></div>
+</div>
+<p>Turbulent transfer coefficients as a function of wind speed, taken from Large and Yeager (2009). Note that <span class="math notranslate nohighlight">\(C_H\)</span> is different in stable, (<span class="math notranslate nohighlight">\(C_{H_s}\)</span>) and unstable (<span class="math notranslate nohighlight">\(C_{H_u}\)</span>) atmospheric stratification.</p>
+<p>For strong winds, <span class="math notranslate nohighlight">\(C_H\)</span> is a positive function of <span class="math notranslate nohighlight">\(|\Delta \mathbf{u}|\)</span>. But as <span class="math notranslate nohighlight">\( | \Delta \mathbf{u} | \)</span> approaches zero, <span class="math notranslate nohighlight">\(C_H\)</span> actually increases very rapidly. This means that the heat exchange doesn’t necessarily vanish for very weak winds, as one might mistakenly conclude from the figure. Further refining our description of <span class="math notranslate nohighlight">\(C_H\)</span>, especially for extremely strong winds (i.e.~within hurricanes) is an ongoing topic of study for air-sea-interaction researchers.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Qlims</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">noca</span><span class="o">.</span><span class="n">hfss11a</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yincrease</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">)</span>
+<span class="n">im</span><span class="o">.</span><span class="n">set_clim</span><span class="p">(</span><span class="n">Qlims</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;December Sensible Heat Flux (W m$^{-2}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03_air_sea_exchange_53_0.png" src="_images/03_air_sea_exchange_53_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">noca</span><span class="o">.</span><span class="n">hfss11a</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yincrease</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">)</span>
+<span class="n">im</span><span class="o">.</span><span class="n">set_clim</span><span class="p">(</span><span class="n">Qlims</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;June Sensible Heat Flux (W m$^{-2}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03_air_sea_exchange_55_0.png" src="_images/03_air_sea_exchange_55_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">noca</span><span class="o">.</span><span class="n">hfss11a</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yincrease</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">)</span>
+<span class="n">im</span><span class="o">.</span><span class="n">set_clim</span><span class="p">(</span><span class="n">Qlims</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Annual Mean Sensible Heat Flux (W m$^{-2}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/rpa/miniconda3/envs/pangeo/lib/python3.6/site-packages/dask/array/numpy_compat.py:42: RuntimeWarning: invalid value encountered in true_divide
+  x = np.divide(x1, x2, out)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03_air_sea_exchange_57_0.png" src="_images/03_air_sea_exchange_57_0.png" />
+</div>
+</div>
+<p>The annual mean contribution of <span class="math notranslate nohighlight">\(Q_s\)</span> to <span class="math notranslate nohighlight">\(Q\)</span> is almost negligible. This is because, on average, the <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(T_{10}\)</span> are very close. There is, however, a strong seasonal cycle in sensible heat exchange. Because of the large ocean heat capacity, the ocean is usually colder than the air in summer and warmer than the air in the winter. This drives important seasonal changes in circulation.</p>
+</div>
+<div class="section" id="latent-heat-flux">
+<h3>Latent Heat Flux<a class="headerlink" href="#latent-heat-flux" title="Permalink to this headline">¶</a></h3>
+<p>The latent heat flux is produced when seawater evaporates to become atmospheric water vapor. This process requires thermodynamic energy and therefore extracts heat from the ocean. The latent heat flux is given by</p>
+<div class="math notranslate nohighlight">
+\[ Q_{lh} = -L_e E \]</div>
+<p>where <span class="math notranslate nohighlight">\(E\)</span> is the evaporation rate (in kg m<span class="math notranslate nohighlight">\(^{-2}\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span>), and <span class="math notranslate nohighlight">\(L_e \simeq 2.5 \times 10^6\)</span> J kg<span class="math notranslate nohighlight">\(^{-1}\)</span> is the latent heat of vaporization. The fact that <span class="math notranslate nohighlight">\(Q_{lh}\)</span> is negative is due to our sign convention: the latent heat flux always cools the ocean</p>
+</div>
+<div class="section" id="evaporation-rate">
+<h3>Evaporation Rate<a class="headerlink" href="#evaporation-rate" title="Permalink to this headline">¶</a></h3>
+<p>What sets the evaporation rate <span class="math notranslate nohighlight">\(E\)</span>? As with sensible heat, evaporation is a turbulent exchange which depends on direct molecular contact between air and water. It is given by another bulk formula:</p>
+<div class="math notranslate nohighlight">
+\[ E = - \rho^{air} c_E | \Delta \mathbf{u} | (q_{10} - q_{sat}) \]</div>
+<p>where <span class="math notranslate nohighlight">\(q_{10}\)</span> and <span class="math notranslate nohighlight">\(q_{sat}\)</span> refer, respectively, to the specific humidity of the air at 10 m and the saturation specific humidity right at the sea surface, and <span class="math notranslate nohighlight">\(c_E\)</span> is the exchange coefficient for water vapor. Specific humidity measures the mass fraction of water vapor in air. It is a non-dimensional unit but is frequently reported as g kg<span class="math notranslate nohighlight">\(^{-1}\)</span> (grams of water per kilogram of air).</p>
+</div>
+<div class="section" id="saturation-specific-humidty">
+<h3>Saturation Specific Humidty<a class="headerlink" href="#saturation-specific-humidty" title="Permalink to this headline">¶</a></h3>
+<p>The maximum amount of water vapor that it can hold is called the <strong>saturation specific humidity</strong>. This quantity is an exponential function of the air temperature. The relationship between <span class="math notranslate nohighlight">\(q_{sat}\)</span> and temperature is given by the <strong>Clausius-Clapeyron relation</strong>. A practical formula for evaluating the Clausius-Clapeyron relation over the ocean is</p>
+<div class="math notranslate nohighlight">
+\[
+q_{sat}(T) = 0.98 \frac{6.4 \times 10^5 \mbox{ kg m}^{-3}}{\rho^{air}} e^{-(5107.4 K) / T} \ .
+\]</div>
+<p>Right at the sea-surface, the air is always at the same temperature as the ocean (<span class="math notranslate nohighlight">\(T\)</span>) and is always completely saturated; that’s why <span class="math notranslate nohighlight">\(q_{sat}\)</span> is a function of SST. But at 10 m altitude, the air can have a different specific humidity due to atmospheric circulation. If the two values of <span class="math notranslate nohighlight">\(q\)</span> are not equal, the ocean will evaporate at rate <span class="math notranslate nohighlight">\(E\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Qlims</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">250</span><span class="p">,</span><span class="mi">250</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">noca</span><span class="o">.</span><span class="n">hfls11a</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yincrease</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">)</span>
+<span class="n">im</span><span class="o">.</span><span class="n">set_clim</span><span class="p">(</span><span class="n">Qlims</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Annual Mean Latent Heat Flux (W m$^{-2}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/rpa/miniconda3/envs/pangeo/lib/python3.6/site-packages/dask/array/numpy_compat.py:42: RuntimeWarning: invalid value encountered in true_divide
+  x = np.divide(x1, x2, out)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03_air_sea_exchange_63_0.png" src="_images/03_air_sea_exchange_63_0.png" />
+</div>
+</div>
+<p><span class="math notranslate nohighlight">\(Q_{lh}\)</span> is the dominant mechanism for cooling the ocean, with an global, annual mean value of close to 100 W m<span class="math notranslate nohighlight">\(^{-2}\)</span>. <span class="math notranslate nohighlight">\(Q_{lh}\)</span> is strongest where strong, dry continental winds blow over the oceans, as occurs near the western boundaries of the midlatitude basins (e.g. over the Gulf Stream).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sh_zm</span> <span class="o">=</span> <span class="n">noca</span><span class="o">.</span><span class="n">hfss11a</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">))</span>
+<span class="n">lh_zm</span> <span class="o">=</span> <span class="n">noca</span><span class="o">.</span><span class="n">hfls11a</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">))</span>
+<span class="n">nethf_zm</span> <span class="o">=</span> <span class="n">noca</span><span class="o">.</span><span class="n">hfns11a</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">sw_zm</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;shortwave&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">lw_zm</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;longwave&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">sh_zm</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;sensible&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">lh_zm</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;latent&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">nethf_zm</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;net&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Annual Zonal Mean Fluxes (W m$^{-2}$)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03_air_sea_exchange_66_0.png" src="_images/03_air_sea_exchange_66_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Qlims</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">noca</span><span class="o">.</span><span class="n">hfns11a</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yincrease</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">)</span>
+<span class="n">im</span><span class="o">.</span><span class="n">set_clim</span><span class="p">(</span><span class="n">Qlims</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Annual Mean Net Heat Flux (W m$^{-2}$)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/rpa/miniconda3/envs/pangeo/lib/python3.6/site-packages/dask/array/numpy_compat.py:42: RuntimeWarning: invalid value encountered in true_divide
+  x = np.divide(x1, x2, out)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03_air_sea_exchange_68_0.png" src="_images/03_air_sea_exchange_68_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="freshwater-fluxes">
+<h2>Freshwater Fluxes<a class="headerlink" href="#freshwater-fluxes" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/&quot;</span>
+      <span class="s1">&#39;Diagram_of_the_Water_Cycle.jpg/1024px-Diagram_of_the_Water_Cycle.jpg&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Diagram_of_the_Water_Cycle.jpg/1024px-Diagram_of_the_Water_Cycle.jpg"/></div></div>
+</div>
+<p>By Ehud Tal (Own work) <a class="reference external" href="http://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>, via Wikimedia Commons
+<a class="reference external" href="https://commons.wikimedia.org/wiki/File%3ADiagram_of_the_Water_Cycle.jpg">https://commons.wikimedia.org/wiki/File:Diagram_of_the_Water_Cycle.jpg</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">evap</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;http://kage.ldeo.columbia.edu:81/expert/home/.OTHER/.richard/.whoi/.oaflux/.data_v3/.monthly/.evaporation/.evapr.nc%5BT%5Daverage/dods&#39;</span><span class="p">)</span>
+<span class="n">precip</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;http://iridl.ldeo.columbia.edu/SOURCES/.NASA/.GPCP/.V2p1/.multi-satellite/.prcp/%5BT%5D/average/dods&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">evap</span><span class="o">.</span><span class="n">load</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">precip</span><span class="o">.</span><span class="n">load</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.Dataset&gt;
+Dimensions:  (lat: 180, lon: 360)
+Coordinates:
+  * lon      (lon) float32 0.5 1.5 2.5 3.5 4.5 ... 355.5 356.5 357.5 358.5 359.5
+  * lat      (lat) float32 -89.5 -88.5 -87.5 -86.5 -85.5 ... 86.5 87.5 88.5 89.5
+Data variables:
+    evapr    (lat, lon) float64 nan nan nan nan ... -0.1009 -0.1009 -0.1009
+Attributes:
+    history:                   Tue Jul 21 15:45:00 2015: ncatted -a gridtype,...
+    NCO:                       4.3.7
+    nco_openmp_thread_number:  1
+    Conventions:               IRIDL
+&lt;xarray.Dataset&gt;
+Dimensions:  (X: 144, Y: 72)
+Coordinates:
+  * X        (X) float32 1.25 3.75 6.25 8.75 ... 351.25 353.75 356.25 358.75
+  * Y        (Y) float32 88.75 86.25 83.75 81.25 ... -81.25 -83.75 -86.25 -88.75
+Data variables:
+    prcp     (Y, X) float64 0.4696 0.4743 0.4606 0.4711 ... 0.3071 0.3241 0.331
+Attributes:
+    Conventions:  IRIDL
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">precip_i</span> <span class="o">=</span> <span class="o">-</span><span class="mi">360</span><span class="o">/</span><span class="mi">10</span><span class="o">*</span><span class="n">precip</span><span class="o">.</span><span class="n">prcp</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span><span class="s1">&#39;X&#39;</span><span class="p">:</span> <span class="s1">&#39;lon&#39;</span><span class="p">,</span> <span class="s1">&#39;Y&#39;</span><span class="p">:</span> <span class="s1">&#39;lat&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">interp_like</span><span class="p">(</span><span class="n">evap</span><span class="p">)</span>
+<span class="n">e_minus_p</span> <span class="o">=</span> <span class="n">precip_i</span> <span class="o">+</span> <span class="n">evap</span><span class="o">.</span><span class="n">evapr</span>
+<span class="n">e_minus_p</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.DataArray (lat: 180, lon: 360)&gt;
+array([[         nan,          nan,          nan, ...,          nan,
+                 nan,          nan],
+       [         nan,          nan,          nan, ...,          nan,
+                 nan,          nan],
+       [         nan,          nan,          nan, ...,          nan,
+                 nan,          nan],
+       ...,
+       [         nan, -17.00304398, -17.07332195, ..., -17.04130931,
+        -16.9538659 ,          nan],
+       [         nan, -17.10691729, -17.18703774, ..., -16.91647593,
+        -16.83511633,          nan],
+       [         nan,          nan,          nan, ...,          nan,
+                 nan,          nan]])
+Coordinates:
+  * lon      (lon) float64 0.5 1.5 2.5 3.5 4.5 ... 355.5 356.5 357.5 358.5 359.5
+  * lat      (lat) float64 -89.5 -88.5 -87.5 -86.5 -85.5 ... 86.5 87.5 88.5 89.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">evap</span><span class="o">.</span><span class="n">evapr</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yincrease</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;PiYG_r&#39;</span><span class="p">)</span>
+<span class="n">im</span><span class="o">.</span><span class="n">set_clim</span><span class="p">([</span><span class="o">-</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Annual Mean Evaporation (cm/year)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03_air_sea_exchange_76_0.png" src="_images/03_air_sea_exchange_76_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">precip_i</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yincrease</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;PiYG_r&#39;</span><span class="p">)</span>
+<span class="n">im</span><span class="o">.</span><span class="n">set_clim</span><span class="p">([</span><span class="o">-</span><span class="mi">300</span><span class="p">,</span><span class="mi">300</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Annual Mean Precipitation (cm/year)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03_air_sea_exchange_78_0.png" src="_images/03_air_sea_exchange_78_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">e_minus_p</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.DataArray (lat: 180, lon: 360)&gt;
+array([[         nan,          nan,          nan, ...,          nan,
+                 nan,          nan],
+       [         nan,          nan,          nan, ...,          nan,
+                 nan,          nan],
+       [         nan,          nan,          nan, ...,          nan,
+                 nan,          nan],
+       ...,
+       [         nan, -17.00304398, -17.07332195, ..., -17.04130931,
+        -16.9538659 ,          nan],
+       [         nan, -17.10691729, -17.18703774, ..., -16.91647593,
+        -16.83511633,          nan],
+       [         nan,          nan,          nan, ...,          nan,
+                 nan,          nan]])
+Coordinates:
+  * lon      (lon) float64 0.5 1.5 2.5 3.5 4.5 ... 355.5 356.5 357.5 358.5 359.5
+  * lat      (lat) float64 -89.5 -88.5 -87.5 -86.5 -85.5 ... 86.5 87.5 88.5 89.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">e_minus_p</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">yincrease</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;PiYG_r&#39;</span><span class="p">)</span>
+<span class="n">im</span><span class="o">.</span><span class="n">set_clim</span><span class="p">([</span><span class="o">-</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Annual Mean Evaporation minus Precipitation (cm/year)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03_air_sea_exchange_81_0.png" src="_images/03_air_sea_exchange_81_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">precip_i</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;precipitation&#39;</span><span class="p">)</span>
+<span class="n">evap</span><span class="o">.</span><span class="n">evapr</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;evaporation&#39;</span><span class="p">)</span>
+<span class="n">e_minus_p</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;E - P&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Annual Mean Evaporation minus Precipitation (cm/year)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/03_air_sea_exchange_83_0.png" src="_images/03_air_sea_exchange_83_0.png" />
+</div>
+</div>
+<div class="section" id="freshwater-and-salinity">
+<h3>Freshwater and Salinity<a class="headerlink" href="#freshwater-and-salinity" title="Permalink to this headline">¶</a></h3>
+<p>The salt stays in the ocean, while freshwater comes in and out through <strong>evaporation</strong>, <strong>precipitation</strong>, and <strong>runoff</strong> (<span class="math notranslate nohighlight">\(E-P-R\)</span>). This changes the total mass (and volume) of the ocean ever so slightly.</p>
+<p>How does <span class="math notranslate nohighlight">\(E-P-R\)</span> affect the ocean salinity? Increasing freshwater dilutes the salinity, and evaporation concentrates it.</p>
+</div>
+<div class="section" id="conservation-of-mass-volume">
+<h3>Conservation of Mass / Volume<a class="headerlink" href="#conservation-of-mass-volume" title="Permalink to this headline">¶</a></h3>
+<p>The mass of the water column is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{-H}^\eta \rho dz
+\]</div>
+<p>The rate of change of mass is proportional to <span class="math notranslate nohighlight">\(E-P-R\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt} \int_{-H}^\eta \rho dz = -(E - P - R)
+\]</div>
+<p>To simplify things somewhat, here we will treat seawater density as constant, i.e. <span class="math notranslate nohighlight">\(\rho = \rho_0\)</span>, allowing us to convert the mass rate of change to volume rate of change</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt} \int_{-H}^\eta dz = \frac{d \eta}{dt} = - \frac{E - P - R}{\rho_{fw}}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\rho_{fw}\)</span> is the density of freshwater.</p>
+</div>
+<div class="section" id="conservation-of-salt">
+<h3>Conservation of Salt<a class="headerlink" href="#conservation-of-salt" title="Permalink to this headline">¶</a></h3>
+<p>The total salt mass in the water column is:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{-H}^\eta \rho S dz
+\]</div>
+<p>Again, approximating density as constant, this simplifies to:</p>
+<div class="math notranslate nohighlight">
+\[
+\rho_0 \int_{-H}^\eta S dz
+\]</div>
+<p>Neglecting lateral transports (which move salt around but can’t remove it from the ocean), salt conservation states that</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d}{dt} \int_{-H}^\eta S dz = 0
+\]</div>
+</div>
+<div class="section" id="virtual-salt-flux">
+<h3>Virtual Salt Flux<a class="headerlink" href="#virtual-salt-flux" title="Permalink to this headline">¶</a></h3>
+<p>Applying Leibniz’ rule to the salt conservation equation, we obtain</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{-H}^\eta \frac{dS}{dt} dz = - S(\eta) \frac{d \eta}{dt} = S(\eta) \frac{E - P - R}{\rho_{fw}}
+\]</div>
+<p>This tells us that the average salinity of the water column increases at a rate proportional to <span class="math notranslate nohighlight">\(E - P - R\)</span>. The quantity on the right is often called the <em>virtual salt flux</em> because it plays a similar role to the heat flux. If this flux is felt over the mixed layer, the rate of change of mixed layer salinity is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{d S}{d t} = \frac{S(E - P - R)}{h \rho_{fw}} .
+\]</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="02-c_ocean_temperature_salinity_stratification.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Temperature, Salinity, and Stratification</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="04_advection_diffusion_continuity.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Advection, Diffusion, and Conservation Laws</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan Abernathey<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

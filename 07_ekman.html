@@ -1,0 +1,673 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wind Driven Circulation &#8212; Intro to Physical Oceanography</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Vorticity, Sverdrup Transport, and Ocean Gyres" href="vorticity_sverdrup_transport_and_gyres.html" />
+    <link rel="prev" title="Hydrostatic and Geostrophic Balances" href="06_hydrostatic_geostrophic.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Intro to Physical Oceanography</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction to Physical Oceanography
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Foundations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_ocean_bathymetry.html">
+   The Boundaries of the Ocean
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-a_thermodynamics_of_seawater.html">
+   Thermodynamics of Seawater
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-b_the_water_column.html">
+   The Water Column
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-c_ocean_temperature_salinity_stratification.html">
+   Temperature, Salinity, and Stratification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_air_sea_exchange.html">
+   Air Sea Exchange
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_advection_diffusion_continuity.html">
+   Advection, Diffusion, and Conservation Laws
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Dynamics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_equations_of_motion.html">
+   Equations of Motion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_hydrostatic_geostrophic.html">
+   Hydrostatic and Geostrophic Balances
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Wind Driven Circulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vorticity_sverdrup_transport_and_gyres.html">
+   Vorticity, Sverdrup Transport, and Ocean Gyres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="AMOC_theory.html">
+   The theory of the Atlantic Meridional Overturning Circulation (AMOC)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/07_ekman.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rabernat/intro_to_physical_oceanography"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rabernat/intro_to_physical_oceanography/issues/new?title=Issue%20on%20page%20%2F07_ekman.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rabernat/intro_to_physical_oceanography/master?urlpath=tree/book/07_ekman.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Wind Driven Circulation
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ekman-layers">
+   Ekman Layers
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ekman-pumping">
+     Ekman Pumping
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#measuring-winds-with-scatterometry">
+     Measuring Winds with Scatterometry
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#coastal-upwelling">
+     Coastal Upwelling
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#global-ekman-pumping">
+     Global Ekman Pumping
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="math notranslate nohighlight">
+\[ \newcommand{\pd}[2]{ \frac{\partial #1}{\partial #2} }
+\newcommand{\od}[2]{\frac{d #1}{d #2}}
+\newcommand{\td}[2]{\frac{D #1}{D #2}}
+\newcommand{\ab}[1]{\langle #1 \rangle}
+\newcommand{\bss}[1]{\textsf{\textbf{#1}}}
+\newcommand{\ol}{\overline}
+\newcommand{\olx}[1]{\overline{#1}^x}
+\]</div>
+<div class="section" id="wind-driven-circulation">
+<h1>Wind Driven Circulation<a class="headerlink" href="#wind-driven-circulation" title="Permalink to this headline">¶</a></h1>
+</div>
+<div class="section" id="ekman-layers">
+<h1>Ekman Layers<a class="headerlink" href="#ekman-layers" title="Permalink to this headline">¶</a></h1>
+<p>The low-Rossby-number equations for the ageostrophic flow are given by the balance between the Coriolis term and the friction term:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{align} - f v_a &amp;= \nu \nabla^2 u \\
+f u_a &amp;= \nu \nabla^2 v \ .
+\end{align} \end{split}\]</div>
+<p>Frictional effects are mostly important near the top and bottom of the ocean, where the flow rubs agains the boundaries or is exposed to the wind.
+Technically, the right-hand side of this equation represents molecular viscosity, representing the frictional transfer of momentum by molecules jostling against each other. However, when looking at large scale phenomena, we replace the molecular viscosity with <em>turbulent viscosity</em>, representing the transfer of momentum by turbulent eddies. For Ekman layers, we mostly care about the vertical transfer of momentum. The equations then become.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{align} - f v_a &amp;= A_z \pd{^2u}{z^2}\\
+f u_a &amp;= A_z \pd{^2v}{z^2} \ 
+\end{align} \end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A_z\)</span> is the turbulent viscosity coefficient (analagous to <span class="math notranslate nohighlight">\(K_z\)</span> in the tracer equations).</p>
+<p>Let’s now consider the layer at the top of the ocean. Winds push on the ocean, exerting stress and inducing waves and turbulence. These waves and turbulence help transmit the stress downwards through the water column, effectively “mixing” the momentum from the winds over a broader layer than just the surface itself. But eventually, if you go deep enough, the wind-driven turbulence dies out. At this point, you have reached the bottom of the <em>Ekman layer</em>, the boundary layer over which frictional momentum is mixed.</p>
+<p><img alt="TODO: Add Ekman Layer Cartoon" src="_images/." /></p>
+<p>How deep is the Ekman layer? It is possible to solve the equations exactly, but we will not go through the full solution in this course. The Ekman layer depth turns out to be given by</p>
+<div class="math notranslate nohighlight">
+\[ \delta \simeq \sqrt{ \frac{A_z}{|f|} } \ . \]</div>
+<p>We can understand this depth scale in the following way: is represents the distance momentum can travel vertically due to turbulent mixing before it feels the influence of the coriolis force.</p>
+<p>Below the Ekman layer, the frictional transfer of momentum vanishes (by construction). We can use this fact to develop an integral view of the Ekman layer by integrating in the vertical. First, we express the frictional momentum balance using a cross product:</p>
+<div class="math notranslate nohighlight">
+\[ f \hat{\mathbf{k}} \times \mathbf{u}_a = A_z \pd{^2 \mathbf{u}}{z^2} \ . \]</div>
+<p>Now we integrate in the vertical to obtain</p>
+<div class="math notranslate nohighlight">
+\[ f \hat{\mathbf{k}} \times \int_{-\delta}^0 \mathbf{u}_a dz
+ = A_z \pd{\mathbf{u}}{z} |_{z=0} - A_z \pd{\mathbf{u}}{z} |_{z=-\delta} \ . \]</div>
+<p>The second term on the RHS is zero because it represents the frictional transfer of momentum at the base of the Ekman layer. The first term is the frictional stress at the top of the ocean: this is equal to the stress imparted by the wind</p>
+<div class="math notranslate nohighlight">
+\[ A_z \pd{\mathbf{u}}{z} |_{z=0} = \frac{\boldsymbol{\tau}}{\rho_0} \]</div>
+<p>(appropriately scaled by the Boussinesq reference density).</p>
+<p>The quantity on the LHS is defined as the <em>Ekman Transport</em>:</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf{U}_{Ek} = \int_{-\delta}^0 \mathbf{u}_a dz \ . \]</div>
+<p>It has units of m<span class="math notranslate nohighlight">\(^2\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span> and represents the net horizontal transport with the Ekman layer. We can rearragnge the equation to read:</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf{U}_{Ek} = - \hat{\mathbf{k}} \times \frac{\boldsymbol{\tau}}{\rho_0 f} \ . \]</div>
+<p>This equation shows that the Ekman transport is always <strong>to the right</strong> of the wind stress (in the Northern Hemisphere). In component form, it reads:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{align}
+U_{Ek} &amp;= \frac{\tau_y}{\rho_0 f} \\
+V_{Ek} &amp;= -\frac{\tau_x}{\rho_0 f}
+\end{align} \end{split}\]</div>
+<p><img alt="TODO: Add Ekman Transport Diagram" src="_images/." /></p>
+<div class="section" id="ekman-pumping">
+<h2>Ekman Pumping<a class="headerlink" href="#ekman-pumping" title="Permalink to this headline">¶</a></h2>
+<p>Mass conservation states that water must be upwelled or downwelled to / from the Ekman layer in order to supply the Ekman transport. The Boussinesq volume conservation equation states that:</p>
+<div class="math notranslate nohighlight">
+\[ \pd{u}{x} + \pd{v}{y} + \pd{w}{z} = 0 \ . \]</div>
+<p>Integrating over the Ekman layer, and neglecting the small volume flux in/out of the ocean surface due to evaporation and precipitation, gives</p>
+<div class="math notranslate nohighlight">
+\[ w|_{z=-\delta} =  \pd{U_{Ek}}{x} + \pd{V_{Ek}}{y} \ . \]</div>
+<p>The vertical velocity at the base of the Ekman layer is called the <em>Ekman pumping</em>. Substituting the Ekman transport in this equation, we obtain</p>
+<div class="math notranslate nohighlight">
+\[ w_{Ek} =
+  \pd{}{x}\left( \frac{\tau_y}{\rho_0 f} \right) 
+- \pd{}{y}\left( \frac{\tau_x}{\rho_0 f} \right)  \ . \]</div>
+<p>This can also be written as a curl:</p>
+<div class="math notranslate nohighlight">
+\[ w_{Ek} = \hat{\mathbf{k}} \cdot \nabla \times
+  \left ( \frac{\boldsymbol{\tau}}{\rho_0 f} \right)  \]</div>
+</div>
+<div class="section" id="measuring-winds-with-scatterometry">
+<h2>Measuring Winds with Scatterometry<a class="headerlink" href="#measuring-winds-with-scatterometry" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Scatterometer" src="http://www.eumetrain.org/data/2/227/media/images/ASCAT_geometry_s.jpg" />
+<a class="reference external" href="http://www.eumetrain.org/data/2/227/navmenu.php?tab=&amp;page=1.2.0">http://www.eumetrain.org/data/2/227/navmenu.php?tab=&amp;page=1.2.0</a></p>
+<p>SCOW: <a class="reference external" href="http://cioss.coas.oregonstate.edu/scow/">http://cioss.coas.oregonstate.edu/scow/</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scow</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;http://wilson.coas.oregonstate.edu:8080/thredds/dodsC/CIOSS/SCOW/Monthly/scow_monthly_maps.nc&#39;</span><span class="p">)</span>
+<span class="n">scow</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.Dataset&gt;
+Dimensions:                      (latitude: 560, longitude: 1440, time: 12)
+Coordinates:
+  * latitude                     (latitude) float32 -69.875 -69.625 -69.375 ...
+  * longitude                    (longitude) float32 0.125 0.375 0.625 0.875 ...
+  * time                         (time) datetime64[ns] 2001-01-01 ...
+Data variables:
+    scow_wind_curl               (time, longitude, latitude) float64 ...
+    scow_wind_divergence         (time, longitude, latitude) float64 ...
+    scow_wind_stress_curl        (time, longitude, latitude) float64 ...
+    scow_wind_stress_divergence  (time, longitude, latitude) float64 ...
+    scow_zonal_wind_stress       (time, longitude, latitude) float64 ...
+    scow_meridional_wind_stress  (time, longitude, latitude) float64 ...
+    scow_wind_stress_magnitude   (time, longitude, latitude) float64 ...
+    scow_zonal_wind              (time, longitude, latitude) float64 ...
+    scow_meridional_wind         (time, longitude, latitude) float64 ...
+    scow_wind_speed              (time, longitude, latitude) float64 ...
+    scow_wind_speed_squared      (time, longitude, latitude) float64 ...
+    scow_wind_speed_cubed        (time, longitude, latitude) float64 ...
+    amsr_sst                     (time, longitude, latitude) float64 ...
+    avhrr_sst                    (time, longitude, latitude) float64 ...
+Attributes:
+    title:                      Scatterometer Climatology of Ocean Winds (SCO...
+    summary:                    This data set contains monthly, global SCOW f...
+    author:                     Craig Risien (crisien@coas.oregonstate.edu)
+    institution:                Oregon State University, College of Earth, Oc...
+    date_created:               2017-02-15T16:54:28
+    history:                    From the updated Risien and Chelton 2008 SCOW...
+    keywords:                   SCOW monthly wind QuikSCAT global AMSR AVHRR ...
+    keyword_vocabulary:         GCMD
+    reference:                  Risien, C.M., and D.B. Chelton, 2008: A Globa...
+    Conventions:                CF-1.6
+    comments:                   The original SCOW climatology (Risien and Che...
+    geospatial_lat_min:         -90.0
+    geospatial_lat_max:         90.0
+    geospatial_lat_units:       degrees_north
+    geospatial_lat_resolution:  0.25 degree grid
+    geospatial_lon_min:         0.0
+    geospatial_lon_max:         360.0
+    geospatial_lon_units:       degrees_east
+    geospatial_lon_resolution:  0.25 degree grid
+    source:                     QuikSCAT observations
+    standard_name_vocabulary:   CF Standard Name Table v32
+    references:                 http://journals.ametsoc.org/doi/abs/10.1175/2...
+    cdm_data_type:              grid
+    sensor:                     QuikSCAT
+    license:                    These data are available for use without rest...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create an annual mean -- takes a long time to load data</span>
+<span class="n">scow_am</span> <span class="o">=</span> <span class="n">scow</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">scow_am</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">omega</span> <span class="o">=</span> <span class="mf">7.29e-5</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">latitude</span><span class="p">))</span>
+<span class="n">rho0</span> <span class="o">=</span> <span class="mi">1030</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;U_ek&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">scow_meridional_wind_stress</span> <span class="o">/</span> <span class="p">(</span><span class="n">rho0</span> <span class="o">*</span> <span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">latitude</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;V_ek&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">ds</span><span class="o">.</span><span class="n">scow_zonal_wind_stress</span> <span class="o">/</span> <span class="p">(</span><span class="n">rho0</span> <span class="o">*</span> <span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">latitude</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">quick_quiver</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">sampling_x</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">sampling_y</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">mag_max</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">longitude</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">latitude</span>
+    <span class="n">mag</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">u</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">v</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+    <span class="n">slx</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">sampling_x</span><span class="p">)</span>
+    <span class="n">sly</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">sampling_y</span><span class="p">)</span>
+    <span class="n">sl2d</span> <span class="o">=</span> <span class="p">(</span><span class="n">sly</span><span class="p">,</span> <span class="n">slx</span><span class="p">)</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">mag</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">mag_max</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ax</span><span class="p">,</span> <span class="n">ax</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">slx</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">sly</span><span class="p">],</span> <span class="n">u</span><span class="p">[</span><span class="n">sl2d</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="n">sl2d</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quick_quiver</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">scow_zonal_wind_stress</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">scow_meridional_wind_stress</span><span class="p">,</span>
+             <span class="n">mag_max</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">sampling_x</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Annual Mean Wind Stress (N m$^{-2}$)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.text.Text at 0x1bdce4390&gt;
+</pre></div>
+</div>
+<img alt="_images/07_ekman_9_1.png" src="_images/07_ekman_9_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quick_quiver</span><span class="p">(</span><span class="n">U_ek</span><span class="p">,</span> <span class="n">V_ek</span><span class="p">,</span> <span class="n">mag_max</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+             <span class="n">sampling_x</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Annual Mean Ekman Transport (m$^</span><span class="si">{2}</span><span class="s1">$ s$^{-1}$)&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/07_ekman_10_0.png" src="_images/07_ekman_10_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">scow_zonal_wind_stress</span>
+    <span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">longitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">250</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;longitude&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax1</span><span class="p">))</span>
+<span class="p">((</span><span class="n">V_ek</span> <span class="o">*</span> <span class="p">(</span><span class="mf">110e3</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">latitude</span><span class="p">)))</span><span class="o">/</span><span class="mf">1e6</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">longitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">250</span><span class="p">))</span>
+    <span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;longitude&#39;</span><span class="p">)</span>
+    <span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax2</span><span class="p">))</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Zonal Mean Wind Stress (150-250 Longitude)&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Ekman Transport (Sv) (150-250 Longitude)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.text.Text at 0x1e74c7d68&gt;
+</pre></div>
+</div>
+<img alt="_images/07_ekman_11_1.png" src="_images/07_ekman_11_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="coastal-upwelling">
+<h2>Coastal Upwelling<a class="headerlink" href="#coastal-upwelling" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cal</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">longitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">220</span><span class="p">,</span> <span class="mi">250</span><span class="p">),</span> <span class="n">latitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">50</span><span class="p">))</span>
+<span class="n">quick_quiver</span><span class="p">(</span><span class="n">cal</span><span class="o">.</span><span class="n">scow_zonal_wind_stress</span><span class="p">,</span> <span class="n">cal</span><span class="o">.</span><span class="n">scow_meridional_wind_stress</span><span class="p">,</span>
+             <span class="n">mag_max</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">sampling_x</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">sampling_y</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&lt;matplotlib.axes._subplots.AxesSubplot at 0x1e43143c8&gt;,
+ &lt;matplotlib.quiver.Quiver at 0x18674d048&gt;)
+</pre></div>
+</div>
+<img alt="_images/07_ekman_13_1.png" src="_images/07_ekman_13_1.png" />
+</div>
+</div>
+<p><img alt="Coastal Upwelling" src="https://www.nwfsc.noaa.gov/research/divisions/fe/estuarine/oeip/figures/Figure_CU-01.JPG" /></p>
+<p><a class="reference external" href="https://www.nwfsc.noaa.gov/research/divisions/fe/estuarine/oeip/db-coastal-upwelling-index.cfm">https://www.nwfsc.noaa.gov/research/divisions/fe/estuarine/oeip/db-coastal-upwelling-index.cfm</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">cal</span><span class="o">.</span><span class="n">avhrr_sst</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">levels</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x1e69294a8&gt;
+</pre></div>
+</div>
+<img alt="_images/07_ekman_15_1.png" src="_images/07_ekman_15_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="global-ekman-pumping">
+<h2>Global Ekman Pumping<a class="headerlink" href="#global-ekman-pumping" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is only approximate...f should be inside the curl</span>
+<span class="n">w_ek</span> <span class="o">=</span> <span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">scow_wind_stress_curl</span> <span class="o">/</span> <span class="p">(</span><span class="n">rho0</span> <span class="o">*</span> <span class="n">f</span><span class="p">)</span> <span class="o">/</span> <span class="mf">1e7</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">latitude</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="p">(</span><span class="n">w_ek</span> <span class="o">*</span> <span class="mi">24</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">364</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vmax</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Ekman Pumping (m / year)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.text.Text at 0x1e6831588&gt;
+</pre></div>
+</div>
+<img alt="_images/07_ekman_17_1.png" src="_images/07_ekman_17_1.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="06_hydrostatic_geostrophic.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Hydrostatic and Geostrophic Balances</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="vorticity_sverdrup_transport_and_gyres.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Vorticity, Sverdrup Transport, and Ocean Gyres</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan Abernathey<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

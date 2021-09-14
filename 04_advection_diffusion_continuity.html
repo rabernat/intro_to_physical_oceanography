@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advection, Diffusion, and Conservation Laws &#8212; Intro to Physical Oceanography</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Equations of Motion" href="05_equations_of_motion.html" />
+    <link rel="prev" title="Air Sea Exchange" href="03_air_sea_exchange.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Intro to Physical Oceanography</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction to Physical Oceanography
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Foundations
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_ocean_bathymetry.html">
+   The Boundaries of the Ocean
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-a_thermodynamics_of_seawater.html">
+   Thermodynamics of Seawater
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-b_the_water_column.html">
+   The Water Column
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-c_ocean_temperature_salinity_stratification.html">
+   Temperature, Salinity, and Stratification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_air_sea_exchange.html">
+   Air Sea Exchange
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Advection, Diffusion, and Conservation Laws
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Dynamics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_equations_of_motion.html">
+   Equations of Motion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_hydrostatic_geostrophic.html">
+   Hydrostatic and Geostrophic Balances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_ekman.html">
+   Wind Driven Circulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vorticity_sverdrup_transport_and_gyres.html">
+   Vorticity, Sverdrup Transport, and Ocean Gyres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="AMOC_theory.html">
+   The theory of the Atlantic Meridional Overturning Circulation (AMOC)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/04_advection_diffusion_continuity.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rabernat/intro_to_physical_oceanography"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rabernat/intro_to_physical_oceanography/issues/new?title=Issue%20on%20page%20%2F04_advection_diffusion_continuity.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rabernat/intro_to_physical_oceanography/master?urlpath=tree/book/04_advection_diffusion_continuity.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basin-scale-budgets">
+   Basin Scale Budgets
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mass-conservation">
+     Mass Conservation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mass-conservation-in-boussinesq-approximation">
+     Mass Conservation in Boussinesq Approximation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#heat-conservation">
+     Heat Conservation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#heat-conservation-in-boussinesq-approximation">
+     Heat Conservation in Boussinesq Approximation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#salt-and-freshwater-conservation">
+     Salt and Freshwater Conservation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#micro-scale-view">
+   Micro-scale View
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#material-derivative">
+   Material Derivative
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#mass-conservation-continuity-equation">
+     Mass Conservation: Continuity Equation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continuity-equation-in-boussinesq-approximation">
+     Continuity Equation in Boussinesq Approximation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Heat Conservation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#salt-conservation">
+     Salt Conservation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><span class="math notranslate nohighlight">\( \newcommand{\pd}[2]{ \frac{\partial #1}{\partial #2} }
+\newcommand{\od}[2]{\frac{d #1}{d #2}}
+\newcommand{\td}[2]{\frac{D #1}{D #2}}
+\newcommand{\ab}[1]{\langle #1 \rangle}
+\newcommand{\bss}[1]{\textsf{\textbf{#1}}}
+\newcommand{\ol}{\overline}
+\newcommand{\olx}[1]{\overline{#1}^x}
+\)</span></p>
+<div class="section" id="advection-diffusion-and-conservation-laws">
+<h1>Advection, Diffusion, and Conservation Laws<a class="headerlink" href="#advection-diffusion-and-conservation-laws" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="basin-scale-budgets">
+<h2>Basin Scale Budgets<a class="headerlink" href="#basin-scale-budgets" title="Permalink to this headline">¶</a></h2>
+<p>As an introduction to this somewhat technical topic, we will first examine the <em>basin scale</em> budgets of <em>mass, heat, and salt</em>. This are usually a bit more intuitive to understand.</p>
+<p>Consider the volume shown below. It shows the side view of an ocean basin (like the North Atlantic) bounded at the bottom by the sea floor, at the top by the ocean surface, and at the southern edge by an open boundary through which water can flow. The central question here is, <em>what controls the rate of change of total mass, heat content, and salt inside this volume</em>?</p>
+<p><img alt="TODO: add figure" src="_images/." /></p>
+<div class="section" id="mass-conservation">
+<h3>Mass Conservation<a class="headerlink" href="#mass-conservation" title="Permalink to this headline">¶</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(M\)</span> be the total mass of the ocean in this basin. The rate of change of mass is given by</p>
+<div class="math notranslate nohighlight">
+\[ \od{M}{t} = F_m^{surf} + F_{m}^{side} \]</div>
+<p>The two terms on the right represent the mass flux into the volume at the surface and the mass flux into the volume at the side boundary. (Note that the sign coventions we chose for the <span class="math notranslate nohighlight">\(F_m\)</span>’s was arbitrary: we definied them such that mass will increase if they are positive. This choice dictates the sign in what follows.) At this point the equation is a bit obvious, but let’s write what each term is a bit more explicity.</p>
+<p>The total mass is given by the integral of the density over the volume (denoted by <span class="math notranslate nohighlight">\(V\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[ M = \iiint_V \rho dV \ . \]</div>
+<p>The mass flux at the surface is given by the integral over the surface of evaporation (<span class="math notranslate nohighlight">\(E\)</span>, measured in m/s), precipitation (<span class="math notranslate nohighlight">\(P\)</span>) and runoff (<span class="math notranslate nohighlight">\(R\)</span>), multiplied by the density of fresh water:</p>
+<div class="math notranslate nohighlight">
+\[ F_m^{surf} = -\iint_{surf} \rho_{fw} (E - P - R) dA \ . \]</div>
+<p>The mass flux at the open boundary is given by the area integral of the velocity <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> times the density, in the direction normal to the boundary:</p>
+<div class="math notranslate nohighlight">
+\[ F_m^{side} = - \iint_{side} \rho \mathbf{u} \cdot \mathbf{dA} \ .\]</div>
+<p>Here <span class="math notranslate nohighlight">\(\mathbf{dA}\)</span> is the vector area element which points <em>out</em> of the volume normal to the boundary.</p>
+<p>This equation suggests several different possibilities:</p>
+<ul class="simple">
+<li><p>If E-P is <em>not</em> in balance with the net E-P-R, then the total ocean mass in the basin has to increase or decrease.</p></li>
+<li><p>In steady state (i.e. time derivative is zero), the net evaporation minus precipitation must balance the mass inflow at the boundary.</p></li>
+</ul>
+<p>It is very common in oceanography to take the mass of the ocean, or of a basin, as constant in time. Although the ocean mass does change slightly on various timescales (most notably through the formation and melting of terrestrial ice sheets), these changes are extremely slight compared to the total ocean mass. In this case, we find</p>
+<div class="math notranslate nohighlight">
+\[ F_m^{surf} = - F_{m}^{side} \]</div>
+</div>
+<div class="section" id="mass-conservation-in-boussinesq-approximation">
+<h3>Mass Conservation in Boussinesq Approximation<a class="headerlink" href="#mass-conservation-in-boussinesq-approximation" title="Permalink to this headline">¶</a></h3>
+<p>The Boussisesq approximation is that density variations <span class="math notranslate nohighlight">\(\delta \rho\)</span> are very small compared to the background density <span class="math notranslate nohighlight">\(\rho_0\)</span>, i.e.</p>
+<div class="math notranslate nohighlight">
+\[ \rho = \rho _0 + \delta \rho \ ; \ \ |\delta \rho| \ll \rho_0 \ . \]</div>
+<p>This approximation simplifies conservations equations considerably. The mass can now be approximated as</p>
+<div class="math notranslate nohighlight">
+\[ M \simeq \iiint_V \rho_0 dV = \rho_0 \iiint_V dV \ . \]</div>
+<p>Since <span class="math notranslate nohighlight">\(\rho_0\)</span> is a constant, we can divide it out of the mass equation and work with volume instead:</p>
+<div class="math notranslate nohighlight">
+\[ V =  \iiint_V dV \ . \]</div>
+<p>The mass equation becomes a volume equation:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{align}
+\od{V}{t} =&amp; \frac{F_m^{surf}}{\rho_0} + \frac{F_{m}^{side}}{\rho_0} \\ 
+ =&amp; F_v^{surf} + F_v^{side}
+\end{align} \end{split}\]</div>
+<p>with</p>
+<div class="math notranslate nohighlight">
+\[ F_v^{surf} = -\frac{\rho_{fw}}{\rho_0} \iint_{surf} (E - P - R) dA \]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[ F_v^{side} = - \iint_{side} \mathbf{u} \cdot \mathbf{dA} \ . \]</div>
+</div>
+<div class="section" id="heat-conservation">
+<h3>Heat Conservation<a class="headerlink" href="#heat-conservation" title="Permalink to this headline">¶</a></h3>
+<p>The total heat content of the basin is given by</p>
+<div class="math notranslate nohighlight">
+\[ H = c_p^0 \iiint_V \rho  \Theta dV \ . \]</div>
+<p>where <span class="math notranslate nohighlight">\(\Theta\)</span> is the conservative temperature (proportional to potential enthalpy).
+Some would say that that <span class="math notranslate nohighlight">\(\Theta\)</span> should be measured in Kelvins. However, the <a class="reference external" href="https://en.wikipedia.org/wiki/First_law_of_thermodynamics">first law of thermodynamics</a> only describes the <em>changes</em> in heat content of a system; the absolute value of <span class="math notranslate nohighlight">\(H\)</span> is meaningless.</p>
+<p>It becomes difficult to reason about heat content when the mass of the system is also changing. For this reason, we will mostly talk about heat transport in situations where the total ocean mass, or the mass of an individual basin under consideration, is constant in time (i.e. <span class="math notranslate nohighlight">\(d M / d t = 0\)</span>). In these circumstances, an aribitrary constant <span class="math notranslate nohighlight">\(\Theta_{ref}\)</span> can be added to <span class="math notranslate nohighlight">\(\Theta\)</span> without changing  <span class="math notranslate nohighlight">\(d H / d t\)</span>, as can be seen by expanding <span class="math notranslate nohighlight">\(H\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\od{}{t} \left [ c_p^0 \iiint_V \rho (\Theta + \Theta_{ref}) dV \right ]
+=  c_p^0 \od{}{t} \iiint_V \rho \Theta dV + c_p^0 \Theta_{ref} \od{M}{t}\ .
+\]</div>
+<p>Consequently, any conclusions we make about heat transport should be unchanged under the transformation <span class="math notranslate nohighlight">\(\Theta \to \Theta + \Theta _{ref}\)</span>.</p>
+<p>The rate of change of heat content depends only on external fluxes into the system:</p>
+<div class="math notranslate nohighlight">
+\[ \od{H}{t} = F_H^{surf} + F_H^{side} \ . \]</div>
+<p>The surface flux is the air-sea flux <span class="math notranslate nohighlight">\(Q\)</span> we discussed earlier, plus the advection of heat by the evaporating / precipitating water:</p>
+<div class="math notranslate nohighlight">
+\[ F_H^{surf} = \iint_{surf} Q dA - c_p^0 \iint_{surf} \rho_{fw} \Theta (E - P - R) dA \]</div>
+<p>where <span class="math notranslate nohighlight">\(Q\)</span> is defined as positive for downward heat flux. The second term represents the advetion of heat into / out of the ocean surface by evaporating / precipitating water. Neglecting diffusive fluxes (for now), the flux through the side is</p>
+<div class="math notranslate nohighlight">
+\[ F_H^{side} = -  c_p^0 \iint \mathbf{u} \rho \Theta \cdot \mathbf{dA} \]</div>
+<p>An important but subtle point is that <em>the individual magnitudes of the advective term in <span class="math notranslate nohighlight">\(F_H^{surf}\)</span> and <span class="math notranslate nohighlight">\(F_H^{side}\)</span> are meaningless.</em> Only together can we understand these terms impact on the heat content on this basin. If we add an arbitrary constant <span class="math notranslate nohighlight">\( \Theta_{ref} \)</span> to <span class="math notranslate nohighlight">\( \Theta \)</span>, we get:</p>
+<div class="math notranslate nohighlight">
+\[ F_H^{surf} = \iint_{surf} Q dA - c_p^0 \iint_{surf} \rho_{fw} \Theta (E - P - R) dA -
+c_p^0 \Theta_{ref} \iint_{surf} \rho_{fw} (E - P - R) \]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[ F_H^{side} = -  c_p^0 \iint_{side} \mathbf{u} \rho \Theta \cdot \mathbf{dA} -
+c_p^0 \Theta_{ref} \iint_{side} \mathbf{u} \rho \cdot \mathbf{dA}\]</div>
+<p>At first glance, by adding a constant to <span class="math notranslate nohighlight">\(\Theta\)</span>, we have changed the magnitude of the heat transport. However, upon adding these terms together, we see that the terms proportional to <span class="math notranslate nohighlight">\(\Theta_{ref}\)</span> cancel, because <span class="math notranslate nohighlight">\(F_m^{side} + F_m^{surf} = 0\)</span>. This observation tells us that we can only assess the contribution of the circulation to the heat budget for <em>circulations that conserve mass</em>. Attempting to break down this contribution into a sum of different components can lead to spurious conclusions, since these individual components potentially depend on an arbitrary reference temperature <span class="math notranslate nohighlight">\(\Theta_{ref}\)</span>.</p>
+</div>
+<div class="section" id="heat-conservation-in-boussinesq-approximation">
+<h3>Heat Conservation in Boussinesq Approximation<a class="headerlink" href="#heat-conservation-in-boussinesq-approximation" title="Permalink to this headline">¶</a></h3>
+<p>Under the Boussinesq approximation,</p>
+<div class="math notranslate nohighlight">
+\[ H = c_p^0 \rho_0 \iiint_V \Theta dV \ . \]</div>
+<p>The fluxes simplify to</p>
+<div class="math notranslate nohighlight">
+\[ F_H^{surf} = \iint_{surf} Q dA - c_p^0 \frac{ \rho_{fw} }{\rho_0} \iint_{surf} \Theta (E - P - R) dA \]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[ F_H^{side} = -  c_p^0 \rho_0 \iint_{side} \mathbf{u} \Theta \cdot \mathbf{dA} \ . \]</div>
+<p>Volume conservation (<span class="math notranslate nohighlight">\(d V / dt = 0\)</span>) accompanies heat conservation to render it independent of <span class="math notranslate nohighlight">\(\Theta_{ref}\)</span>.</p>
+</div>
+<div class="section" id="salt-and-freshwater-conservation">
+<h3>Salt and Freshwater Conservation<a class="headerlink" href="#salt-and-freshwater-conservation" title="Permalink to this headline">¶</a></h3>
+<p>Since negligible salt is exchanged with the atmosphere (or sea ice), the basin-scale budget for salinity is</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{S} = \iiint_V \rho S dV \]</div>
+<div class="math notranslate nohighlight">
+\[ \frac{d \mathcal{S}}{dt} = F_S^{side} \]</div>
+<p>with</p>
+<div class="math notranslate nohighlight">
+\[ F_S^{side} = -  \iint_{side} \mathbf{u} \rho S \cdot \mathbf{dA} \ . \]</div>
+<p>In steady state this simply states that the net salt flux through a closed section is zero.</p>
+<p>We can construct the freshwater balance by subtracting the mass balance. Assuming steady state, we find</p>
+<div class="math notranslate nohighlight">
+\[ F_M^{side} - F_S^{side} = -F_M^{surf}. \]</div>
+<p>This equation can be simplified to</p>
+<div class="math notranslate nohighlight">
+\[ F_{fw}^{side} = - \iint_{side} \mathbf{u} \rho(1 - S) \cdot \mathbf{dA} 
+   = \iint_{surf} \rho_{fw} (E - P - R) dA \]</div>
+<p>which represents the next freshwater flux through the basin. In the Boussinesq approximation, we have</p>
+<div class="math notranslate nohighlight">
+\[ F_{fw}^{side} = - \rho_0 \iint_{side} \mathbf{u} (1 - S) \cdot \mathbf{dA} 
+   = \rho_{fw}  \iint_{surf}(E - P - R) dA \]</div>
+<p>For a basin with a closed volume budget (<span class="math notranslate nohighlight">\(F_V^{side} = 0\)</span>), the first term in parenthesis vanishes, and we obtain</p>
+<div class="math notranslate nohighlight">
+\[ F_{fw}^{side} = - F_S^{side} \]</div>
+<p>i.e. the freshwater transport is equal and opposite to the salt transport.</p>
+</div>
+</div>
+<div class="section" id="micro-scale-view">
+<h2>Micro-scale View<a class="headerlink" href="#micro-scale-view" title="Permalink to this headline">¶</a></h2>
+<p>The integral budgets above illustrate the concept of heat conservation at the basin scale. We now move down-scale to consider an <em>infintessimally small</em> element of fluid. These differential equations are the most general and flexible way to describe the conservation of mass, heat, and salt.</p>
+</div>
+<div class="section" id="material-derivative">
+<h2>Material Derivative<a class="headerlink" href="#material-derivative" title="Permalink to this headline">¶</a></h2>
+<p>The “water parcel” is hypothetical, infinitesimally small fluid element. We imagine the fluid to be composed of an infinite continuum of such parcels, each following its own unique path.
+A fluid parcel position at a given time <span class="math notranslate nohighlight">\(t\)</span> is given by a three dimensional vector <span class="math notranslate nohighlight">\(\mathbf{x}(x,y,z,t)\)</span>. The instantaneous rate of change of the position of such a fluid element defines the fluid velocity:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{u}  = (u, v, w)\equiv \od{\mathbf{x}}{t}
+\]</div>
+<p>One way to do fluid mechanics is to keep track of all such fluid elements as they move around; this is called the <em>Lagrangian</em> approach. In Lagrangian fluid mechanics, the rate of change of some fluid property <span class="math notranslate nohighlight">\(c\)</span> is just <span class="math notranslate nohighlight">\(dc / dt\)</span>; it is implicit that we are following the water parcel along its path through space. As you might imagine, Lagrangian fluid mechanics is very difficult because there is actually an infinite number of such paths, and the trajectories quickly become extremely complex. This approach is also incompatible with the way we usually measure the ocean, which involves taking samples at a fixed point in space.</p>
+<p>The alternative is the <em>Eulerian</em> approach. Under this approach, the rate of change of a fluid parcel property is proportional to the <em>local</em> rate of change of that property, plus a contribution from the fluid flow transporting that property around (called advection). We can see this mathemtically by using the chain rule:</p>
+<div class="math notranslate nohighlight">
+\[ \od{}{t} c(\mathbf{x}, t) = \pd{c}{t} + \od{\mathbf{x}}{t} \cdot \nabla c 
+= \left ( \pd{}{t} + \mathbf{u} \cdot \nabla \right ) c \ . \]</div>
+<p>The quantity in parentheses is called the <em>material derivative</em>. To distinguish it from an ordinary or partial derivative, we often denote it with a capital <span class="math notranslate nohighlight">\(D\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ \td{}{t} = \pd{}{t} + \mathbf{u} \cdot \nabla  \]</div>
+<p>It represents a rate of change following a fluid parcel, but in the Eulerian frame of reference.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#The acceleration in Newton&#39;s second law involves the _time rate of change_ of momentum. When we first learn about mechanics, we study the motion of discrete particles (e.g.~pool balls, cannonballs, etc.), for which momentum and its rate of change is easy to define. Fluid mechanics, a branch of _continuum mechanics_, confronts a much more difficult situation. There are no &quot;particles&quot; to follow; i</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="mass-conservation-continuity-equation">
+<h3>Mass Conservation: Continuity Equation<a class="headerlink" href="#mass-conservation-continuity-equation" title="Permalink to this headline">¶</a></h3>
+<p>The mass budget of an infinitesimally small fluid parcel is</p>
+<div class="math notranslate nohighlight">
+\[ \pd{\rho}{t} + \nabla \cdot (\rho \mathbf{u}) = 0 \ . \]</div>
+<p>This equation is called the <em>continuity equation</em>.</p>
+<p>Using some <a class="reference external" href="https://en.wikipedia.org/wiki/Vector_calculus_identities">vector calculus identities</a>, it can be rewritten as.</p>
+<div class="math notranslate nohighlight">
+\[ \pd{\rho}{t} + \mathbf{u} \cdot \nabla \rho + \rho \nabla \cdot \mathbf{u} = 0  \]</div>
+<p>or, using the definition of material derivative</p>
+<div class="math notranslate nohighlight">
+\[ \td{\rho}{t} + \rho \nabla \cdot \mathbf{u} = 0  \]</div>
+</div>
+<div class="section" id="continuity-equation-in-boussinesq-approximation">
+<h3>Continuity Equation in Boussinesq Approximation<a class="headerlink" href="#continuity-equation-in-boussinesq-approximation" title="Permalink to this headline">¶</a></h3>
+<p>In the Boussinesq approximation, fluctuations in density are much smaller than the background density. If we expand the continuity equation interms of background and fluctuations, we obtain</p>
+<div class="math notranslate nohighlight">
+\[ \td{\rho_0}{t} +  \td{\delta \rho}{t} + \rho_0 \nabla \cdot \mathbf{u} + \delta \rho \nabla \cdot \mathbf{u} = 0 \]</div>
+<p>The first terms is zero, because <span class="math notranslate nohighlight">\(\rho_0\)</span> is constant. Of the remaining nonzero terms, only one has a <span class="math notranslate nohighlight">\(\rho_0\)</span> in it. As a “first order” approximation, we find that</p>
+<div class="math notranslate nohighlight">
+\[ \rho_0 \nabla \cdot \mathbf{u} \simeq 0  \ .\]</div>
+<p>At this point, we are free to drop the <span class="math notranslate nohighlight">\(\rho_0\)</span> factor to give the Boussinesq volume continuity equation:</p>
+<div class="math notranslate nohighlight">
+\[ \nabla \cdot \mathbf{u} = 0  \ .\]</div>
+<p>This is also called the incompressibility equation. In the Boussinesq approximation, volume conservation replaced mass conservation.</p>
+</div>
+<div class="section" id="id1">
+<h3>Heat Conservation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>The left-hand side of the heat conservation equation, representing the rate of change of the heat content of a fluid parcel is</p>
+<div class="math notranslate nohighlight">
+\[ c_p^0 \left [ \pd{}{t}(\rho \Theta) + \nabla \cdot ( \rho \Theta \mathbf{u} ) \right ]\]</div>
+<p>which we can rewrite using the continuity equation as</p>
+<div class="math notranslate nohighlight">
+\[ c_p^0 \rho \td{\Theta}{t} \ . \]</div>
+<p>The right hand side, representing all non-conservative effects, can be written as the sum of the convergence of a molecular diffusive flux <span class="math notranslate nohighlight">\(\mathbf{Q}_{diff}\)</span> and a radiative flux <span class="math notranslate nohighlight">\(Q_{rad}\)</span>:</p>
+<p>(Note we have assumed that the radiative flux is only in the vertical direction, a very reasonable approximation for large-scale processes.)</p>
+<p>The diffusive flux is given by <a class="reference external" href="https://en.wikipedia.org/wiki/Fick%27s_laws_of_diffusion">Fick’s law of diffusion</a>:</p>
+<div class="math notranslate nohighlight">
+\[ \mathbf{Q}_{diff}  = - c_p^0 \rho \kappa_T \nabla T \]</div>
+<p>where <span class="math notranslate nohighlight">\(T\)</span> is the <em>in-situ</em> temperature and <span class="math notranslate nohighlight">\(\kappa_T\)</span> is the molectular diffusivity of heat. The air-sea heat flux acts as a boundary condition for the diffusive flux.</p>
+<p>In the Boussinesq approximation, we replace the <span class="math notranslate nohighlight">\(\rho\)</span>’s above with <span class="math notranslate nohighlight">\(\rho_0\)</span> to obtain:</p>
+<div class="math notranslate nohighlight">
+\[ \td{\Theta}{t} =  \kappa_T \nabla^2 T  - \frac{1}{\rho_0 c_p^0}\pd{Q_{rad}}{z} \ .\]</div>
+<p>One complictation of this equation is that molecular diffusion acts on <span class="math notranslate nohighlight">\(T\)</span>, not <span class="math notranslate nohighlight">\(\Theta\)</span>. However, we will mostly be thinking about turbulent, rather than molecular, diffusion, for which this is not an issue.</p>
+</div>
+<div class="section" id="salt-conservation">
+<h3>Salt Conservation<a class="headerlink" href="#salt-conservation" title="Permalink to this headline">¶</a></h3>
+<p>Neglecting the exchange of salt with the surface, salinity is governed just by advection and diffusion</p>
+<div class="math notranslate nohighlight">
+\[  \rho \td{S}{t} =  \nabla \cdot ( \rho \kappa_S \nabla S ) \]</div>
+<p>which reduces to</p>
+<div class="math notranslate nohighlight">
+\[ \td{S}{t} =   \kappa_S  \nabla^2 S  \]</div>
+<p>in the Boussinesq approximation.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="03_air_sea_exchange.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Air Sea Exchange</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="05_equations_of_motion.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Equations of Motion</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan Abernathey<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,808 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vorticity, Sverdrup Transport, and Ocean Gyres &#8212; Intro to Physical Oceanography</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="The theory of the Atlantic Meridional Overturning Circulation (AMOC)" href="AMOC_theory.html" />
+    <link rel="prev" title="Wind Driven Circulation" href="07_ekman.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      <h1 class="site-logo" id="site-title">Intro to Physical Oceanography</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction to Physical Oceanography
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Foundations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_ocean_bathymetry.html">
+   The Boundaries of the Ocean
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-a_thermodynamics_of_seawater.html">
+   Thermodynamics of Seawater
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-b_the_water_column.html">
+   The Water Column
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-c_ocean_temperature_salinity_stratification.html">
+   Temperature, Salinity, and Stratification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_air_sea_exchange.html">
+   Air Sea Exchange
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_advection_diffusion_continuity.html">
+   Advection, Diffusion, and Conservation Laws
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Dynamics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_equations_of_motion.html">
+   Equations of Motion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_hydrostatic_geostrophic.html">
+   Hydrostatic and Geostrophic Balances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_ekman.html">
+   Wind Driven Circulation
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Vorticity, Sverdrup Transport, and Ocean Gyres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="AMOC_theory.html">
+   The theory of the Atlantic Meridional Overturning Circulation (AMOC)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/vorticity_sverdrup_transport_and_gyres.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rabernat/intro_to_physical_oceanography"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rabernat/intro_to_physical_oceanography/issues/new?title=Issue%20on%20page%20%2Fvorticity_sverdrup_transport_and_gyres.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rabernat/intro_to_physical_oceanography/master?urlpath=tree/book/vorticity_sverdrup_transport_and_gyres.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vorticity">
+   Vorticity
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#planetary-vorticity-equation">
+   Planetary Vorticity Equation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#barotropic-vorticty">
+   Barotropic Vorticty
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#topographic-beta-effect">
+   Topographic Beta Effect
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ekman-and-geostrophic-contributions-to-sverdrup-transport">
+   Ekman and Geostrophic Contributions to Sverdrup Transport
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculation-of-the-streamfunction">
+   Calculation of the Streamfunction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boundary-currents">
+   Boundary Currents
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="math notranslate nohighlight">
+\[ \newcommand{\pd}[2]{ \frac{\partial #1}{\partial #2} }
+\newcommand{\od}[2]{\frac{d #1}{d #2}}
+\newcommand{\td}[2]{\frac{D #1}{D #2}}
+\newcommand{\ab}[1]{\langle #1 \rangle}
+\newcommand{\bss}[1]{\textsf{\textbf{#1}}}
+\newcommand{\ol}{\overline}
+\newcommand{\olx}[1]{\overline{#1}^x}
+\]</div>
+<div class="section" id="vorticity-sverdrup-transport-and-ocean-gyres">
+<h1>Vorticity, Sverdrup Transport, and Ocean Gyres<a class="headerlink" href="#vorticity-sverdrup-transport-and-ocean-gyres" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="vorticity">
+<h2>Vorticity<a class="headerlink" href="#vorticity" title="Permalink to this headline">¶</a></h2>
+<p>We begin with the general definition of vorticity, which is an important concept for ocean circulation theory.
+Despite its importance, it can be hard to develop and intuitive understanding of vorticity.
+Here is my best attempt at a definition in normal language</p>
+<blockquote>
+<div><p><em>Vorticity</em> represents the local “spinniness” of a point in the fluid.</p>
+</div></blockquote>
+<p>Vorticity is, in general, a vector, defined as the curl of the velocity field.</p>
+<div class="math notranslate nohighlight">
+\[ \boldsymbol{\omega} = \nabla \times \mathbf{u} \]</div>
+<p>The unadorned symbol <span class="math notranslate nohighlight">\(\boldsymbol{\omega}\)</span> is the <em>relative vorticity</em>, measured by the observer in the rotating reference frame.
+If measuring vorticity from the intertial reference frame, we would also measure the component due to the Earth’s rotation itself, the “spinniness” of the Earth. This is the <em>absolute vorticity</em>:</p>
+<div class="math notranslate nohighlight">
+\[ \boldsymbol{\omega}_a = \nabla \times \mathbf{u} + \boldsymbol{\Omega}
+ = \boldsymbol{\omega} + \boldsymbol{\Omega} \]</div>
+<p>For large scale ocean circulation, we are usually only concerned with the horizontal flow, i.e.~the flow in the plane tangent to the Earth’s surface. We denote this as</p>
+<div class="math notranslate nohighlight">
+\[ \omega = \hat{\mathbf{k}} \cdot \boldsymbol{\omega} = -\pd{u}{y} + \pd{v}{x} \]</div>
+</div>
+<div class="section" id="planetary-vorticity-equation">
+<h2>Planetary Vorticity Equation<a class="headerlink" href="#planetary-vorticity-equation" title="Permalink to this headline">¶</a></h2>
+<p>In previous lectures, we considered the <em>planetry</em> approximation, in which the horizontal equations of motion reduced to the following form:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{align} \pd{u}{t} - f v &amp;= -\pd{\phi}{x} + \frac{1}{\rho_0}\pd{\tau_x}{z} \\
+\pd{v}{t} + f u &amp;= -\pd{\phi}{y} + \frac{1}{\rho_0}\pd{\tau_y}{z} 
+\end{align} \end{split}\]</div>
+<p>where we have represented the friction terms using a stress <span class="math notranslate nohighlight">\(\tau\)</span>.
+Note that we have left the time-dependent term in the equations, despite the small Rossby number.
+We will drop them again later. For now, they make it easier to answer the question
+What do the planetary equations say about vorticity?
+To answer this we combine the equations in a way that allows us to write an expression for <span class="math notranslate nohighlight">\(\omega\)</span>.
+First we work on the left-hand side of the equations taking <span class="math notranslate nohighlight">\(- \partial_y\)</span> of the first and adding this to <span class="math notranslate nohighlight">\(\partial_x\)</span> of the second:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} \begin{align} -\pd{}{y} \left (\pd{u}{t} - f v \right) + \pd{}{x} \left (\pd{v}{t} + f u \right) &amp;= \\
+\pd{}{t} \left (-\pd{u}{y} + \pd{v}{x} \right)  + \pd{}{y} (fv) + \pd{}{x} (fu)  &amp;= \\
+\pd{\omega}{t}  + f\left ( \pd{u}{x} + \pd{v}{y} \right ) + \beta v &amp;=
+\end{align} \end{split}\]</div>
+<p>(Recall that <span class="math notranslate nohighlight">\(\beta = df/dy\)</span>.)
+The continuity equation says that</p>
+<div class="math notranslate nohighlight">
+\[
+\pd{u}{x} + \pd{v}{y} + \pd{w}{z} = 0
+\]</div>
+<p>which allows us to write the left-hand side as</p>
+<div class="math notranslate nohighlight">
+\[
+ \pd{\omega}{t}  - f \pd{w}{z} + \beta v = \ .
+\]</div>
+<p>On the right hand side, we see that the pressure terms cancel</p>
+<div class="math notranslate nohighlight">
+\[ = \pd{^2\phi}{x \partial y} - \pd{^2\phi}{x \partial y} + \frac{1}{\rho_0} \left ( - \pd{}{y}\pd{\tau_x}{z} + \pd{}{x}\pd{\tau_y}{z} \right ) \ . \]</div>
+<p>The full vorticity equation can now be written as</p>
+<div class="math notranslate nohighlight">
+\[ 
+ \pd{\omega}{t}  - f \pd{w}{z} + \beta v 
+ = \frac{1}{\rho_0} \pd{}{z} \left ( -\pd{\tau_x}{y} + \pd{\tau_y}{x} \right ) \ . 
+\]</div>
+<ul class="simple">
+<li><p>The first term represents the rate of change of vorticity. (For small Rossby number, this time deriviative will be small.)</p></li>
+<li><p>The second term represents “vortex stretching”: it quantifies how vertical motion, which forces the fluid parcel to expand or contract horizontally, can translate into the production and removal of vorticity. This is relate to the conservation of angular momentum and is similar to how a figure skater accelerates their spinning by contracting their arms and legs.</p></li>
+<li><p>The third term <span class="math notranslate nohighlight">\(\beta v\)</span> represents the production of vorticity due to advection across the planetary vorticity gradient. Effectively, it describes how the planetary vorticity of the spinning earth can be converted to relative vorticity of the water parcel, via a change in latitude of the water parcel.</p></li>
+<li><p>The term on the right-hand is the curl of the stress divergence. It represents the mechanical torque imposed on the ocean by frictional forces.</p></li>
+</ul>
+<p>In the interior ocean (away from the top and bottom boundaries), the friction will be small, leaving the approximate balance</p>
+<div class="math notranslate nohighlight">
+\[ \beta v = f \pd{w}{z} \]</div>
+</div>
+<div class="section" id="barotropic-vorticty">
+<h2>Barotropic Vorticty<a class="headerlink" href="#barotropic-vorticty" title="Permalink to this headline">¶</a></h2>
+<p>The <em>barotropic</em> ocean circuluation is the horizontal flow integrated over the full depth of the ocean.
+For simplicity, here we will take the ocean to have a uniform depth of <span class="math notranslate nohighlight">\(H\)</span>.
+The depth-integrated flow is given by</p>
+<div class="math notranslate nohighlight">
+\[ U, V = \int_{-H}^0 (u, v) dz \]</div>
+<p>If we integrate the continuity equation vertically, we find</p>
+<div class="math notranslate nohighlight">
+\[ \pd{U}{x} + \pd{V}{y} + w|_{z=0} - w|_{z=-H} = 0 \ .\]</div>
+<p>Neglecting the small contribution of evaporation and precipitation, there is no vertical flow either through the surface or the bottom of the ocean, leaving</p>
+<div class="math notranslate nohighlight">
+\[ \pd{U}{x} + \pd{V}{y} = 0 \ .\]</div>
+<p>Because <span class="math notranslate nohighlight">\((U, V)\)</span> is a two-dimensional non-divergent flow, we can represent is using a <em>streamfunction</em> <span class="math notranslate nohighlight">\(\Psi\)</span>, defined as</p>
+<div class="math notranslate nohighlight">
+\[ U = -\pd{\Psi}{y} \ , \ \ V = \pd{\Psi}{x} \ . \]</div>
+<p>This notation simplifies our description of the barotropic circulation.</p>
+<p>The barotropic vorticity <span class="math notranslate nohighlight">\(Z\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[ Z = -\pd{U}{y} + \pd{V}{x} = \nabla^2 \Psi \ . \]</div>
+<p>To obtain an equation for <span class="math notranslate nohighlight">\(Z\)</span>, we just take the vertical integral of the planetry vorticity equation.
+We obtain</p>
+<div class="math notranslate nohighlight">
+\[ \pd{Z}{t} + \beta V  =
+  \frac{1}{\rho_0} \left ( -\pd{\tau_x}{y} + \pd{\tau_y}{x} \right )_{z=0}  - 
+   \frac{1}{\rho_0} \left ( -\pd{\tau_x}{y} + \pd{\tau_y}{x} \right )_{z=-H}\ . 
+\]</div>
+<p>Disregarding the tendency term, we can write this compactly as</p>
+<div class="math notranslate nohighlight">
+\[ \beta V = \frac{1}{\rho_0} \left [ \mbox{curl} ( \boldsymbol{\tau}_{surf}) -
+                                  \mbox{curl} (\boldsymbol{\tau}_{bot})  \right ]
+\]</div>
+<p>where curl <span class="math notranslate nohighlight">\(= \hat{\mathbf{k}} \cdot \nabla \times\)</span> represents the curl of the vector in the horizontal plane.
+This equation shows us that the barotropic meridional flow <span class="math notranslate nohighlight">\(V\)</span> is proportional to the curl of the frictional boundary stresses on the ocean. There is a contribution to the stress from the surface (wind stress) and the bottom (drag). However, over most of the ocean, the deep flow is very weak, meaning that bottom drag is negligible. In this case, the barotropic vorticity equation reduces to the form that is commonly called <em>Sverdrup Balance</em>:</p>
+<div class="math notranslate nohighlight">
+\[
+\beta V_{Sv} = \frac{1}{\rho_0}  \mbox{curl} ( \boldsymbol{\tau}_{surf}) \ .
+\]</div>
+<p>Sverdrup balance is a remarkable simplification of the ocean circulation. It tells us that, just given knowledge of the wind stress field, we can predict the full-depth integrated meridional transport.</p>
+</div>
+<div class="section" id="topographic-beta-effect">
+<h2>Topographic Beta Effect<a class="headerlink" href="#topographic-beta-effect" title="Permalink to this headline">¶</a></h2>
+<p>In our laboratory experiment <span class="math notranslate nohighlight">\(f\)</span> is constant (<span class="math notranslate nohighlight">\(f_0\)</span>). However, we have a sloping bottom, such that <span class="math notranslate nohighlight">\(d H/d y = s_y\)</span>.
+The bottom boundary condition is no longer <span class="math notranslate nohighlight">\(w=0\)</span>. Instead, it is <span class="math notranslate nohighlight">\(\mathbf{u} \cdot \nabla H + w = 0\)</span>. If we assume the horizontal flow is barotropic (uniform with depth), we obtain</p>
+<div class="math notranslate nohighlight">
+\[ w|_{z=-H} = \frac{s_y}{H} V \]</div>
+<p>Using this when we vertically integrate the vorticity equations gives</p>
+<div class="math notranslate nohighlight">
+\[
+ \pd{Z}{t} + \frac{f_0 s_y}{H} V 
+ = \frac{1}{\rho_0} \left ( -\pd{\tau_x}{y} + \pd{\tau_y}{x} \right )_{z=0}  - 
+   \frac{1}{\rho_0} \left ( -\pd{\tau_x}{y} + \pd{\tau_y}{x} \right )_{z=-H}\ . 
+\]</div>
+<p>The factor</p>
+<div class="math notranslate nohighlight">
+\[ f_0 s_y / H \equiv \beta_{eff} \]</div>
+<p>plays the same mathematical role as <span class="math notranslate nohighlight">\(\beta\)</span> on the rotating sphere. The topographic Sverdrup balance is</p>
+<div class="math notranslate nohighlight">
+\[
+\beta_{eff} V_{Sv} = \frac{1}{\rho_0}  \mbox{curl} ( \boldsymbol{\tau}_{surf}) \ .
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scow</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;http://wilson.coas.oregonstate.edu:8080/thredds/dodsC/CIOSS/SCOW/Monthly/scow_monthly_maps.nc&#39;</span><span class="p">)</span>
+<span class="n">scow</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.Dataset&gt;
+Dimensions:                      (latitude: 560, longitude: 1440, time: 12)
+Coordinates:
+  * latitude                     (latitude) float32 -69.875 -69.625 -69.375 ...
+  * longitude                    (longitude) float32 0.125 0.375 0.625 0.875 ...
+  * time                         (time) datetime64[ns] 2001-01-01 ...
+Data variables:
+    scow_wind_curl               (time, longitude, latitude) float64 ...
+    scow_wind_divergence         (time, longitude, latitude) float64 ...
+    scow_wind_stress_curl        (time, longitude, latitude) float64 ...
+    scow_wind_stress_divergence  (time, longitude, latitude) float64 ...
+    scow_zonal_wind_stress       (time, longitude, latitude) float64 ...
+    scow_meridional_wind_stress  (time, longitude, latitude) float64 ...
+    scow_wind_stress_magnitude   (time, longitude, latitude) float64 ...
+    scow_zonal_wind              (time, longitude, latitude) float64 ...
+    scow_meridional_wind         (time, longitude, latitude) float64 ...
+    scow_wind_speed              (time, longitude, latitude) float64 ...
+    scow_wind_speed_squared      (time, longitude, latitude) float64 ...
+    scow_wind_speed_cubed        (time, longitude, latitude) float64 ...
+    amsr_sst                     (time, longitude, latitude) float64 ...
+    avhrr_sst                    (time, longitude, latitude) float64 ...
+Attributes:
+    title:                      Scatterometer Climatology of Ocean Winds (SCO...
+    summary:                    This data set contains monthly, global SCOW f...
+    author:                     Craig Risien (crisien@coas.oregonstate.edu)
+    institution:                Oregon State University, College of Earth, Oc...
+    date_created:               2017-02-15T16:54:28
+    history:                    From the updated Risien and Chelton 2008 SCOW...
+    keywords:                   SCOW monthly wind QuikSCAT global AMSR AVHRR ...
+    keyword_vocabulary:         GCMD
+    reference:                  Risien, C.M., and D.B. Chelton, 2008: A Globa...
+    Conventions:                CF-1.6
+    comments:                   The original SCOW climatology (Risien and Che...
+    geospatial_lat_min:         -90.0
+    geospatial_lat_max:         90.0
+    geospatial_lat_units:       degrees_north
+    geospatial_lat_resolution:  0.25 degree grid
+    geospatial_lon_min:         0.0
+    geospatial_lon_max:         360.0
+    geospatial_lon_units:       degrees_east
+    geospatial_lon_resolution:  0.25 degree grid
+    source:                     QuikSCAT observations
+    standard_name_vocabulary:   CF Standard Name Table v32
+    references:                 http://journals.ametsoc.org/doi/abs/10.1175/2...
+    cdm_data_type:              grid
+    sensor:                     QuikSCAT
+    license:                    These data are available for use without rest...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create an annual mean -- takes a long time to load data</span>
+<span class="n">scow_am</span> <span class="o">=</span> <span class="n">scow</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">scow_am</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="s1">&#39;latitude&#39;</span><span class="p">,</span> <span class="s1">&#39;longitude&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">quick_quiver</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">v</span><span class="p">,</span> <span class="n">sampling_x</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">sampling_y</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+                 <span class="n">scalar</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mag_max</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">longitude</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">latitude</span>
+    <span class="n">slx</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">sampling_x</span><span class="p">)</span>
+    <span class="n">sly</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="n">sampling_y</span><span class="p">)</span>
+    <span class="n">sl2d</span> <span class="o">=</span> <span class="p">(</span><span class="n">sly</span><span class="p">,</span> <span class="n">slx</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">scalar</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">mag</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="n">u</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">v</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">mag</span> <span class="o">=</span> <span class="n">scalar</span>
+
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">mag</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="n">mag_max</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ax</span><span class="p">,</span> <span class="n">ax</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">slx</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">sly</span><span class="p">],</span> <span class="n">u</span><span class="p">[</span><span class="n">sl2d</span><span class="p">],</span> <span class="n">v</span><span class="p">[</span><span class="n">sl2d</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quick_quiver</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">scow_zonal_wind_stress</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">scow_meridional_wind_stress</span><span class="p">,</span>
+             <span class="n">scalar</span><span class="o">=</span><span class="n">ds</span><span class="o">.</span><span class="n">scow_wind_stress_curl</span><span class="p">,</span>
+             <span class="n">mag_max</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sampling_x</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
+             <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;SCOW Wind Stress (vectors) and Wind Stress Curl (colors: </span><span class="si">%s</span><span class="s1">)&#39;</span> 
+           <span class="o">%</span> <span class="n">scow</span><span class="o">.</span><span class="n">scow_wind_stress_curl</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/vorticity_sverdrup_transport_and_gyres_9_0.png" src="_images/vorticity_sverdrup_transport_and_gyres_9_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">omega</span> <span class="o">=</span> <span class="mf">7.29e-5</span>
+<span class="n">R</span> <span class="o">=</span> <span class="mf">6.3781e6</span>
+<span class="n">f</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">latitude</span><span class="p">))</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">omega</span> <span class="o">/</span> <span class="n">R</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">latitude</span><span class="p">))</span>
+<span class="n">rho0</span> <span class="o">=</span> <span class="mi">1030</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;V_sv&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">scow_wind_stress_curl</span> <span class="o">/</span> <span class="p">(</span><span class="n">beta</span> <span class="o">*</span> <span class="n">rho0</span> <span class="o">*</span> <span class="mf">1e7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">V_sv</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vmax</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Sverdrup Transport (m$^2$ s$^{-1}$)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.text.Text at 0x1159eae48&gt;
+</pre></div>
+</div>
+<img alt="_images/vorticity_sverdrup_transport_and_gyres_11_1.png" src="_images/vorticity_sverdrup_transport_and_gyres_11_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="ekman-and-geostrophic-contributions-to-sverdrup-transport">
+<h2>Ekman and Geostrophic Contributions to Sverdrup Transport<a class="headerlink" href="#ekman-and-geostrophic-contributions-to-sverdrup-transport" title="Permalink to this headline">¶</a></h2>
+<p>Under the planetary approximation, the Sverdrup transport is composed of both Ekman and geosptrophic contributions:</p>
+<div class="math notranslate nohighlight">
+\[ V_{Sv} = V_{Ek} + V_g \ . \]</div>
+<p>In the previous lecture, we saw that</p>
+<div class="math notranslate nohighlight">
+\[ V_{Ek} = -\frac{\tau_x}{\rho_0 f} \ . \]</div>
+<p>This, together with the Sverdrup transport, determines the amount of flow carried by the geostrophic flow:</p>
+<div class="math notranslate nohighlight">
+\[ V_g =  \frac{1}{\rho_0 \beta}  \mbox{curl} ( \boldsymbol{\tau}_{surf}) +  \frac{\tau_x}{\rho_0 f} \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;V_ek&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="n">ds</span><span class="o">.</span><span class="n">scow_zonal_wind_stress</span> <span class="o">/</span> <span class="p">(</span><span class="n">rho0</span> <span class="o">*</span> <span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">latitude</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">ds</span><span class="p">[</span><span class="s1">&#39;V_g&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">V_sv</span> <span class="o">-</span> <span class="n">ds</span><span class="o">.</span><span class="n">V_ek</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">V_g</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vmax</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Geostrophic Contribution to Sverdrup Transport (m$^2$ s$^{-1}$)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.text.Text at 0x18ae332b0&gt;
+</pre></div>
+</div>
+<img alt="_images/vorticity_sverdrup_transport_and_gyres_14_1.png" src="_images/vorticity_sverdrup_transport_and_gyres_14_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="calculation-of-the-streamfunction">
+<h2>Calculation of the Streamfunction<a class="headerlink" href="#calculation-of-the-streamfunction" title="Permalink to this headline">¶</a></h2>
+<p>Once we know <span class="math notranslate nohighlight">\(V\)</span> (using Sverdrup balance), we can use mass continuity to determine <span class="math notranslate nohighlight">\(U\)</span>, via the sverdrup balance.</p>
+<p>The constraint that there be no normal flow across the ocean’s horizontal boundaries means that <span class="math notranslate nohighlight">\(\Psi = const\)</span> on the boundaries. We pick this constant aribtrarily to be 0. We know <span class="math notranslate nohighlight">\(V = \partial \Psi / \partial x\)</span>. We integrate this in <span class="math notranslate nohighlight">\(x\)</span> to obtain</p>
+<div class="math notranslate nohighlight">
+\[ \int_{x_1}^{x_2} V_{Sv} dx = \Psi(x_2, y) - \Psi(x_1, y) \]</div>
+<p>If we choose either <span class="math notranslate nohighlight">\(x_1\)</span> or <span class="math notranslate nohighlight">\(x_2\)</span> on the ocean boundary (where <span class="math notranslate nohighlight">\(\Psi=0\)</span>), we have determined <span class="math notranslate nohighlight">\(\Psi\)</span> at an arbitrary point in the interior. However, we must choose <em>whether to choose the eastern or western boundary</em> as the limit of integration. This cannot be determined by Sverdrup balance alone; it requires conisderation of frictional boundary layers.</p>
+<p>We will see below that conservation of vorticity requires us to choose the eastern boundary, requiring closure of the circulation in a western boundary current. We accept this for now and set <span class="math notranslate nohighlight">\(x_2 = x_e\)</span> (the longitude of the eastern boundary). We require that the streamfunction be zero on the eastern boundary, i.e. <span class="math notranslate nohighlight">\(\Psi(x_e, y) = 0\)</span>.
+To find the value of the streamfunction in the interior at any point in <span class="math notranslate nohighlight">\(x\)</span>, we let <span class="math notranslate nohighlight">\(x_1\)</span>, the western limit of the integral, become <span class="math notranslate nohighlight">\(x\)</span>, and perform the integration over dummy variable <span class="math notranslate nohighlight">\(x'\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi(x, y) = - \int_{x}^{x_e} V_{Sv}(x', y) dx' .
+\]</div>
+<p>Equivalently, we can integrate from the eastern boundary to find</p>
+<div class="math notranslate nohighlight">
+\[
+\Psi(x, y) = \int_{x_e}^x V_{Sv}(x', y) dx' \ .
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span><span class="o">.</span><span class="n">coords</span><span class="p">[</span><span class="s1">&#39;dx&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">latitude</span><span class="p">))</span>
+                   <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">longitude</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;longitude&#39;</span><span class="p">)))</span>
+
+<span class="k">def</span> <span class="nf">plot_sverdrup_streamfunction</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span> <span class="n">levels</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">psi</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">V_sv</span> <span class="o">*</span> <span class="n">ds</span><span class="o">.</span><span class="n">dx</span><span class="p">)</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">longitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span><span class="kc">None</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;longitude&#39;</span><span class="p">)</span><span class="o">/</span><span class="mf">1e6</span>
+    <span class="n">psi</span> <span class="o">=</span> <span class="n">psi</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="o">~</span><span class="n">ds</span><span class="o">.</span><span class="n">V_sv</span><span class="o">.</span><span class="n">isnull</span><span class="p">())</span>
+    
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">psi</span><span class="o">.</span><span class="n">plot</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">levels</span><span class="o">=</span><span class="n">levels</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">psi</span>
+
+<span class="n">ds_natl</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">longitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">270</span><span class="p">,</span> <span class="mi">360</span><span class="p">),</span> <span class="n">latitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">60</span><span class="p">))</span> 
+<span class="n">plot_sverdrup_streamfunction</span><span class="p">(</span><span class="n">ds_natl</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Very Rough Calculation of Sverdrup Trasport in the North Atlantic (Sv)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.text.Text at 0x180b26ba8&gt;
+</pre></div>
+</div>
+<img alt="_images/vorticity_sverdrup_transport_and_gyres_16_1.png" src="_images/vorticity_sverdrup_transport_and_gyres_16_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_npac</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">longitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">110</span><span class="p">,</span> <span class="mi">250</span><span class="p">),</span> <span class="n">latitude</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">60</span><span class="p">))</span>
+<span class="n">psi_npac</span> <span class="o">=</span> <span class="n">plot_sverdrup_streamfunction</span><span class="p">(</span><span class="n">ds_npac</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Very Rough Calculation of Sverdrup Trasport in the North Pacific (Sv)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.text.Text at 0x18a108898&gt;
+</pre></div>
+</div>
+<img alt="_images/vorticity_sverdrup_transport_and_gyres_17_1.png" src="_images/vorticity_sverdrup_transport_and_gyres_17_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">psi_npac</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x18b4b63c8&gt;]
+</pre></div>
+</div>
+<img alt="_images/vorticity_sverdrup_transport_and_gyres_18_1.png" src="_images/vorticity_sverdrup_transport_and_gyres_18_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="boundary-currents">
+<h2>Boundary Currents<a class="headerlink" href="#boundary-currents" title="Permalink to this headline">¶</a></h2>
+<p>We have neglected bottom friction so far. This is fine in the open ocean. However, in order to close the circulation, we need to invoke friction within a narrow boundary layer. We will use the simplest possible form of friction: linear bottom drag. With linear bottom drag, the frictional stress at the bottom is given by</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{\rho_0} \boldsymbol{\tau}_{bot} = R \mathbf{U}
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(r\)</span> represents the rate at which bottom friction retards the barotropic flow.</p>
+<p>The full barotropic vorticity equation then becomes</p>
+<div class="math notranslate nohighlight">
+\[
+\beta V = \frac{1}{\rho_0}  \mbox{curl} ( \boldsymbol{\tau}_{surf}) - R \left ( -\pd{U}{y} +  \pd{V}{x} \right )
+\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[
+R \nabla^2 \Psi + \beta \pd{\Psi}{x} = \frac{1}{\rho_0}  \mbox{curl} ( \boldsymbol{\tau}_{surf} ) \ .
+\]</div>
+<p>(This is sometimes called Stommel’s equation.) We can split it up into a Sverdrup component (defined above), and a boundary current component, defined as:</p>
+<div class="math notranslate nohighlight">
+\[
+R \nabla^2 \Psi_{bc} + \beta \pd{\Psi_{bc}}{x} = 0 \ .
+\]</div>
+<p>Note that we have used only the boundary current in the laplacian under the assumption that the Sverdrup flow does not have enough curvature to make a significant contribution to the first term in the equation.</p>
+<p>If we integrate this equation in longitude across the entire basin, we obtain
+$<span class="math notranslate nohighlight">\(
+R \int_{x_w}^{x_e} \nabla^2 \Psi dx = \int_{x_w}^{x_e} \frac{1}{\rho_0}  \mbox{curl} ( \boldsymbol{\tau}_{surf} ) dx \ .
+\)</span>$</p>
+<p>Assuming that the boundary current flows mostly in the meridional direction, we can simplify this to</p>
+<div class="math notranslate nohighlight">
+\[
+R \delta \ol{\pd{V}{x}} \simeq \int_{x_w}^{x_e} \frac{1}{\rho_0}  \mbox{curl} ( \boldsymbol{\tau}_{surf} ) dx \ .
+\]</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="07_ekman.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Wind Driven Circulation</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="AMOC_theory.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">The theory of the Atlantic Meridional Overturning Circulation (AMOC)</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Ryan Abernathey<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
