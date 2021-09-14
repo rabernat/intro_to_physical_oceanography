@@ -1,0 +1,44 @@
+name: deploy-book
+
+# Trigger the workflow on push to main branch and PRs
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
+
+# This job installs dependencies, builds the book, and deploys the html
+jobs:
+  build-and-deploy-book:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: [3.8]
+    steps:
+    - uses: actions/checkout@v2
+
+    # Install dependencies
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    # Build the book
+    - name: Build the book
+      run: |
+        jupyter-book build book
+
+    # Deploy the book's html to earth-env-data-science.github.io
+    - name: GitHub Pages action
+      if: github.ref == 'refs/heads/master'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        publish_branch: gh-pages
+        publish_dir: book/_build/html
+        full_commit_message: "GitHub action book deploy"
