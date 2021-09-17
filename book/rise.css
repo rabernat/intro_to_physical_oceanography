@@ -1,0 +1,32 @@
+.reveal pre.xr-text-repr-fallback {
+    display: none;
+}
+
+
+.reveal ul.xr-sections {
+    padding-left: 0 !important;
+    display: grid;
+    grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.reveal .xr-wrap {
+    font-size: 70%;
+    max-width: 1000px;
+}
+
+.reveal .xr-var-data table {
+    font-size: 90%;
+    
+}
+
+.reveal .xr-var-list, .xr-var-item {
+    display: contents;
+}
+
+.reveal img.float-right {
+    float: right;
+}
+
+.reveal ul {
+    display: block;
+}
