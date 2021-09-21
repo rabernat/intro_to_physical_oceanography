@@ -9,6 +9,7 @@ parts:
     chapters:
     - file: 01_ocean_bathymetry
     - file: 02-a_thermodynamics_of_seawater
+    - file: assignments/thermodynamics
     - file: 02-b_the_water_column
     - file: 02-c_ocean_temperature_salinity_stratification
     - file: 03_air_sea_exchange
