@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e2363ea40746bee74734a24ffefccd78.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -361,7 +361,23 @@
 <h2>Basin Scale Budgets<a class="headerlink" href="#basin-scale-budgets" title="Permalink to this headline">¶</a></h2>
 <p>As an introduction to this somewhat technical topic, we will first examine the <em>basin scale</em> budgets of <em>mass, heat, and salt</em>. This are usually a bit more intuitive to understand.</p>
 <p>Consider the volume shown below. It shows the side view of an ocean basin (like the North Atlantic) bounded at the bottom by the sea floor, at the top by the ocean surface, and at the southern edge by an open boundary through which water can flow. The central question here is, <em>what controls the rate of change of total mass, heat content, and salt inside this volume</em>?</p>
-<p><img alt="TODO: add figure" src="_images/." /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;images/3D_Basin_Diagram.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/04_advection_diffusion_continuity_3_0.png" src="_images/04_advection_diffusion_continuity_3_0.png" />
+</div>
+</div>
 <div class="section" id="mass-conservation">
 <h3>Mass Conservation<a class="headerlink" href="#mass-conservation" title="Permalink to this headline">¶</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(M\)</span> be the total mass of the ocean in this basin. The rate of change of mass is given by</p>
