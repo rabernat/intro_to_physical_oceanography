@@ -1,0 +1,421 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment: Heat and Salt Fluxes &#8212; Intro to Physical Oceanography</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Equations of Motion" href="../05_equations_of_motion.html" />
+    <link rel="prev" title="Advection, Diffusion, and Conservation Laws" href="../04_advection_diffusion_continuity.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Intro to Physical Oceanography</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction to Physical Oceanography
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Foundations
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01_ocean_bathymetry.html">
+   The Boundaries of the Ocean
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-a_thermodynamics_of_seawater.html">
+   Thermodynamics of Seawater
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="thermodynamics.html">
+   Assignment: Thermodynamics of Seawater
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-b_the_water_column.html">
+   The Water Column
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02-c_ocean_temperature_salinity_stratification.html">
+   Temperature, Salinity, and Stratification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_air_sea_exchange.html">
+   Air Sea Exchange
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04_advection_diffusion_continuity.html">
+   Advection, Diffusion, and Conservation Laws
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Assignment: Heat and Salt Fluxes
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Dynamics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05_equations_of_motion.html">
+   Equations of Motion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06_hydrostatic_geostrophic.html">
+   Hydrostatic and Geostrophic Balances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07_ekman.html">
+   Wind Driven Circulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../vorticity_sverdrup_transport_and_gyres.html">
+   Vorticity, Sverdrup Transport, and Ocean Gyres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../AMOC_theory.html">
+   The theory of the Atlantic Meridional Overturning Circulation (AMOC)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/assignments/heat_and_salt_fluxes.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rabernat/intro_to_physical_oceanography"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rabernat/intro_to_physical_oceanography/issues/new?title=Issue%20on%20page%20%2Fassignments/heat_and_salt_fluxes.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rabernat/intro_to_physical_oceanography/master?urlpath=tree/book/assignments/heat_and_salt_fluxes.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sensible-heat-flux">
+   1) Sensible heat flux
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mediterranean-sea-volume-and-freshwater-flux">
+   2) Mediterranean Sea Volume and Freshwater Flux
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#southern-ocean-heat-transport">
+   3) Southern Ocean Heat Transport
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="assignment-heat-and-salt-fluxes">
+<h1>Assignment: Heat and Salt Fluxes<a class="headerlink" href="#assignment-heat-and-salt-fluxes" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These problems can be done “by hand,” but you can use a computer as a calculator if you wish.</p>
+</div>
+<div class="section" id="sensible-heat-flux">
+<h2>1) Sensible heat flux<a class="headerlink" href="#sensible-heat-flux" title="Permalink to this headline">¶</a></h2>
+<p>Let’s assume that initially the ocean and atmosphere are in a balanced state, with no turbulent heat exchange and <span class="math notranslate nohighlight">\(T = T_{10} = 20^\circ\)</span>C. Suddenly a cold front comes through and the air temperature drops suddenly to 18<span class="math notranslate nohighlight">\(^\circ\)</span>C. Assume there is no ocean current and that the atmospheric winds are blowing at 10 m/s. You can also assume that <span class="math notranslate nohighlight">\(C_H = 10^{-3}\)</span>.</p>
+<ol class="simple">
+<li><p>Calculate the sensible heat flux immediately after this drop in air temperature.</p></li>
+<li><p>Assume the mixed layer is 50 m deep. Calculate the instantaneous rate of mixed layer cooling immediately after the drop in air temperature. Express your answer in degrees per day.</p></li>
+<li><p>This cooling rate cannot be maintained. As the mixed layer cools and the ocean temperature approaches the air temperature, the sensible heat flux will become weaker. Derive an equation describing the time evolution of the air-sea temperature difference <span class="math notranslate nohighlight">\(T' = T - T_{10}\)</span>, assuming <span class="math notranslate nohighlight">\(T_{10}\)</span> remains fixed. (<span class="math notranslate nohighlight">\(T'\)</span> is positive when the water is warmer than the air.) You should find an equation of the form
+$<span class="math notranslate nohighlight">\( \frac{dT'}{dt} = - \lambda T' \)</span><span class="math notranslate nohighlight">\(
+The constant \)</span>\lambda<span class="math notranslate nohighlight">\( is an inverse timescale. Express \)</span>\lambda<span class="math notranslate nohighlight">\( first in terms of the other parameters and then find its value. Give your answer in the units days\)</span>^{-1}<span class="math notranslate nohighlight">\(. In your own words, what does \)</span>\lambda$ represent? How does it depend on the mixed layer depth? The wind speed?</p></li>
+<li><p>This equation is a simple linear, first-order ordinary differential equation. Write the solution for <span class="math notranslate nohighlight">\(T'(t)\)</span>. How long does it take the initial air-sea difference of 2<span class="math notranslate nohighlight">\(^\circ\)</span>C to be reduced by half?</p></li>
+</ol>
+</div>
+<div class="section" id="mediterranean-sea-volume-and-freshwater-flux">
+<h2>2) Mediterranean Sea Volume and Freshwater Flux<a class="headerlink" href="#mediterranean-sea-volume-and-freshwater-flux" title="Permalink to this headline">¶</a></h2>
+<p>In this problem, we return to our favorite basin, the Mediterranean Sea. The flow in and out of the Mediterranean at the Strait of Gibraltar can roughly be described as a two-layer flow. The upper layer flows in with relatively low salinity, and the lower layer flows out with higher salinity.</p>
+<p><img alt="med sea" src="https://vectr.com/rabernat/aDXHLWyY.svg?width=600&amp;height=300&amp;select=aDXHLWyYpage0" /></p>
+<p>You may use the Boussinesq approximation for all of these calculations.</p>
+<ol class="simple">
+<li><p>Calculate the net volume flux by advection into the basin at Gibraltar.</p></li>
+<li><p>Calculate the average evaporation minus precipitation rate necessary to maintain a steady volume budget. Give your answer in cm/year.</p></li>
+<li><p>Calculate the net freshwater flux by advection at Gibraltar. Is it consistent with the evaporation rate?</p></li>
+</ol>
+</div>
+<div class="section" id="southern-ocean-heat-transport">
+<h2>3) Southern Ocean Heat Transport<a class="headerlink" href="#southern-ocean-heat-transport" title="Permalink to this headline">¶</a></h2>
+<p>A very rough model of the Southern Ocean overturning is wind-driven Ekman pumping pushing warm water out near the surface and geostrophc transport below the depth of topography provding the return flow.</p>
+<p><img alt="so" src="https://vectr.com/rabernat/apTPY1rnD.svg?width=600&amp;height=300&amp;select=apTPY1rnDpage0" /></p>
+<ol class="simple">
+<li><p>Calculate the net Ekman-driven volume transport out the Southern Ocean near 55S assuming that the zonal wind strength is 0.1 N m<span class="math notranslate nohighlight">\(^{-2}\)</span>. Give you answer in Sv.</p></li>
+<li><p>Calculate the required geostrophic inflow to keep the volume budget balance, assuming now net E-P-R below 55S.</p></li>
+<li><p>Calculate the heat transport by this flow across 55S. Give your answer in PW (10<span class="math notranslate nohighlight">\(^{15}\)</span> W). Explain your sign convention.</p></li>
+<li><p>Calculate the required average air-sea heat flux into the ocean south of 55S needed to balance the heat budget. Explain your sign convention.</p></li>
+<li><p>Compare to the observed air-sea flux <a class="reference external" href="http://nbviewer.jupyter.org/github/rabernat/intro_to_physical_oceanography/blob/master/lectures/03_air_sea_exchange.ipynb">from our notes</a>. Are they compatible? What terms might be missing from our heat budget?</p></li>
+</ol>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./assignments"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="../04_advection_diffusion_continuity.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Advection, Diffusion, and Conservation Laws</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../05_equations_of_motion.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Equations of Motion</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Ryan Abernathey<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
