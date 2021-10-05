@@ -1,0 +1,615 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ocean State Estimation &#8212; Intro to Physical Oceanography</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="The theory of the Atlantic Meridional Overturning Circulation (AMOC)" href="AMOC_theory.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Intro to Physical Oceanography</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction to Physical Oceanography
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Foundations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_ocean_bathymetry.html">
+   The Boundaries of the Ocean
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-a_thermodynamics_of_seawater.html">
+   Thermodynamics of Seawater
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="assignments/thermodynamics.html">
+   Assignment: Thermodynamics of Seawater
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-b_the_water_column.html">
+   The Water Column
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-c_ocean_temperature_salinity_stratification.html">
+   Temperature, Salinity, and Stratification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_air_sea_exchange.html">
+   Air Sea Exchange
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_advection_diffusion_continuity.html">
+   Advection, Diffusion, and Conservation Laws
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="assignments/heat_and_salt_fluxes.html">
+   Assignment: Heat and Salt Fluxes
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Dynamics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_equations_of_motion.html">
+   Equations of Motion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_hydrostatic_geostrophic.html">
+   Hydrostatic and Geostrophic Balances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_ekman.html">
+   Wind Driven Circulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vorticity_sverdrup_transport_and_gyres.html">
+   Vorticity, Sverdrup Transport, and Ocean Gyres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="AMOC_theory.html">
+   The theory of the Atlantic Meridional Overturning Circulation (AMOC)
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  The Ocean State
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Ocean State Estimation
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/ECCO-state-estimate.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rabernat/intro_to_physical_oceanography"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rabernat/intro_to_physical_oceanography/issues/new?title=Issue%20on%20page%20%2FECCO-state-estimate.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rabernat/intro_to_physical_oceanography/master?urlpath=tree/book/ECCO-state-estimate.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Ocean State Estimation
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-do-we-want-to-know-about-the-ocean">
+     What do we want to know about the ocean?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ocean-general-circulation-models">
+     Ocean General Circulation Models
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ocean-models-aren-t-perfect-but-they-are-consistent">
+       Ocean models aren’t perfect, but they are
+       <em>
+        consistent
+       </em>
+       …
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-butterfly-effect">
+       The butterfly effect
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-assimilation">
+     Data Assimilation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ecco-estimating-the-circulation-and-climate-of-the-ocean">
+   ECCO: Estimating the Circulation and Climate of the Ocean
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sea-surface-height">
+     Sea Surface Height
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#how-we-measure-sea-surface-height-from-space">
+       How we measure Sea Surface Height from space
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#in-situ-temperature-and-salinity">
+     In Situ Temperature and Salinity
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#temperature">
+       Temperature
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#salinity">
+       Salinity
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#argo-float-distribution">
+       Argo Float distribution
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#world-ocean-circulation-woce-go-ship-hydrography">
+       World Ocean Circulation (WOCE) &amp; GO-Ship Hydrography
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sea-surface-temperature">
+     Sea Surface Temperature
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sea-surface-salinity">
+     Sea Surface Salinity
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#aquarius-instrument">
+       Aquarius Instrument
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sea-ice-concentration">
+     Sea Ice Concentration
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ocean-bottom-pressure">
+     Ocean Bottom Pressure
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ocean-mass-bottom-pressure">
+       Ocean Mass ↔️ Bottom Pressure
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="ocean-state-estimation">
+<h1>Ocean State Estimation<a class="headerlink" href="#ocean-state-estimation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-do-we-want-to-know-about-the-ocean">
+<h2>What do we want to know about the ocean?<a class="headerlink" href="#what-do-we-want-to-know-about-the-ocean" title="Permalink to this headline">¶</a></h2>
+<p>From the point of view of climate science, some of the most important questions we want to answer about the ocean are:</p>
+<ul class="simple">
+<li><p>What is the <em>mean</em> state of the ocean’s master variables (temperature, salinity, velocities, and sea-surface height)?</p></li>
+<li><p>How does the ocean state vary in time?</p></li>
+<li><p>What is the strength and direction of ocean transports of mass, heat, and salt; and how do these transports vary in time?</p></li>
+<li><p>What is the exchange of heat, freshwater, and momentum with the atmosphere?</p></li>
+</ul>
+<p>Ocean observations come from a huge range of difference sources, but for the most part, there are few <em>direct</em> observations of these quantities.
+Furthermore these observations have their own errors and inconsistencies.
+How can they be synthesized into a “best guess” of the true ocean state?
+This is a challenging scientific and engineering problem.</p>
+</div>
+<div class="section" id="ocean-general-circulation-models">
+<h2>Ocean General Circulation Models<a class="headerlink" href="#ocean-general-circulation-models" title="Permalink to this headline">¶</a></h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/73/AtmosphericModelSchematic.png" style="float: right;" />
+<p>Ocean General Circulation Models (GCMs) encode our understanding of the laws of physics into a computer program that can be run on a computer (usually a supercomputer).
+They solve numerically the appropriate physical equations (usually partial differential equations; e.g. momentum equation, heat equations) subject to specified boundary conditions (e.g. the atmospheric state).</p>
+<p>Ocean models divide the ocean up into discrete “grid cells”.
+The smaller the cells, the more accurate and detailed the simulation; this is called “resolution”.
+But high resolution is also expensive…the time it takes to solve the equations depends roughly on <span class="math notranslate nohighlight">\(\Delta X^3\)</span>, where <span class="math notranslate nohighlight">\(\Delta X\)</span> is the size of the grid box (in meters).</p>
+<div class="section" id="ocean-models-aren-t-perfect-but-they-are-consistent">
+<h3>Ocean models aren’t perfect, but they are <em>consistent</em>…<a class="headerlink" href="#ocean-models-aren-t-perfect-but-they-are-consistent" title="Permalink to this headline">¶</a></h3>
+<p>Ocean models do not provide a perfect representation of the ocean.
+But they do provide a <em>consistent</em> one.
+A well-formulated ocean model exactly conserves quantities like heat, energy, and momentum, just like the real ocean.</p>
+</div>
+<div class="section" id="the-butterfly-effect">
+<h3>The butterfly effect<a class="headerlink" href="#the-butterfly-effect" title="Permalink to this headline">¶</a></h3>
+<img src="https://github.com/chris-greening/double-pendula/raw/master/ten.gif" style="float: right;" />
+<p>However, even a perfect model would not reproduce the real ocean state and its evolution over time exactly.
+Due to the inherent chaos in the governing equations, miniscule differences in initial conditions between the
+model and the real world would eventually amplify and cause the simulation to diverge from the real world.
+This is often called the <a class="reference external" href="https://en.wikipedia.org/wiki/Butterfly_effect">Butterfly Effect</a>.</p>
+</div>
+</div>
+<div class="section" id="data-assimilation">
+<h2>Data Assimilation<a class="headerlink" href="#data-assimilation" title="Permalink to this headline">¶</a></h2>
+<p>Data assimilation is a set of methologies for making a simulation consistent with observations.</p>
+<p>The state estimate uses a form of data assimilation called <em>4D Var</em> or “four-dimensional variational” assimilation. This works by iteratively adjusting the initial conditions and boundary conditions of the simulation to bring it as close as possible to the observations. The observations are weighed relative to their uncertainties. This method produces estimates that are consistent with diverse observations yet still respect the conservation properties encoded in the GCM.</p>
+<p><img alt="data assimilation" src="files/intro_to_physical_oceanography/book/images/4Dvar_data_assimilation.gif" /></p>
+<p>Image credit:</p>
+<p>Zaron E.D. (2011) <em>Introduction to Ocean Data Assimilation.</em> In: Schiller A., Brassington G. (eds) Operational Oceanography in the 21st Century. Springer, Dordrecht. <a class="reference external" href="https://doi.org/10.1007/978-94-007-0332-2_13">https://doi.org/10.1007/978-94-007-0332-2_13</a></p>
+</div>
+</div>
+<div class="section" id="ecco-estimating-the-circulation-and-climate-of-the-ocean">
+<h1>ECCO: Estimating the Circulation and Climate of the Ocean<a class="headerlink" href="#ecco-estimating-the-circulation-and-climate-of-the-ocean" title="Permalink to this headline">¶</a></h1>
+<img src="https://science.jpl.nasa.gov/media/images/ECCO.max-500x500.jpg" width="30%" style="float: right" />
+<p>In this class, we will work with data from the <a class="reference external" href="https://www.ecco-group.org/">NASA ECCO Ocean State Estimate</a>.
+This product is the most comprehensive ocean state estimate for looking at things like ocean transport and budgets.</p>
+<p>Let’s first review the data sources used to constrain ECCO.</p>
+<div class="section" id="sea-surface-height">
+<h2>Sea Surface Height<a class="headerlink" href="#sea-surface-height" title="Permalink to this headline">¶</a></h2>
+<img style="float: right;" width="40%" src="https://sealevel.jpl.nasa.gov/internal_resources/701_OceanSurfaceTopographyMissions2020.jpg" />
+<p>Ocean dynamic topography as measured by from space provides an important constraint on ocean heat and salt content, as well as geostrophic currents.</p>
+<p>More info about sea level data are available from <a class="reference external" href="https://sealevel.jpl.nasa.gov/">https://sealevel.jpl.nasa.gov/</a></p>
+<p>Data used in ECCO include ERS-1/2 (1992-2001), TOPEX/Poseidon (1993-2005), GFO (2001-2007), ENVISAT (2002-2012), Jason-1 (2002-2008), Jason-2 (2008-2017), CryoSat-2 (2011-2017), SARAL/AltiKa (2013-2017), Jason-3 (2016-2017)</p>
+<div class="section" id="how-we-measure-sea-surface-height-from-space">
+<h3>How we measure Sea Surface Height from space<a class="headerlink" href="#how-we-measure-sea-surface-height-from-space" title="Permalink to this headline">¶</a></h3>
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Poseidon.graphic.jpg" />
+<p>Via <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Poseidon.graphic.jpg">https://commons.wikimedia.org/wiki/File:Poseidon.graphic.jpg</a></p>
+</div>
+</div>
+<div class="section" id="in-situ-temperature-and-salinity">
+<h2>In Situ Temperature and Salinity<a class="headerlink" href="#in-situ-temperature-and-salinity" title="Permalink to this headline">¶</a></h2>
+<img src="https://upload.wikimedia.org/wikipedia/commons/e/e2/BrnBld_ArgoFloat.svg" style="float: right;" />
+<div class="section" id="temperature">
+<h3>Temperature<a class="headerlink" href="#temperature" title="Permalink to this headline">¶</a></h3>
+<p>Argo floats (1995-2017), CTDs (1992-2017), XBTs (1992-2017), marine mammals (APB 2004-2017), gliders (2003-2017), Ice-Tethered Profilers (ITP, 2004-2017), moorings (1992-2017)</p>
+</div>
+<div class="section" id="salinity">
+<h3>Salinity<a class="headerlink" href="#salinity" title="Permalink to this headline">¶</a></h3>
+<p>CTDs (1992-2017), moorings (1992-2017), Argo floats (1997-2017), gliders (2003-2017), marine mammals (APB 2004-2017), ITP (2004-2017)</p>
+</div>
+<div class="section" id="argo-float-distribution">
+<h3>Argo Float distribution<a class="headerlink" href="#argo-float-distribution" title="Permalink to this headline">¶</a></h3>
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Argo_floats_in_Feb._2018_colour_coded_by_country.png" />
+<p>via <a class="reference external" href="https://commons.wikimedia.org/wiki/File:Argo_floats_in_Feb._2018_colour_coded_by_country.png">https://commons.wikimedia.org/wiki/File:Argo_floats_in_Feb._2018_colour_coded_by_country.png</a></p>
+</div>
+<div class="section" id="world-ocean-circulation-woce-go-ship-hydrography">
+<h3>World Ocean Circulation (WOCE) &amp; GO-Ship Hydrography<a class="headerlink" href="#world-ocean-circulation-woce-go-ship-hydrography" title="Permalink to this headline">¶</a></h3>
+<img src="http://woceatlas.tamu.edu/images/printed/jpg/image9.jpg" />
+<p>via <a class="reference external" href="http://woceatlas.tamu.edu/printed/SOA_WOCE.html">http://woceatlas.tamu.edu/printed/SOA_WOCE.html</a></p>
+</div>
+</div>
+<div class="section" id="sea-surface-temperature">
+<h2>Sea Surface Temperature<a class="headerlink" href="#sea-surface-temperature" title="Permalink to this headline">¶</a></h2>
+<p>From the Advanced Very High Resolution Radiometer (AVHRR)</p>
+<img src="https://www.ncei.noaa.gov/sites/default/files/styles/wide_full_width_image_no_crop/public/2021-07/Image_01B-08.png?itok=4_ja4rtI" />
+<p><a class="reference external" href="https://www.ncei.noaa.gov/products/climate-data-records/pathfinder-sea-surface-temperature">https://www.ncei.noaa.gov/products/climate-data-records/pathfinder-sea-surface-temperature</a></p>
+</div>
+<div class="section" id="sea-surface-salinity">
+<h2>Sea Surface Salinity<a class="headerlink" href="#sea-surface-salinity" title="Permalink to this headline">¶</a></h2>
+<p>NASA <a class="reference external" href="https://aquarius.nasa.gov/">Aquarius</a> mission</p>
+<img src="https://aquarius.oceansciences.org/images/aquarius_mission_composite_v5_molleweide.png" />
+<div class="section" id="aquarius-instrument">
+<h3>Aquarius Instrument<a class="headerlink" href="#aquarius-instrument" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Aquarius was an active/passive microwave remote sensor that measured brightness temperature and radar backscatter at L-band. The antenna system’s reflector produced three beams (pointed at incidence angles 25.8°, 33.8°, and 40.3° for the inner, middle, and outer beams, respectively) to obtain measurements in a push-broom fashion from feed horns pointed perpendicular to the flight direction. The beams created three fields of view at the Earth’s surface resulting in a data swath of approximately 390km. Credit: NASA.</p>
+</div></blockquote>
+<img src="https://salinity.oceansciences.org/images/aquarius_beams.png" />
+<p>via <a class="reference external" href="https://salinity.oceansciences.org/gallery-images-more.htm?id=79">https://salinity.oceansciences.org/gallery-images-more.htm?id=79</a></p>
+</div>
+</div>
+<div class="section" id="sea-ice-concentration">
+<h2>Sea Ice Concentration<a class="headerlink" href="#sea-ice-concentration" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Scanning Multichannel Microwave Radiometer (SMMR) instrument on the Nimbus-7 satellite</p></li>
+<li><p>Special Sensor Microwave/Imager (SSM/I) and Special Sensor Microwave Imager/Sounder (SSMIS) and instruments on the Defense Meteorological Satellite Program’s (DMSP)</p></li>
+</ul>
+<img src="https://live.staticflickr.com/65535/51189318417_fce31e15ee_c_d.jpg" />
+<p><a class="reference external" href="https://nsidc.org/data/smmr_ssmi">https://nsidc.org/data/smmr_ssmi</a></p>
+</div>
+<div class="section" id="ocean-bottom-pressure">
+<h2>Ocean Bottom Pressure<a class="headerlink" href="#ocean-bottom-pressure" title="Permalink to this headline">¶</a></h2>
+<p>NASA <a class="reference external" href="https://www.nasa.gov/mission_pages/Grace/index.html">Gravity Recovery and Climate Experiment</a> (GRACE).</p>
+<img src="https://www.nasa.gov/sites/default/files/styles/946xvariable_height/public/images/623369main_pia04236-full_full.jpg?itok=ZhVnhgqg" /><div class="section" id="ocean-mass-bottom-pressure">
+<h3>Ocean Mass ↔️ Bottom Pressure<a class="headerlink" href="#ocean-mass-bottom-pressure" title="Permalink to this headline">¶</a></h3>
+<p>The mass of the water column at each point on the Earth’s surface is given by</p>
+<div class="math notranslate nohighlight">
+\[ M = \int_{-H}^\eta \rho dz \]</div>
+<p>and, via the hydrostatic balance, the ocean bottom pressure is just</p>
+<div class="math notranslate nohighlight">
+\[ p_{bot} = M g \ . \]</div>
+<p>The GRACE mission measures slight changes in Earth’s gravitational field, which are due to fluctuations in ocean mass.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="AMOC_theory.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">The theory of the Atlantic Meridional Overturning Circulation (AMOC)</p>
+            </div>
+        </a>
+    </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Ryan Abernathey<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
