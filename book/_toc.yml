@@ -25,3 +25,4 @@ parts:
   - caption: The Ocean State
     chapters:
     - file: ECCO-state-estimate
+    - file: barotropic_circulation
