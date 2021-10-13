@@ -360,6 +360,11 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     Seasonality
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#important-points-indian">
      Important Points - Indian
     </a>
@@ -403,8 +408,8 @@ As we will see in <a class="reference internal" href="vorticity_sverdrup_transpo
 <p>The full 3D velociety field of the ocean is the vector field <span class="math notranslate nohighlight">\(\mathbf{u}(\mathbf{x}, t) = (u, v, w)\)</span>.
 Visualizing and understanding a time-varying vector field is very challenging, so we often want to remove one dimension.</p>
 <p>As a first step, we define vertically-integrated flow components as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f681554e-e26b-47b1-97cb-91be14f0214f">
-<span class="eqno">(2)<a class="headerlink" href="#equation-f681554e-e26b-47b1-97cb-91be14f0214f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b87cfb20-3136-4a42-ae40-d128c928fe20">
+<span class="eqno">(2)<a class="headerlink" href="#equation-b87cfb20-3136-4a42-ae40-d128c928fe20" title="Permalink to this equation">¶</a></span>\[\begin{align}
 U &amp;= \int_{-H}^\eta u dz \\
 V &amp;= \int_{-H}^\eta v dz \\
 \end{align}\]</div>
@@ -412,8 +417,8 @@ V &amp;= \int_{-H}^\eta v dz \\
 <div class="section" id="continuity-equation">
 <h3>Continuity Equation<a class="headerlink" href="#continuity-equation" title="Permalink to this headline">¶</a></h3>
 <p>Now we apply the same integral to the Boussinesq continuity equation: <span class="math notranslate nohighlight">\(\nabla \cdot \mathbf{u} = 0\)</span> to obtain</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8e5a3f18-d313-4a92-a70e-d66147309057">
-<span class="eqno">(3)<a class="headerlink" href="#equation-8e5a3f18-d313-4a92-a70e-d66147309057" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a3553240-fad0-40ee-9942-86e8c2b25237">
+<span class="eqno">(3)<a class="headerlink" href="#equation-a3553240-fad0-40ee-9942-86e8c2b25237" title="Permalink to this equation">¶</a></span>\[\begin{align}
 \int_{-H}^\eta \frac{\partial u}{\partial x} +
 \int_{-H}^\eta \frac{\partial v}{\partial y} +
 \int_{-H}^\eta \frac{\partial w}{\partial z} &amp;= 0 \\
@@ -9233,6 +9238,8 @@ Data variables: (12/35)
 <img alt="_images/barotropic_circulation_32_0.png" src="_images/barotropic_circulation_32_0.png" />
 </div>
 </div>
+<div class="section" id="id2">
+<h3>Seasonality<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Psi_ind_mm</span> <span class="o">=</span> <span class="n">Psi_ind</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;time.month&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
@@ -9265,7 +9272,8 @@ Data variables: (12/35)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/barotropic_circulation_34_0.png" src="_images/barotropic_circulation_34_0.png" />
+<img alt="_images/barotropic_circulation_35_0.png" src="_images/barotropic_circulation_35_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="important-points-indian">
@@ -9311,7 +9319,7 @@ Data variables: (12/35)
     <span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="n">label</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">projection</span><span class="o">.</span><span class="n">transform_point</span><span class="p">(</span><span class="n">lon</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">src_crs</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;white&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;North Atlantic Barotropic Streamfunction&quot;</span><span class="p">)</span>
 
-<span class="c1">#plt.close()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -9319,7 +9327,7 @@ Data variables: (12/35)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;North Atlantic Barotropic Streamfunction&#39;)
 </pre></div>
 </div>
-<img alt="_images/barotropic_circulation_38_1.png" src="_images/barotropic_circulation_38_1.png" />
+<img alt="_images/barotropic_circulation_39_1.png" src="_images/barotropic_circulation_39_1.png" />
 </div>
 </div>
 </div>
