@@ -27,3 +27,4 @@ parts:
     - file: ECCO-state-estimate
     - file: barotropic_circulation
     - file: overturning_circulation
+    - file: heat-transport
