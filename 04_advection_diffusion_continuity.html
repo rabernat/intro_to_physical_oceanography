@@ -323,6 +323,13 @@
     <a class="reference internal nav-link" href="#heat-conservation">
      Heat Conservation
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#simultaneous-changes-of-heat-and-mass">
+       Simultaneous Changes of Heat and Mass
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#heat-conservation-in-boussinesq-approximation">
@@ -333,6 +340,18 @@
     <a class="reference internal nav-link" href="#salt-and-freshwater-conservation">
      Salt and Freshwater Conservation
     </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#layered-models">
+     Layered Models
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#example-two-layer-flow">
+       Example: Two Layer Flow
+      </a>
+     </li>
+    </ul>
    </li>
   </ul>
  </li>
@@ -396,18 +415,12 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;images/3D_Basin_Diagram.png&#39;</span><span class="p">)</span>
+<span class="n">Image</span><span class="p">(</span><span class="s1">&#39;images/3D_Basin_Diagram.png&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/04_advection_diffusion_continuity_3_0.png" src="_images/04_advection_diffusion_continuity_3_0.png" />
+<img alt="_images/04_advection_diffusion_continuity_2_0.png" src="_images/04_advection_diffusion_continuity_2_0.png" />
 </div>
 </div>
 <div class="section" id="mass-conservation">
@@ -466,13 +479,6 @@
 \[ H = c_p^0 \iiint_V \rho  \Theta dV \ . \]</div>
 <p>where <span class="math notranslate nohighlight">\(\Theta\)</span> is the conservative temperature (proportional to potential enthalpy).
 Some would say that that <span class="math notranslate nohighlight">\(\Theta\)</span> should be measured in Kelvins. However, the <a class="reference external" href="https://en.wikipedia.org/wiki/First_law_of_thermodynamics">first law of thermodynamics</a> only describes the <em>changes</em> in heat content of a system; the absolute value of <span class="math notranslate nohighlight">\(H\)</span> is meaningless.</p>
-<p>It becomes difficult to reason about heat content when the mass of the system is also changing. For this reason, we will mostly talk about heat transport in situations where the total ocean mass, or the mass of an individual basin under consideration, is constant in time (i.e. <span class="math notranslate nohighlight">\(d M / d t = 0\)</span>). In these circumstances, an aribitrary constant <span class="math notranslate nohighlight">\(\Theta_{ref}\)</span> can be added to <span class="math notranslate nohighlight">\(\Theta\)</span> without changing  <span class="math notranslate nohighlight">\(d H / d t\)</span>, as can be seen by expanding <span class="math notranslate nohighlight">\(H\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[
-\od{}{t} \left [ c_p^0 \iiint_V \rho (\Theta + \Theta_{ref}) dV \right ]
-=  c_p^0 \od{}{t} \iiint_V \rho \Theta dV + c_p^0 \Theta_{ref} \od{M}{t}\ .
-\]</div>
-<p>Consequently, any conclusions we make about heat transport should be unchanged under the transformation <span class="math notranslate nohighlight">\(\Theta \to \Theta + \Theta _{ref}\)</span>.</p>
 <p>The rate of change of heat content depends only on external fluxes into the system:</p>
 <div class="math notranslate nohighlight">
 \[ \od{H}{t} = F_H^{surf} + F_H^{side} \ . \]</div>
@@ -482,15 +488,46 @@ Some would say that that <span class="math notranslate nohighlight">\(\Theta\)</
 <p>where <span class="math notranslate nohighlight">\(Q\)</span> is defined as positive for downward heat flux. The second term represents the advetion of heat into / out of the ocean surface by evaporating / precipitating water. Neglecting diffusive fluxes (for now), the flux through the side is</p>
 <div class="math notranslate nohighlight">
 \[ F_H^{side} = -  c_p^0 \iint \mathbf{u} \rho \Theta \cdot \mathbf{dA} \]</div>
-<p>An important but subtle point is that <em>the individual magnitudes of the advective term in <span class="math notranslate nohighlight">\(F_H^{surf}\)</span> and <span class="math notranslate nohighlight">\(F_H^{side}\)</span> are meaningless.</em> Only together can we understand these terms impact on the heat content on this basin. If we add an arbitrary constant <span class="math notranslate nohighlight">\( \Theta_{ref} \)</span> to <span class="math notranslate nohighlight">\( \Theta \)</span>, we get:</p>
+<div class="section" id="simultaneous-changes-of-heat-and-mass">
+<h4>Simultaneous Changes of Heat and Mass<a class="headerlink" href="#simultaneous-changes-of-heat-and-mass" title="Permalink to this headline">¶</a></h4>
+<p>It becomes difficult to reason about heat content when the mass of the system is also changing. For this reason, we will mostly talk about heat transport in situations where the total ocean mass, or the mass of an individual basin under consideration, is constant in time (i.e. <span class="math notranslate nohighlight">\(d M / d t = 0\)</span>).</p>
+<p>If the mass of the system is changing, is may be useful to distinguish from the mean temperature of the body <span class="math notranslate nohighlight">\(\overline{\Theta}\)</span> and a fluctuation from this mean <span class="math notranslate nohighlight">\(\Theta'\)</span>. Expanding <span class="math notranslate nohighlight">\(H\)</span>, we obtain:</p>
 <div class="math notranslate nohighlight">
-\[ F_H^{surf} = \iint_{surf} Q dA - c_p^0 \iint_{surf} \rho_{fw} \Theta (E - P - R) dA -
-c_p^0 \Theta_{ref} \iint_{surf} \rho_{fw} (E - P - R) \]</div>
-<p>and</p>
+\[
+\od{H}{t} = \od{}{t} \left [ c_p^0 \iiint_V \rho (\overline{\Theta} + \Theta') dV \right ]
+=  c_p^0 \od{}{t} \iiint_V \rho \Theta' dV + c_p^0 \overline{\Theta} \od{M}{t}\ .
+\]</div>
+<p>We make the same substitution in the surface flux</p>
 <div class="math notranslate nohighlight">
-\[ F_H^{side} = -  c_p^0 \iint_{side} \mathbf{u} \rho \Theta \cdot \mathbf{dA} -
-c_p^0 \Theta_{ref} \iint_{side} \mathbf{u} \rho \cdot \mathbf{dA}\]</div>
-<p>At first glance, by adding a constant to <span class="math notranslate nohighlight">\(\Theta\)</span>, we have changed the magnitude of the heat transport. However, upon adding these terms together, we see that the terms proportional to <span class="math notranslate nohighlight">\(\Theta_{ref}\)</span> cancel, because <span class="math notranslate nohighlight">\(F_m^{side} + F_m^{surf} = 0\)</span>. This observation tells us that we can only assess the contribution of the circulation to the heat budget for <em>circulations that conserve mass</em>. Attempting to break down this contribution into a sum of different components can lead to spurious conclusions, since these individual components potentially depend on an arbitrary reference temperature <span class="math notranslate nohighlight">\(\Theta_{ref}\)</span>.</p>
+\[ F_H^{surf} = \iint_{surf} Q dA - c_p^0 \iint_{surf} \rho_{fw} \Theta'(E - P - R) dA -
+c_p^0 \overline{\Theta} \iint_{surf} \rho_{fw} (E - P - R) \]</div>
+<p>and the side flux</p>
+<div class="math notranslate nohighlight">
+\[ F_H^{side} = -  c_p^0 \iint_{side} \mathbf{u} \rho \Theta' \cdot \mathbf{dA} -
+c_p^0 \overline{\Theta} \iint_{side} \mathbf{u} \rho \cdot \mathbf{dA}\]</div>
+<p>Summing all these, we can obtain a formula of the form</p>
+<div class="math notranslate nohighlight">
+\[
+\od{H'}{t} = F_H^{'surf} + F_H^{'side} + c_p^0 \overline{\Theta} (\od{M}{t} - F_m^{surf} - F_m^{side})
+\]</div>
+<p>Through mass conservation, the final term proprtional to <span class="math notranslate nohighlight">\(\overline{\Theta}\)</span> cancels out to zero.
+All that remains are the terms proportional to <span class="math notranslate nohighlight">\(\Theta'\)</span>, which we have defined as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7b94bf9f-c82c-4d83-94ba-cff7244403eb">
+<span class="eqno">(2)<a class="headerlink" href="#equation-7b94bf9f-c82c-4d83-94ba-cff7244403eb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+H' &amp;= c_p^0 \od{}{t} \iiint_V \rho \Theta' dV \\
+F_H^{'surf} &amp;= \iint_{surf} Q dA - c_p^0 \iint_{surf} \rho_{fw} \Theta'(E - P - R) dA \\
+F_H^{'side} &amp;= -  c_p^0 \iint_{side} \mathbf{u} \rho \Theta' \cdot \mathbf{dA} \ .
+\end{align}\]</div>
+<p>This gives us a template to follow when trying to calculate heat budgets for bodies whose mass is changing: redefine the temperature as relative to the mean temperature.
+This form of the budget also reveals something important: even with <span class="math notranslate nohighlight">\(dM/dt = 0\)</span>, the magnitude of the surface and side fluxes is indeterminate up to a constant.
+We can add <em>any</em> constant temperature to these components, and it will cancel out in the heat budget.
+Attempting to break down the heat budget into a sum of different components can lead to spurious conclusions, since these individual components potentially depend on an arbitrary reference temperature.
+We can avoid this indeterminacy only if:</p>
+<ul class="simple">
+<li><p>There are no net mass fluxes at all through any of the boundaries (<span class="math notranslate nohighlight">\(F_m^{surf} = F_m^{side} = 0\)</span>) OR</p></li>
+<li><p>We reference all our temperature measurements at all boundaries to the same constant and, using the same reference temperature, cancel the terms related to net mass flux.</p></li>
+</ul>
+</div>
 </div>
 <div class="section" id="heat-conservation-in-boussinesq-approximation">
 <h3>Heat Conservation in Boussinesq Approximation<a class="headerlink" href="#heat-conservation-in-boussinesq-approximation" title="Permalink to this headline">¶</a></h3>
@@ -531,6 +568,72 @@ c_p^0 \Theta_{ref} \iint_{side} \mathbf{u} \rho \cdot \mathbf{dA}\]</div>
 <div class="math notranslate nohighlight">
 \[ F_{fw}^{side} = - F_S^{side} \]</div>
 <p>i.e. the freshwater transport is equal and opposite to the salt transport.</p>
+</div>
+<div class="section" id="layered-models">
+<h3>Layered Models<a class="headerlink" href="#layered-models" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="p">(</span><span class="s1">&#39;images/3D_Basin_Diagram_layers.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/04_advection_diffusion_continuity_9_0.png" src="_images/04_advection_diffusion_continuity_9_0.png" />
+</div>
+</div>
+<p>A very common framework for thinking about basin-scale budgets is the use of <em>layered models</em>.
+By this we mean models where the quantities of interest—<span class="math notranslate nohighlight">\(\mathbf{u}\)</span>, <span class="math notranslate nohighlight">\(\Theta\)</span>, etc.—are represented as piecewise constant function.
+In these cases, we can replace many of the integrals in the budget with simple sums.</p>
+<div class="section" id="example-two-layer-flow">
+<h4>Example: Two Layer Flow<a class="headerlink" href="#example-two-layer-flow" title="Permalink to this headline">¶</a></h4>
+<p>As an example, let’s develop a model very losely inspired by the North Atlantic: flow coming into the basin in layer 1 and out of the basin in layer two. Let’s use the Boussinesq assumption and additionally assume steady-state volume (<span class="math notranslate nohighlight">\(dV/dt = 0\)</span>) and no net volume flux through the surface <span class="math notranslate nohighlight">\(F_v^{surf} = 0\)</span>. In this case, the volume budget just becomes</p>
+<div class="math notranslate nohighlight">
+\[
+F_v^{side} = - \iint_{side} \mathbf{u} \cdot \mathbf{dA} = 0 
+\]</div>
+<p>Now let’s divide the integral into two separate components:</p>
+<ul class="simple">
+<li><p>In layer 1, <span class="math notranslate nohighlight">\(\mathbf{u} \cdot \mathbf{dA} &lt; 0\)</span> (inflow)</p></li>
+<li><p>In layer 2, <span class="math notranslate nohighlight">\(\mathbf{u} \cdot \mathbf{dA} &gt; 0\)</span> (outflow)</p></li>
+</ul>
+<p>We now separate the integral into two parts</p>
+<div class="amsmath math notranslate nohighlight" id="equation-300eae11-b322-45ee-ba31-f177f34bb065">
+<span class="eqno">(3)<a class="headerlink" href="#equation-300eae11-b322-45ee-ba31-f177f34bb065" title="Permalink to this equation">¶</a></span>\[\begin{align}
+F_v^{side} &amp;= - \iint_1 \mathbf{u} \cdot \mathbf{dA} - \iint_2 \mathbf{u} \cdot \mathbf{dA} \\
+&amp;= \psi_1 + \psi_2 = 0
+\end{align}\]</div>
+<p>Clearly the two components must be equal and opposite, i.e.
+$<span class="math notranslate nohighlight">\( \psi_1 = \psi \ , \ \ \psi_2 = -\psi \)</span>$</p>
+<p>In this simple two-layer model, the quantity <span class="math notranslate nohighlight">\(\psi\)</span> represents the strength of the overturning circulation (covered much more in-depth in <a class="reference internal" href="overturning_circulation.html"><span class="doc">Overturning Circulation</span></a>).
+It is a volume flux, measured in m<span class="math notranslate nohighlight">\(^3\)</span>/s, or in Sv (1 Sv = 10<span class="math notranslate nohighlight">\(^6\)</span> m<span class="math notranslate nohighlight">\(^3\)</span>/s).
+Note that we did not need to specify the exact details of <span class="math notranslate nohighlight">\(\mathbf{u}\)</span> on the boundary or the shape of the boundary.</p>
+<p>Now we will look at heat transport by this circulation.
+The advective heat transport through the side boundary is given by</p>
+<div class="math notranslate nohighlight">
+\[ F_H^{side} = -  c_p^0 \rho_0 \iint_{side} \mathbf{u} \Theta \cdot \mathbf{dA} \ . \]</div>
+<p>This is where the piecewise-constant approximations of the layered model come in.
+<em>We will assume that the temperature is uniform in each layer on the boundary.</em>
+I.e., on the side, we have <span class="math notranslate nohighlight">\(\Theta = \Theta_1\)</span> in layer 1 and <span class="math notranslate nohighlight">\(\Theta = \Theta_2\)</span> in layer 2.
+The heat transport becomes</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ca9d700a-135c-4582-82a5-5dfbac855ff1">
+<span class="eqno">(4)<a class="headerlink" href="#equation-ca9d700a-135c-4582-82a5-5dfbac855ff1" title="Permalink to this equation">¶</a></span>\[\begin{align}
+F_H^{side} &amp;= - c_p^0 \rho_0 \Theta_1 \iint_1 \mathbf{u} \cdot \mathbf{dA} -
+   c_p^0 \rho_0 \Theta_1 \iint_2 \mathbf{u} \cdot \mathbf{dA} \\
+   &amp;= c_p^0 \rho_0 ( \Theta_1 \psi_1  + \Theta_2 \psi_2 )
+\end{align}\]</div>
+<p>Recognizing that <span class="math notranslate nohighlight">\(\psi_1 = \psi\)</span> and <span class="math notranslate nohighlight">\(\psi_2 = -\psi\)</span>, we obtain</p>
+<div class="math notranslate nohighlight">
+\[
+F_H^{side} = c_p^0 \rho_0 \psi ( \Theta_1  - \Theta_2 ) \ , 
+\]</div>
+<p>where  <span class="math notranslate nohighlight">\(\Delta \Theta = \Theta_1 - \Theta_2\)</span> is the difference in temperature between the two layers.
+This simple yet powerful formula expresses some important fundamental truths about how ocean heat transport works:</p>
+<ul class="simple">
+<li><p>Heat transport can clearly occur even when there is no net volume transport, due to correlations between the strength / direction of the flow and the water temperature.</p></li>
+<li><p>The transport is proportional to the strength of the circulation, as measured by <span class="math notranslate nohighlight">\(\psi\)</span>.</p></li>
+<li><p>The transport is proportional to the temperature <em>difference</em> between the inflowing and outflowing water.</p></li>
+</ul>
+</div>
 </div>
 </div>
 <div class="section" id="micro-scale-view">
