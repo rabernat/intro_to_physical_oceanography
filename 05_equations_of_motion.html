@@ -424,7 +424,7 @@
 <li><p>What is the acceleration of a fluid parcel on a rotating, spherical planet?</p></li>
 <li><p>What are the different forces that make up <span class="math notranslate nohighlight">\(\mathbf{f}\)</span>?</p></li>
 </ol>
-<p><img alt="water parcel" src="https://vectr.com/rabernat/b23Bl8h8uT.svg" /></p>
+<p><img alt="water parcel" src="_images/fluid_parcel_forces.svg" /></p>
 <p><em>Cartoon of a water parcel moving through space along a path (black line). The colored arrows represent the different forces on and acceleration of the parcel.</em></p>
 <p>We will start with the forces, because they are easier. There are three forces we have to consider: the pressure gradient force (<span class="math notranslate nohighlight">\(\mathbf{f}_p\)</span>), the gravitational force (<span class="math notranslate nohighlight">\(\mathbf{f}_g\)</span>) and the viscous force (<span class="math notranslate nohighlight">\(\mathbf{f}_{visc}\)</span>). Together these sum to give the net force:</p>
 <div class="math notranslate nohighlight">
@@ -461,7 +461,7 @@
 <div class="math notranslate nohighlight">
 \[ \mu \frac{\partial^2 u}{\partial y^2} \ .\]</div>
 <p>Which is proportional to the <em>curvature</em> of the profile <span class="math notranslate nohighlight">\(u(y)\)</span>. The cartoon illustrates a typical jet, with enhanced velocity at the jet axis. The curvature of such a jet profile ensures that the viscous force is negatuve, such that it acts to <em>retard</em> the jet, with a maximum magnitude right at the jet core. One interpretation of this situation is that viscosity diffuses momentum away from the jet core towards the jet flanks.</p>
-<p><img alt="shear flow" src="https://vectr.com/rabernat/c4ThJXocdS.svg" /></p>
+<p><img alt="shear flow" src="_images/viscosity.svg" /></p>
 <p>Viscosity is mathematically and physically analagous to diffusion.</p>
 </div>
 <div class="section" id="acceleration">
@@ -609,11 +609,36 @@ Let’s now consider together the pressure and gravity terms on the right-hand s
 <em>By Mike1024 [Public domain], via <a class="reference external" href="https://commons.wikimedia.org/wiki/File%3AECEF_ENU_Longitude_Latitude_relationships.svg">Wikimedia Commons</a></em></p>
 <p>In this approximation, we assume we are looking at region small enough that the Earth appears locally flat, such that we can use cartesian geometry. This region is centered around position <span class="math notranslate nohighlight">\(\lambda_{ref}\)</span>, <span class="math notranslate nohighlight">\(\varphi_{ref}\)</span>.
 The local cartesian coordinates are then defined as</p>
-<p>| name | direction | velocity | local coord | relation to spherical coord |
-|————|————-|———————–|
-| zonal | east | <span class="math notranslate nohighlight">\(u\)</span> | <span class="math notranslate nohighlight">\(x\)</span>   | <span class="math notranslate nohighlight">\((\lambda - \lambda_{ref}) \cos(\varphi) / a\)</span> |
-| meridional | north | <span class="math notranslate nohighlight">\(v\)</span> | <span class="math notranslate nohighlight">\(y\)</span> | <span class="math notranslate nohighlight">\((\varphi - \varphi_{ref}) / a\)</span> |
-| vertical | up | <span class="math notranslate nohighlight">\(w\)</span> | <span class="math notranslate nohighlight">\(z\)</span>     | <span class="math notranslate nohighlight">\(r - r_{ref} \)</span> |</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>name</p></th>
+<th class="head"><p>direction</p></th>
+<th class="head"><p>velocity</p></th>
+<th class="head"><p>local coord</p></th>
+<th class="head"><p>relation to spherical coord</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>zonal</p></td>
+<td><p>east</p></td>
+<td><p><span class="math notranslate nohighlight">\(u\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(x\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\((\lambda - \lambda_{ref}) \cos(\varphi) / a\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>meridional</p></td>
+<td><p>north</p></td>
+<td><p><span class="math notranslate nohighlight">\(v\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(y\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\((\varphi - \varphi_{ref}) / a\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>vertical</p></td>
+<td><p>up</p></td>
+<td><p><span class="math notranslate nohighlight">\(w\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(z\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(r - r_{ref} \)</span></p></td>
+</tr>
+</tbody>
+</table>
 <p>where <span class="math notranslate nohighlight">\(a\)</span> is the Earth’s radius.</p>
 <p>As a further approximation, we only keep the components of the Coriolis force that act in the horizontal plane on the horizontal velocities. This turns out to be a very good approximation, due to the small aspect ratio of the ocean and the relative smallness of the vertical flow.</p>
 <p>We can now write the Boussinesq equation of motion in component form:</p>
