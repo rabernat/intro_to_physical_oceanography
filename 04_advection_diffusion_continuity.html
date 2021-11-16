@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Advection, Diffusion, and Conservation Laws &#8212; Intro to Physical Oceanography</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -56,7 +56,10 @@
     <link rel="next" title="Assignment: Heat and Salt Fluxes" href="assignments/heat_and_salt_fluxes.html" />
     <link rel="prev" title="Air Sea Exchange" href="03_air_sea_exchange.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
     
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
@@ -512,8 +515,8 @@ c_p^0 \overline{\Theta} \iint_{side} \mathbf{u} \rho \cdot \mathbf{dA}\]</div>
 \]</div>
 <p>Through mass conservation, the final term proprtional to <span class="math notranslate nohighlight">\(\overline{\Theta}\)</span> cancels out to zero.
 All that remains are the terms proportional to <span class="math notranslate nohighlight">\(\Theta'\)</span>, which we have defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-247c98d8-68d6-40a7-b5fc-9a9536efb00a">
-<span class="eqno">(2)<a class="headerlink" href="#equation-247c98d8-68d6-40a7-b5fc-9a9536efb00a" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fd4d1c9c-9674-42fb-9f06-03d2ce0ee614">
+<span class="eqno">(2)<a class="headerlink" href="#equation-fd4d1c9c-9674-42fb-9f06-03d2ce0ee614" title="Permalink to this equation">¶</a></span>\[\begin{align}
 H' &amp;= c_p^0 \od{}{t} \iiint_V \rho \Theta' dV \\
 F_H^{'surf} &amp;= \iint_{surf} Q dA - c_p^0 \iint_{surf} \rho_{fw} \Theta'(E - P - R) dA \\
 F_H^{'side} &amp;= -  c_p^0 \iint_{side} \mathbf{u} \rho \Theta' \cdot \mathbf{dA} \ .
@@ -597,8 +600,8 @@ F_v^{side} = - \iint_{side} \mathbf{u} \cdot \mathbf{dA} = 0
 <li><p>In layer 2, <span class="math notranslate nohighlight">\(\mathbf{u} \cdot \mathbf{dA} &gt; 0\)</span> (outflow)</p></li>
 </ul>
 <p>We now separate the integral into two parts</p>
-<div class="amsmath math notranslate nohighlight" id="equation-90304ab1-24fa-4c96-93c6-d373387137c4">
-<span class="eqno">(3)<a class="headerlink" href="#equation-90304ab1-24fa-4c96-93c6-d373387137c4" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fd423d76-d155-4d68-838d-51a09d07ca37">
+<span class="eqno">(3)<a class="headerlink" href="#equation-fd423d76-d155-4d68-838d-51a09d07ca37" title="Permalink to this equation">¶</a></span>\[\begin{align}
 F_v^{side} &amp;= - \iint_1 \mathbf{u} \cdot \mathbf{dA} - \iint_2 \mathbf{u} \cdot \mathbf{dA} \\
 &amp;= \psi_1 + \psi_2 = 0
 \end{align}\]</div>
@@ -615,8 +618,8 @@ The advective heat transport through the side boundary is given by</p>
 <em>We will assume that the temperature is uniform in each layer on the boundary.</em>
 I.e., on the side, we have <span class="math notranslate nohighlight">\(\Theta = \Theta_1\)</span> in layer 1 and <span class="math notranslate nohighlight">\(\Theta = \Theta_2\)</span> in layer 2.
 The heat transport becomes</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b5d0d8cd-8e8e-406e-8da1-1339f73bec1c">
-<span class="eqno">(4)<a class="headerlink" href="#equation-b5d0d8cd-8e8e-406e-8da1-1339f73bec1c" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8a1dc4e8-cdb5-4c6d-ae27-6087ac3819c2">
+<span class="eqno">(4)<a class="headerlink" href="#equation-8a1dc4e8-cdb5-4c6d-ae27-6087ac3819c2" title="Permalink to this equation">¶</a></span>\[\begin{align}
 F_H^{side} &amp;= - c_p^0 \rho_0 \Theta_1 \iint_1 \mathbf{u} \cdot \mathbf{dA} -
    c_p^0 \rho_0 \Theta_1 \iint_2 \mathbf{u} \cdot \mathbf{dA} \\
    &amp;= c_p^0 \rho_0 ( \Theta_1 \psi_1  + \Theta_2 \psi_2 )
@@ -738,31 +741,22 @@ A fluid parcel position at a given time <span class="math notranslate nohighligh
               </div>
               
         
-            
-
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="03_air_sea_exchange.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Air Sea Exchange</p>
-            </div>
-        </a>
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="03_air_sea_exchange.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Air Sea Exchange</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="assignments/heat_and_salt_fluxes.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assignment: Heat and Salt Fluxes</p>
     </div>
-     <div id="next">
-        <a class="right-next" href="assignments/heat_and_salt_fluxes.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Assignment: Heat and Salt Fluxes</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
+    <i class="fas fa-angle-right"></i>
+    </a>
 </div>
         
         </div>
@@ -783,8 +777,7 @@ A fluid parcel position at a given time <span class="math notranslate nohighligh
       </div>
     </div>
   
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
-  
   </body>
 </html>
