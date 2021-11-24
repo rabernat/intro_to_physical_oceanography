@@ -20,6 +20,7 @@ parts:
     - file: 05_equations_of_motion
     - file: 06_hydrostatic_geostrophic
     - file: 07_ekman
+    - file: assignments/geostrophy_ekman
     - file: vorticity_sverdrup_transport_and_gyres
     - file: AMOC_theory
   - caption: The Ocean State
