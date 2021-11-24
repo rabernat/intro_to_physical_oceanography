@@ -167,6 +167,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="assignments/geostrophy_ekman.html">
+   Homework 3: Thermal Wind and Ekman Transports
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="vorticity_sverdrup_transport_and_gyres.html">
    Vorticity, Sverdrup Transport, and Ocean Gyres
   </a>
@@ -515,8 +520,8 @@ c_p^0 \overline{\Theta} \iint_{side} \mathbf{u} \rho \cdot \mathbf{dA}\]</div>
 \]</div>
 <p>Through mass conservation, the final term proprtional to <span class="math notranslate nohighlight">\(\overline{\Theta}\)</span> cancels out to zero.
 All that remains are the terms proportional to <span class="math notranslate nohighlight">\(\Theta'\)</span>, which we have defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a6943085-1f5f-4be0-bbca-c6c080c9ab95">
-<span class="eqno">(2)<a class="headerlink" href="#equation-a6943085-1f5f-4be0-bbca-c6c080c9ab95" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2d3e3b5d-62c9-4a6e-8b05-a8fd56e99ad9">
+<span class="eqno">(2)<a class="headerlink" href="#equation-2d3e3b5d-62c9-4a6e-8b05-a8fd56e99ad9" title="Permalink to this equation">¶</a></span>\[\begin{align}
 H' &amp;= c_p^0 \od{}{t} \iiint_V \rho \Theta' dV \\
 F_H^{'surf} &amp;= \iint_{surf} Q dA - c_p^0 \iint_{surf} \rho_{fw} \Theta'(E - P - R) dA \\
 F_H^{'side} &amp;= -  c_p^0 \iint_{side} \mathbf{u} \rho \Theta' \cdot \mathbf{dA} \ .
@@ -600,8 +605,8 @@ F_v^{side} = - \iint_{side} \mathbf{u} \cdot \mathbf{dA} = 0
 <li><p>In layer 2, <span class="math notranslate nohighlight">\(\mathbf{u} \cdot \mathbf{dA} &gt; 0\)</span> (outflow)</p></li>
 </ul>
 <p>We now separate the integral into two parts</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cf7fa8d1-bd78-447a-831f-81c65d880454">
-<span class="eqno">(3)<a class="headerlink" href="#equation-cf7fa8d1-bd78-447a-831f-81c65d880454" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3a7afbf5-9e4c-4e03-8b28-cd51b76f1bf2">
+<span class="eqno">(3)<a class="headerlink" href="#equation-3a7afbf5-9e4c-4e03-8b28-cd51b76f1bf2" title="Permalink to this equation">¶</a></span>\[\begin{align}
 F_v^{side} &amp;= - \iint_1 \mathbf{u} \cdot \mathbf{dA} - \iint_2 \mathbf{u} \cdot \mathbf{dA} \\
 &amp;= \psi_1 + \psi_2 = 0
 \end{align}\]</div>
@@ -618,8 +623,8 @@ The advective heat transport through the side boundary is given by</p>
 <em>We will assume that the temperature is uniform in each layer on the boundary.</em>
 I.e., on the side, we have <span class="math notranslate nohighlight">\(\Theta = \Theta_1\)</span> in layer 1 and <span class="math notranslate nohighlight">\(\Theta = \Theta_2\)</span> in layer 2.
 The heat transport becomes</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7e27b886-131d-4fb2-8ad1-30fa8db38818">
-<span class="eqno">(4)<a class="headerlink" href="#equation-7e27b886-131d-4fb2-8ad1-30fa8db38818" title="Permalink to this equation">¶</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-eb70ee12-bdda-4590-8b9e-ed66dc9aee10">
+<span class="eqno">(4)<a class="headerlink" href="#equation-eb70ee12-bdda-4590-8b9e-ed66dc9aee10" title="Permalink to this equation">¶</a></span>\[\begin{align}
 F_H^{side} &amp;= - c_p^0 \rho_0 \Theta_1 \iint_1 \mathbf{u} \cdot \mathbf{dA} -
    c_p^0 \rho_0 \Theta_1 \iint_2 \mathbf{u} \cdot \mathbf{dA} \\
    &amp;= c_p^0 \rho_0 ( \Theta_1 \psi_1  + \Theta_2 \psi_2 )
