@@ -387,9 +387,50 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#ekman-transport">
-   3) Ekman Transport
+  <a class="reference internal nav-link" href="#ekman-transport-and-pumping">
+   3) Ekman Transport and Pumping
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-calculate-the-ekman-transport-velocity-as-a-function-of-y">
+     3a) Calculate the Ekman transport velocity as a function of
+     <span class="math notranslate nohighlight">
+      \(y\)
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#b-now-plug-in-numbers-and-calculate-the-net-ekman-transport-across-the-southern-y-0-and-northern-y-l-y-borders-of-the-region">
+     3b) Now plug in numbers and calculate the
+     <em>
+      net Ekman transport
+     </em>
+     across the Southern (
+     <span class="math notranslate nohighlight">
+      \(y=0\)
+     </span>
+     ) and Northern (
+     <span class="math notranslate nohighlight">
+      \(y=L_y\)
+     </span>
+     ) borders of the region.
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#c-calculate-the-ekman-pumping-velocity-over-the-region">
+     3c) Calculate the Ekman pumping velocity over the region
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#d-now-plug-in-numbers-and-calculate-the-new-ekman-upwelling-downwelling-over-the-entire-region">
+     3d) Now plug in numbers and calculate the
+     <em>
+      new Ekman upwelling / downwelling
+     </em>
+     over the entire region.
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -480,9 +521,39 @@ Assume the depth scale <span class="math notranslate nohighlight">\(D = 2000\)</
 <p>Use all the other same assumptions as part 1d.</p>
 </div>
 </div>
-<div class="section" id="ekman-transport">
-<h2>3) Ekman Transport<a class="headerlink" href="#ekman-transport" title="Permalink to this headline">¶</a></h2>
-<p>To be posted</p>
+<div class="section" id="ekman-transport-and-pumping">
+<h2>3) Ekman Transport and Pumping<a class="headerlink" href="#ekman-transport-and-pumping" title="Permalink to this headline">¶</a></h2>
+<p>Consider a region of the subtropical ocean shown in the cartoon, described using cartesian coordinates.</p>
+<p><img alt="basin" src="../_images/basin.png" /></p>
+<p>The region is of size (<span class="math notranslate nohighlight">\(L_x\)</span>, <span class="math notranslate nohighlight">\(L_y\)</span>).
+The zonal wind stress increases linearly from <span class="math notranslate nohighlight">\(\tau_x = 0\)</span> at <span class="math notranslate nohighlight">\(y = 0\)</span> to <span class="math notranslate nohighlight">\(\tau_x = \tau_0\)</span> at <span class="math notranslate nohighlight">\(y = L_y\)</span>.
+There is no meridional stress.
+This is qualitatively similar to the mid-latitude South Atlantic or South Pacific.</p>
+<p>You may assume that <span class="math notranslate nohighlight">\(f\)</span> = <span class="math notranslate nohighlight">\(f_0\)</span> = const.</p>
+<div class="section" id="a-calculate-the-ekman-transport-velocity-as-a-function-of-y">
+<h3>3a) Calculate the Ekman transport velocity as a function of <span class="math notranslate nohighlight">\(y\)</span><a class="headerlink" href="#a-calculate-the-ekman-transport-velocity-as-a-function-of-y" title="Permalink to this headline">¶</a></h3>
+<p>I’m looking for a formula in terms of the provided parameters.</p>
+</div>
+<div class="section" id="b-now-plug-in-numbers-and-calculate-the-net-ekman-transport-across-the-southern-y-0-and-northern-y-l-y-borders-of-the-region">
+<h3>3b) Now plug in numbers and calculate the <em>net Ekman transport</em> across the Southern (<span class="math notranslate nohighlight">\(y=0\)</span>) and Northern (<span class="math notranslate nohighlight">\(y=L_y\)</span>) borders of the region.<a class="headerlink" href="#b-now-plug-in-numbers-and-calculate-the-net-ekman-transport-across-the-southern-y-0-and-northern-y-l-y-borders-of-the-region" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(L_x = 2000\)</span> km</p></li>
+<li><p><span class="math notranslate nohighlight">\(L_y = 1000\)</span> km</p></li>
+<li><p><span class="math notranslate nohighlight">\(\tau_0 = 0.1\)</span> N m<span class="math notranslate nohighlight">\(^{-2}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f = 0.8 \times 10^{-4}\)</span> s<span class="math notranslate nohighlight">\(^{-1}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho_0 = 1025\)</span> kg m<span class="math notranslate nohighlight">\(^{-3}\)</span></p></li>
+</ul>
+<p>By <em>net Ekman transport</em> I mean <span class="math notranslate nohighlight">\(V_Ek\)</span> integrated over the <span class="math notranslate nohighlight">\(x\)</span> dimension. Give you answer in Sv.</p>
+</div>
+<div class="section" id="c-calculate-the-ekman-pumping-velocity-over-the-region">
+<h3>3c) Calculate the Ekman pumping velocity over the region<a class="headerlink" href="#c-calculate-the-ekman-pumping-velocity-over-the-region" title="Permalink to this headline">¶</a></h3>
+<p>I’m looking for a formula in terms of the provided parameters</p>
+</div>
+<div class="section" id="d-now-plug-in-numbers-and-calculate-the-new-ekman-upwelling-downwelling-over-the-entire-region">
+<h3>3d) Now plug in numbers and calculate the <em>new Ekman upwelling / downwelling</em> over the entire region.<a class="headerlink" href="#d-now-plug-in-numbers-and-calculate-the-new-ekman-upwelling-downwelling-over-the-entire-region" title="Permalink to this headline">¶</a></h3>
+<p>Use the same numbers as above.</p>
+<p>Give you answer in Sv.</p>
+</div>
 </div>
 </div>
 
@@ -495,16 +566,16 @@ Assume the depth scale <span class="math notranslate nohighlight">\(D = 2000\)</
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-miniconda3-eeds-book-py"
+            mode: "python"
         },
         kernelOptions: {
-            kernelName: "conda-env-miniconda3-eeds-book-py",
+            kernelName: "python3",
             path: "./assignments"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-miniconda3-eeds-book-py'</script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
