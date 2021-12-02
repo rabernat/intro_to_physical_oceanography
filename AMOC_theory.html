@@ -391,29 +391,840 @@ S=S_0+S_1 e^{wz/K_v}
 <p>Munk fitted temperature and salinity data from the central Pacific with these functions to estimate <span class="math notranslate nohighlight">\(K_v\)</span>. The central Pacific is a good place because it has low horizontal velocities in the deep ocean. We can do the same thing here with some temperature profiles near the equator:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>curl -O https://www.esrl.noaa.gov/psd/thredds/fileServer/Datasets/nodc.woa98/temperat/annual/otemp.raw1deg.nc
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">fsspec</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://www.esrl.noaa.gov/psd/thredds/fileServer/Datasets/nodc.woa98/temperat/annual/otemp.raw1deg.nc&quot;</span>
+
+
+<span class="k">with</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">fp</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<span class="n">ds</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100 8357k  100 8357k    0     0  1875k      0  0:00:04  0:00:04 --:--:-- 1875k
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/srv/conda/envs/notebook/lib/python3.8/site-packages/xarray/coding/times.py:119: SerializationWarning: Ambiguous reference date string: 1-1-1 00:00:0.0. The first value is assumed to be the year hence will be padded with zeros to remove the ambiguity (the padded reference date string is: 0001-1-1 00:00:0.0). To remove this message, remove the ambiguity by padding your reference date strings with zeros.
+  warnings.warn(warning_msg, SerializationWarning)
+/srv/conda/envs/notebook/lib/python3.8/site-packages/xarray/coding/times.py:527: SerializationWarning: Unable to decode time axis into full numpy.datetime64 objects, continuing using cftime.datetime objects instead, reason: dates out of range
+  dtype = _decode_cf_datetime_dtype(data, units, calendar, self.use_cftime)
+/srv/conda/envs/notebook/lib/python3.8/site-packages/xarray/core/indexing.py:419: SerializationWarning: Unable to decode time axis into full numpy.datetime64 objects, continuing using cftime.datetime objects instead, reason: dates out of range
+  return np.asarray(array[self.key], dtype=None)
 </pre></div>
 </div>
-</div>
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
+Dimensions:  (lat: 180, lon: 360, level: 33, time: 1)
+Coordinates:
+  * lat      (lat) float32 89.5 88.5 87.5 86.5 85.5 ... -86.5 -87.5 -88.5 -89.5
+  * lon      (lon) float32 0.5 1.5 2.5 3.5 4.5 ... 355.5 356.5 357.5 358.5 359.5
+  * level    (level) float32 0.0 10.0 20.0 30.0 ... 4e+03 4.5e+03 5e+03 5.5e+03
+  * time     (time) object 0001-01-01 00:00:00
+Data variables:
+    otemp    (time, level, lat, lon) float32 nan -1.528 nan nan ... nan nan nan
+Attributes:
+    title:          NODC World Ocean Atlas 1998
+    history:        created February 2000 by Hoop
+    platform:       Marine Analyses
+    Conventions:    COARDS
+    References:     https://www.psl.noaa.gov/data/gridded/data.nodc.woa98.html
+    dataset_title:  NODC (Levitus) World Ocean Atlas 1998</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-6aad5954-c37a-4d0f-8612-cc4f0088f2cf' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-6aad5954-c37a-4d0f-8612-cc4f0088f2cf' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>lat</span>: 180</li><li><span class='xr-has-index'>lon</span>: 360</li><li><span class='xr-has-index'>level</span>: 33</li><li><span class='xr-has-index'>time</span>: 1</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-646a61b3-14c3-45c5-a43e-c21f10f2b22b' class='xr-section-summary-in' type='checkbox'  checked><label for='section-646a61b3-14c3-45c5-a43e-c21f10f2b22b' class='xr-section-summary' >Coordinates: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lat</span></div><div class='xr-var-dims'>(lat)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>89.5 88.5 87.5 ... -88.5 -89.5</div><input id='attrs-d879d828-f9c5-4588-a0ff-d2ee2a44455e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d879d828-f9c5-4588-a0ff-d2ee2a44455e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8fd721dd-9696-4ea4-a89c-c80eddf01406' class='xr-var-data-in' type='checkbox'><label for='data-8fd721dd-9696-4ea4-a89c-c80eddf01406' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>long_name :</span></dt><dd>Latitude</dd><dt><span>actual_range :</span></dt><dd>[ 89.5 -89.5]</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([ 89.5,  88.5,  87.5,  86.5,  85.5,  84.5,  83.5,  82.5,  81.5,  80.5,
+        79.5,  78.5,  77.5,  76.5,  75.5,  74.5,  73.5,  72.5,  71.5,  70.5,
+        69.5,  68.5,  67.5,  66.5,  65.5,  64.5,  63.5,  62.5,  61.5,  60.5,
+        59.5,  58.5,  57.5,  56.5,  55.5,  54.5,  53.5,  52.5,  51.5,  50.5,
+        49.5,  48.5,  47.5,  46.5,  45.5,  44.5,  43.5,  42.5,  41.5,  40.5,
+        39.5,  38.5,  37.5,  36.5,  35.5,  34.5,  33.5,  32.5,  31.5,  30.5,
+        29.5,  28.5,  27.5,  26.5,  25.5,  24.5,  23.5,  22.5,  21.5,  20.5,
+        19.5,  18.5,  17.5,  16.5,  15.5,  14.5,  13.5,  12.5,  11.5,  10.5,
+         9.5,   8.5,   7.5,   6.5,   5.5,   4.5,   3.5,   2.5,   1.5,   0.5,
+        -0.5,  -1.5,  -2.5,  -3.5,  -4.5,  -5.5,  -6.5,  -7.5,  -8.5,  -9.5,
+       -10.5, -11.5, -12.5, -13.5, -14.5, -15.5, -16.5, -17.5, -18.5, -19.5,
+       -20.5, -21.5, -22.5, -23.5, -24.5, -25.5, -26.5, -27.5, -28.5, -29.5,
+       -30.5, -31.5, -32.5, -33.5, -34.5, -35.5, -36.5, -37.5, -38.5, -39.5,
+       -40.5, -41.5, -42.5, -43.5, -44.5, -45.5, -46.5, -47.5, -48.5, -49.5,
+       -50.5, -51.5, -52.5, -53.5, -54.5, -55.5, -56.5, -57.5, -58.5, -59.5,
+       -60.5, -61.5, -62.5, -63.5, -64.5, -65.5, -66.5, -67.5, -68.5, -69.5,
+       -70.5, -71.5, -72.5, -73.5, -74.5, -75.5, -76.5, -77.5, -78.5, -79.5,
+       -80.5, -81.5, -82.5, -83.5, -84.5, -85.5, -86.5, -87.5, -88.5, -89.5],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>lon</span></div><div class='xr-var-dims'>(lon)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>0.5 1.5 2.5 ... 357.5 358.5 359.5</div><input id='attrs-61c2fc67-4b40-4063-b4e7-5959c406944d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-61c2fc67-4b40-4063-b4e7-5959c406944d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fd0325af-ec8e-436a-8e3e-e89e2173a832' class='xr-var-data-in' type='checkbox'><label for='data-fd0325af-ec8e-436a-8e3e-e89e2173a832' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>long_name :</span></dt><dd>Longitude</dd><dt><span>actual_range :</span></dt><dd>[  0.5 359.5]</dd><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([  0.5,   1.5,   2.5, ..., 357.5, 358.5, 359.5], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>level</span></div><div class='xr-var-dims'>(level)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>0.0 10.0 20.0 ... 5e+03 5.5e+03</div><input id='attrs-9e34e8ea-520a-4230-aeb2-b558b76eff8f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9e34e8ea-520a-4230-aeb2-b558b76eff8f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-141e8e05-4514-44f0-bdf1-af0684677cf6' class='xr-var-data-in' type='checkbox'><label for='data-141e8e05-4514-44f0-bdf1-af0684677cf6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>meters</dd><dt><span>positive :</span></dt><dd>down</dd><dt><span>long_name :</span></dt><dd>Level</dd><dt><span>actual_range :</span></dt><dd>[   0. 5500.]</dd><dt><span>axis :</span></dt><dd>Z</dd></dl></div><div class='xr-var-data'><pre>array([   0.,   10.,   20.,   30.,   50.,   75.,  100.,  125.,  150.,  200.,
+        250.,  300.,  400.,  500.,  600.,  700.,  800.,  900., 1000., 1100.,
+       1200., 1300., 1400., 1500., 1750., 2000., 2500., 3000., 3500., 4000.,
+       4500., 5000., 5500.], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>0001-01-01 00:00:00</div><input id='attrs-fefb3e1e-6045-435e-a5a6-4b980e14a11f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-fefb3e1e-6045-435e-a5a6-4b980e14a11f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-bc80bca0-1ece-4f17-bc8b-874d233ad592' class='xr-var-data-in' type='checkbox'><label for='data-bc80bca0-1ece-4f17-bc8b-874d233ad592' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Time</dd><dt><span>actual_range :</span></dt><dd>[0. 0.]</dd><dt><span>delta_t :</span></dt><dd>0001-00-00 00:00:00</dd><dt><span>avg_period :</span></dt><dd>0097-00-00 00:00:00</dd><dt><span>prev_avg_period :</span></dt><dd>0000-01-00 00:00:00</dd><dt><span>ltm_range :</span></dt><dd>[693597. 729026.]</dd><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array([cftime.DatetimeGregorian(1, 1, 1, 0, 0, 0, 0, has_year_zero=False)],
+      dtype=object)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-703c6333-23c4-44f3-ba81-16f99809c922' class='xr-section-summary-in' type='checkbox'  checked><label for='section-703c6333-23c4-44f3-ba81-16f99809c922' class='xr-section-summary' >Data variables: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>otemp</span></div><div class='xr-var-dims'>(time, level, lat, lon)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>nan -1.528 nan nan ... nan nan nan</div><input id='attrs-ffb676ae-3251-4b37-b17f-aa62d46cd914' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ffb676ae-3251-4b37-b17f-aa62d46cd914' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-06251c34-2dc1-4ed9-a645-6222021bba20' class='xr-var-data-in' type='checkbox'><label for='data-06251c34-2dc1-4ed9-a645-6222021bba20' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Ocean Temperature, unanalyzed, 1-deg grid, Annual</dd><dt><span>valid_range :</span></dt><dd>[-10.  90.]</dd><dt><span>actual_range :</span></dt><dd>[-2.4  30.18]</dd><dt><span>units :</span></dt><dd>deg C</dd><dt><span>var_desc :</span></dt><dd>Ocean Temperature, unanalyzed</dd><dt><span>dataset :</span></dt><dd>NODC World Ocean Atlas 1998</dd><dt><span>level_desc :</span></dt><dd>Multiple Levels</dd><dt><span>statistic :</span></dt><dd>Mean</dd><dt><span>parent_stat :</span></dt><dd>Individual Observations</dd></dl></div><div class='xr-var-data'><pre>array([[[[    nan, -1.5277,     nan, ...,     nan,     nan, -1.7   ],
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         ...,
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan]],
+
+        [[    nan, -1.7213,     nan, ...,     nan,     nan, -1.7   ],
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         ...,
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan]],
+
+        [[    nan, -1.7175,     nan, ...,     nan,     nan, -1.7   ],
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         ...,
+...
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan]],
+
+        [[    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         ...,
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan]],
+
+        [[    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         ...,
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan],
+         [    nan,     nan,     nan, ...,     nan,     nan,     nan]]]],
+      dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-ad01fbc9-45be-468c-b3ea-1e7fec6d84b6' class='xr-section-summary-in' type='checkbox'  checked><label for='section-ad01fbc9-45be-468c-b3ea-1e7fec6d84b6' class='xr-section-summary' >Attributes: <span>(6)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>title :</span></dt><dd>NODC World Ocean Atlas 1998</dd><dt><span>history :</span></dt><dd>created February 2000 by Hoop</dd><dt><span>platform :</span></dt><dd>Marine Analyses</dd><dt><span>Conventions :</span></dt><dd>COARDS</dd><dt><span>References :</span></dt><dd>https://www.psl.noaa.gov/data/gridded/data.nodc.woa98.html</dd><dt><span>dataset_title :</span></dt><dd>NODC (Levitus) World Ocean Atlas 1998</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="nn">netCDF4</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;otemp.raw1deg.nc&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">T_profile</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">otemp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">lon</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="mi">160</span><span class="p">,</span> <span class="mi">170</span><span class="p">))</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="s1">&#39;lon&#39;</span><span class="p">)</span>
+<span class="n">T_profile</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.DataArray &#x27;otemp&#x27; (level: 33)&gt;
+array([27.28738  , 27.255503 , 27.205109 , 27.14207  , 26.84693  ,
+       25.95462  , 24.929    , 23.725101 , 22.33022  , 19.35958  ,
+       16.92775  , 15.16682  , 11.549769 ,  8.529009 ,  6.54656  ,
+        5.4630704,  4.867266 ,  4.36547  ,  4.04791  ,  3.6824002,
+        3.3990498,  3.14325  ,  2.9537334,  2.6543334,  2.3956   ,
+        2.0864   ,  1.7397   ,  1.5811334,  1.4910334,  1.4452333,
+        1.4083334,  1.4050666,  1.45     ], dtype=float32)
+Coordinates:
+    lat      float32 19.5
+  * level    (level) float32 0.0 10.0 20.0 30.0 ... 4e+03 4.5e+03 5e+03 5.5e+03
+    time     object 0001-01-01 00:00:00</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.DataArray</div><div class='xr-array-name'>'otemp'</div><ul class='xr-dim-list'><li><span class='xr-has-index'>level</span>: 33</li></ul></div><ul class='xr-sections'><li class='xr-section-item'><div class='xr-array-wrap'><input id='section-e8742802-a89b-4383-8f00-6da9f2c8fd65' class='xr-array-in' type='checkbox' checked><label for='section-e8742802-a89b-4383-8f00-6da9f2c8fd65' title='Show/hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-array-preview xr-preview'><span>27.29 27.26 27.21 27.14 26.85 25.95 ... 1.491 1.445 1.408 1.405 1.45</span></div><div class='xr-array-data'><pre>array([27.28738  , 27.255503 , 27.205109 , 27.14207  , 26.84693  ,
+       25.95462  , 24.929    , 23.725101 , 22.33022  , 19.35958  ,
+       16.92775  , 15.16682  , 11.549769 ,  8.529009 ,  6.54656  ,
+        5.4630704,  4.867266 ,  4.36547  ,  4.04791  ,  3.6824002,
+        3.3990498,  3.14325  ,  2.9537334,  2.6543334,  2.3956   ,
+        2.0864   ,  1.7397   ,  1.5811334,  1.4910334,  1.4452333,
+        1.4083334,  1.4050666,  1.45     ], dtype=float32)</pre></div></div></li><li class='xr-section-item'><input id='section-6ae28eb7-5892-4429-9c30-f9c54dcfa266' class='xr-section-summary-in' type='checkbox'  checked><label for='section-6ae28eb7-5892-4429-9c30-f9c54dcfa266' class='xr-section-summary' >Coordinates: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>19.5</div><input id='attrs-776a9f5e-fb5d-42fd-94f0-337398aeeabf' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-776a9f5e-fb5d-42fd-94f0-337398aeeabf' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-062c9274-f7ef-4b3c-a274-eb5ac6fe755f' class='xr-var-data-in' type='checkbox'><label for='data-062c9274-f7ef-4b3c-a274-eb5ac6fe755f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>long_name :</span></dt><dd>Latitude</dd><dt><span>actual_range :</span></dt><dd>[ 89.5 -89.5]</dd><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array(19.5, dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>level</span></div><div class='xr-var-dims'>(level)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>0.0 10.0 20.0 ... 5e+03 5.5e+03</div><input id='attrs-105d54cc-6ec3-4139-9581-8a97985940ed' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-105d54cc-6ec3-4139-9581-8a97985940ed' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3c77c641-81e4-4eb9-9111-67d6e55d5af1' class='xr-var-data-in' type='checkbox'><label for='data-3c77c641-81e4-4eb9-9111-67d6e55d5af1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>meters</dd><dt><span>positive :</span></dt><dd>down</dd><dt><span>long_name :</span></dt><dd>Level</dd><dt><span>actual_range :</span></dt><dd>[   0. 5500.]</dd><dt><span>axis :</span></dt><dd>Z</dd></dl></div><div class='xr-var-data'><pre>array([   0.,   10.,   20.,   30.,   50.,   75.,  100.,  125.,  150.,  200.,
+        250.,  300.,  400.,  500.,  600.,  700.,  800.,  900., 1000., 1100.,
+       1200., 1300., 1400., 1500., 1750., 2000., 2500., 3000., 3500., 4000.,
+       4500., 5000., 5500.], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>()</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>0001-01-01 00:00:00</div><input id='attrs-9fff5b40-fdf2-4ab8-b7a7-3ffbe1f5e13e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9fff5b40-fdf2-4ab8-b7a7-3ffbe1f5e13e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6b0fe47a-f393-4b19-90ac-b4851f26c2e6' class='xr-var-data-in' type='checkbox'><label for='data-6b0fe47a-f393-4b19-90ac-b4851f26c2e6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Time</dd><dt><span>actual_range :</span></dt><dd>[0. 0.]</dd><dt><span>delta_t :</span></dt><dd>0001-00-00 00:00:00</dd><dt><span>avg_period :</span></dt><dd>0097-00-00 00:00:00</dd><dt><span>prev_avg_period :</span></dt><dd>0000-01-00 00:00:00</dd><dt><span>ltm_range :</span></dt><dd>[693597. 729026.]</dd><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array(cftime.DatetimeGregorian(1, 1, 1, 0, 0, 0, 0, has_year_zero=False),
+      dtype=object)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-71716be4-6e12-4e58-9404-93d9a67f89db' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-71716be4-6e12-4e58-9404-93d9a67f89db' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -423,7 +1234,7 @@ S=S_0+S_1 e^{wz/K_v}
 <span class="k">def</span> <span class="nf">test_func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="n">c</span><span class="p">)</span>
 
-<span class="n">params</span><span class="p">,</span> <span class="n">params_covariance</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">curve_fit</span><span class="p">(</span><span class="n">test_func</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">level</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">otemp</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:,:]</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">ds</span><span class="o">.</span><span class="n">lon</span><span class="o">&gt;</span><span class="mi">160</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">lon</span><span class="o">&lt;</span><span class="mi">170</span><span class="p">))</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">),</span>
+<span class="n">params</span><span class="p">,</span> <span class="n">params_covariance</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">curve_fit</span><span class="p">(</span><span class="n">test_func</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">level</span><span class="o">.</span><span class="n">values</span><span class="p">,</span> <span class="n">T_profile</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
                                                <span class="n">p0</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
@@ -431,28 +1242,25 @@ S=S_0+S_1 e^{wz/K_v}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[   1.52028625   27.81975956  413.91084354]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[  1.5203067   27.81977414 413.91147183]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">otemp</span><span class="p">[</span><span class="mi">0</span><span class="p">,:,:,:]</span><span class="o">.</span><span class="n">where</span><span class="p">((</span><span class="n">ds</span><span class="o">.</span><span class="n">lon</span><span class="o">&gt;</span><span class="mi">160</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">lon</span><span class="o">&lt;</span><span class="mi">170</span><span class="p">))</span><span class="o">.</span><span class="n">isel</span><span class="p">(</span><span class="n">lat</span><span class="o">=</span><span class="mi">70</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;lon&#39;</span><span class="p">),</span><span class="n">ds</span><span class="o">.</span><span class="n">level</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">5.0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="n">T_profile</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;level&#39;</span><span class="p">,</span> <span class="n">yincrease</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">5.0</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">test_func</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">level</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">),</span><span class="n">ds</span><span class="o">.</span><span class="n">level</span><span class="p">,</span> <span class="s1">&#39;g--&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">5.0</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="s1">&#39;both&#39;</span><span class="p">,</span><span class="n">labelsize</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Depth (m)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperature ($^{\circ}C$)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Temperature ($^{\circ}C$)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">25</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5,0,&#39;Temperature ($^{\\circ}C$)&#39;)
-</pre></div>
-</div>
-<img alt="_images/AMOC_theory_19_1.png" src="_images/AMOC_theory_19_1.png" />
+<img alt="_images/AMOC_theory_19_0.png" src="_images/AMOC_theory_19_0.png" />
 </div>
 </div>
 <p>Based on this temperature profile,</p>
@@ -487,57 +1295,24 @@ V=\frac{f Q_s}{\beta A} \, .
 <p>Here, <span class="math notranslate nohighlight">\(V\)</span> is the depth integrated meridional velocity in the deep ocean, which I’ve plotted below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>curl -O http://research.jisao.washington.edu/datasets/elevation/fractional_land.1-deg.nc
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-100  129k  100  129k    0     0   251k      0 --:--:-- --:--:-- --:--:--  251k
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;http://research.jisao.washington.edu/datasets/elevation/fractional_land.1-deg.nc&quot;</span>
+<span class="k">with</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">ds_land</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="n">decode_times</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="nn">netCDF4</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s1">&#39;fractional_land.1-deg.nc&#39;</span><span class="p">,</span><span class="n">decode_times</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="n">ds</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.Dataset&gt;
-Dimensions:  (lat: 180, lon: 360, time: 1)
-Coordinates:
-  * lat      (lat) float32 89.5 88.5 87.5 86.5 85.5 84.5 83.5 82.5 81.5 80.5 ...
-  * lon      (lon) float32 0.5 1.5 2.5 3.5 4.5 5.5 6.5 7.5 8.5 9.5 10.5 11.5 ...
-  * time     (time) float64 0.0
-Data variables:
-    data     (time, lat, lon) float32 ...
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V</span><span class="o">=</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]))</span><span class="o">*</span><span class="mi">15</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span><span class="mi">10</span><span class="o">**</span><span class="mi">13</span>
-<span class="n">V</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">data</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vmin</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">V</span><span class="o">=</span><span class="n">ds_land</span><span class="o">.</span><span class="n">data</span><span class="o">+</span><span class="mi">4</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">deg2rad</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">lat</span><span class="p">))</span><span class="o">*</span><span class="mi">15</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="o">/</span><span class="mi">4</span><span class="o">/</span><span class="mi">10</span><span class="o">**</span><span class="mi">13</span>
+<span class="n">V</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">ds_land</span><span class="o">.</span><span class="n">data</span><span class="o">==</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">vmin</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span><span class="n">vmax</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">aspect</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span><span class="mi">60</span><span class="p">)</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted meridional velocity in the deep ocean, integrated vertically (units are $m^2/s$)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Predicted meridional velocity in the deep ocean, integrated vertically (units are $m^2/s$)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5,1,&#39;Predicted meridional velocity in the deep ocean, integrated vertically (units are $m^2/s$)&#39;)
-</pre></div>
-</div>
-<img alt="_images/AMOC_theory_36_1.png" src="_images/AMOC_theory_36_1.png" />
+<img alt="_images/AMOC_theory_35_0.png" src="_images/AMOC_theory_35_0.png" />
 </div>
 </div>
 <p><span class="math notranslate nohighlight">\(f\)</span> is positive in the northern hemisphere and negative in the southern hemisphere, so <span class="math notranslate nohighlight">\(V\)</span> is northward in the northern hemisphere and southward in the southern hemisphere.</p>
@@ -558,7 +1333,7 @@ and then differentiate with respect to \)</span>y<span class="math notranslate n
 <h3>Single Hemisphere example<a class="headerlink" href="#single-hemisphere-example" title="Permalink to this headline">¶</a></h3>
 <p>So for example, upwelling in the Northern Hemisphere of the Atlantic Ocean is associated with northward flow in the interior of the deep ocean. But there is a source of deep water in the far north of the Atlantic, so the net transport at depth must be southward. Therefore a southward western boundary current transports the water from the source of deep water <em>and</em> the water that flowed north in the interior southward towards the equator.</p>
 <p>If we think about a box that represents the North Atlantic and assume no flow crosses the equator (this isn’t realistic but it makes a nice example):</p>
-<p><img alt="Stommel_arons_box.001.jpeg" src="attachment:Stommel_arons_box.001.jpeg" /></p>
+<p><img alt="Stommel_arons_box.001.jpeg" src="_images/Stommel_arons_box.001.jpeg" /></p>
 <p>By conservation of mass, the amount of deep-water formation, <span class="math notranslate nohighlight">\(Q_s\)</span>, plus the northward transport in the interior, <span class="math notranslate nohighlight">\(Q_I\)</span>, must equal the transport removed by upwelling, <span class="math notranslate nohighlight">\(Q_u\)</span>, plus the transport of the western boundary current:
 $<span class="math notranslate nohighlight">\(Q_s+Q_I(y)=Q_W(y)+Q_u(y)\)</span>$</p>
 <p>By integrating <span class="math notranslate nohighlight">\(V\)</span> in the zonal direction,
@@ -576,9 +1351,9 @@ $<span class="math notranslate nohighlight">\(Q_W(y)=2 Q_S\frac{y}{y_N}\)</span>
 <div class="section" id="stommel-arons-in-a-global-geometry">
 <h3>Stommel-Arons in a global geometry<a class="headerlink" href="#stommel-arons-in-a-global-geometry" title="Permalink to this headline">¶</a></h3>
 <p>Sources of deep water are marked <span class="math notranslate nohighlight">\(S_1\)</span> and <span class="math notranslate nohighlight">\(S_2\)</span> in the figure below (from Stommel and Arons’ 1959 paper). Here, water can cross the equator. Remember that this figure assumes uniform upwelling of deep waters.</p>
-<p><img alt="stommel_arons.jpg" src="attachment:stommel_arons.jpg" /></p>
+<p><img alt="stommel_arons.jpg" src="_images/stommel_arons.jpg" /></p>
 <p>One feature of the solution is a deep western boundary current that flows southward in the Atlantic Ocean. This is consistent with observations. For example, high oxygen water is formed in the North Atlantic and flows southward in the deep western boundary current:</p>
-<p><img alt="gam2810_oxy.jpg" src="attachment:gam2810_oxy.jpg" /></p>
+<p><img alt="gam2810_oxy.jpg" src="_images/gam2810_oxy.jpg" /></p>
 </div>
 </div>
 </div>
