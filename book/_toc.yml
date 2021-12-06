@@ -23,6 +23,7 @@ parts:
     - file: assignments/geostrophy_ekman
     - file: vorticity_sverdrup_transport_and_gyres
     - file: AMOC_theory
+    - file: southern_ocean
   - caption: The Ocean State
     chapters:
     - file: ECCO-state-estimate
