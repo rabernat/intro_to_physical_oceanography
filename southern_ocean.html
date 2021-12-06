@@ -1,0 +1,602 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Southern Ocean Circulation &#8212; Intro to Physical Oceanography</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet">
+  <link href="_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.be7d3bbb2ef33a8344ce.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Ocean State Estimation" href="ECCO-state-estimate.html" />
+    <link rel="prev" title="The theory of the Atlantic Meridional Overturning Circulation (AMOC)" href="AMOC_theory.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Intro to Physical Oceanography</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction to Physical Oceanography
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Foundations
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_ocean_bathymetry.html">
+   The Boundaries of the Ocean
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-a_thermodynamics_of_seawater.html">
+   Thermodynamics of Seawater
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="assignments/thermodynamics.html">
+   Assignment: Thermodynamics of Seawater
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-b_the_water_column.html">
+   The Water Column
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02-c_ocean_temperature_salinity_stratification.html">
+   Temperature, Salinity, and Stratification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_air_sea_exchange.html">
+   Air Sea Exchange
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_advection_diffusion_continuity.html">
+   Advection, Diffusion, and Conservation Laws
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="assignments/heat_and_salt_fluxes.html">
+   Assignment: Heat and Salt Fluxes
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Dynamics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_equations_of_motion.html">
+   Equations of Motion
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_hydrostatic_geostrophic.html">
+   Hydrostatic and Geostrophic Balances
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07_ekman.html">
+   Wind Driven Circulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="assignments/geostrophy_ekman.html">
+   Homework 3: Thermal Wind and Ekman Transports
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="vorticity_sverdrup_transport_and_gyres.html">
+   Vorticity, Sverdrup Transport, and Ocean Gyres
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="AMOC_theory.html">
+   The theory of the Atlantic Meridional Overturning Circulation (AMOC)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Southern Ocean Circulation
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  The Ocean State
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="ECCO-state-estimate.html">
+   Ocean State Estimation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="barotropic_circulation.html">
+   Ocean Barotropic Volume Transport
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="overturning_circulation.html">
+   Overturning Circulation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="heat-transport.html">
+   Heat Transport
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/southern_ocean.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/rabernat/intro_to_physical_oceanography"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/rabernat/intro_to_physical_oceanography/issues/new?title=Issue%20on%20page%20%2Fsouthern_ocean.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/rabernat/intro_to_physical_oceanography/master?urlpath=tree/book/southern_ocean.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-setup">
+   Basic Setup
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#zonal-momentum-balance-in-a-barotropic-model">
+   Zonal Momentum Balance in a Barotropic Model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-wind-driven-overturning">
+   The Wind-Driven Overturning
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#stratification-and-eddy-flux">
+   Stratification and Eddy Flux
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <p><span class="math notranslate nohighlight">\( \newcommand{\pd}[2]{ \frac{\partial #1}{\partial #2} }
+\newcommand{\od}[2]{\frac{d #1}{d #2}}
+\newcommand{\td}[2]{\frac{D #1}{D #2}}
+\newcommand{\ab}[1]{\langle #1 \rangle}
+\newcommand{\bss}[1]{\textsf{\textbf{#1}}}
+\newcommand{\ol}{\overline}
+\newcommand{\olx}[1]{\overline{#1}^x}
+\)</span></p>
+<div class="section" id="southern-ocean-circulation">
+<h1>Southern Ocean Circulation<a class="headerlink" href="#southern-ocean-circulation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="basic-setup">
+<h2>Basic Setup<a class="headerlink" href="#basic-setup" title="Permalink to this headline">¶</a></h2>
+<p>We will use the Boussinesq momentum equations to describe a simple model for the southern ocean circulation. For simplicity, we will use Cartesian coordinates. We will be focused particularly on the zonal momentum balance, which reads</p>
+<div class="amsmath math notranslate nohighlight" id="equation-94babd71-f53a-4369-a81f-d14f689df4da">
+<span class="eqno">(5)<a class="headerlink" href="#equation-94babd71-f53a-4369-a81f-d14f689df4da" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\td{u}{t}  - f v = - \pd{\phi}{x} + \frac{1}{\rho_0}\pd{\tau^x}{z} 
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tau_x\)</span> is the zonal component of the frictional stress. For completeness, we also note the incompressibility equation</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ad2f4b6b-cce2-42ba-94ff-8cea7188dbb3">
+<span class="eqno">(6)<a class="headerlink" href="#equation-ad2f4b6b-cce2-42ba-94ff-8cea7188dbb3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\pd{u}{x} + \pd{v}{y} + \pd{w}{z} = 0 
+\end{align}\]</div>
+<p>hydrostatic balance</p>
+<div class="amsmath math notranslate nohighlight" id="equation-676238d3-13b7-40a4-a9f9-f2129063f29f">
+<span class="eqno">(7)<a class="headerlink" href="#equation-676238d3-13b7-40a4-a9f9-f2129063f29f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\pd{\phi}{z} = b
+\end{align}\]</div>
+<p>and the buoyancy equation</p>
+<div class="amsmath math notranslate nohighlight" id="equation-289ee143-7121-4bf8-a1dd-572928bb3a0f">
+<span class="eqno">(8)<a class="headerlink" href="#equation-289ee143-7121-4bf8-a1dd-572928bb3a0f" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\td{b}{t} = \pd{B}{z}
+\label{eq:b}
+\end{align}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(B\)</span> is the vertical turbulent buoyancy flux.</p>
+<div class="figure align-default" id="so-cartoon">
+<img alt="Southern Ocean Cartoon" src="_images/SO_cartoon.png" />
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Cartoon showing the domain of the idealized ACC problem.</span><a class="headerlink" href="#so-cartoon" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="zonal-momentum-balance-in-a-barotropic-model">
+<h2>Zonal Momentum Balance in a Barotropic Model<a class="headerlink" href="#zonal-momentum-balance-in-a-barotropic-model" title="Permalink to this headline">¶</a></h2>
+<p>If we assume the density is constant (<span class="math notranslate nohighlight">\(b=0\)</span>), then the hydrostatic balance tells us that pressure doesn’t vary with depth. This situation is called <em>barotropic</em>: “baro” means pressure and “tropic” means constant. Pressure gradients can come only from the free surface <span class="math notranslate nohighlight">\(\eta\)</span>: <span class="math notranslate nohighlight">\(\phi = g \eta\)</span>.</p>
+<p>Now consider an integral over the full depth of the water column and across a closed circumpolar path in the <span class="math notranslate nohighlight">\(x\)</span> direction. (For simplicity, we assume this path is a latitude circle, but the results generalize to any circumpolar contour.) Assuming a steady state, we find</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a2551ee9-7e91-4cb8-bc09-37e9630eaf37">
+<span class="eqno">(9)<a class="headerlink" href="#equation-a2551ee9-7e91-4cb8-bc09-37e9630eaf37" title="Permalink to this equation">¶</a></span>\[\begin{align}
+- f \oint \int_{-H}^0 v dz dx = -\oint \int_{-H}^\eta \pd{}{y}(uv) dx dz - \oint \int_{-H}^\eta \pd{\phi}{x} dx dz + \frac{1}{\rho_0} \oint (\tau^x_s - \tau^x_b ) dx
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\tau^x_s\)</span> is the frictional stress at the surface and <span class="math notranslate nohighlight">\(\tau^x_b\)</span> is the frictional stress at the bottom.
+Mass conservations requires that the term on the left-hand side vanish; otherwise mass would be flowing into or out of the Southern Ocean. The first term on the right-hand side is a Reynolds stress; this is generally negligible on the planetary scale, and we will neglect it from here on. However, it may play an important role on smaller scales, such as within the multiple jets of the ACC.</p>
+<p>A key question is whether the bottom is flat (<span class="math notranslate nohighlight">\(H = const\)</span>) or rather depends on <span class="math notranslate nohighlight">\(x\)</span> (<span class="math notranslate nohighlight">\(H = H(x)\)</span>). Application of Leibnitz rule allows us to simplify the pressure term into</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5c81d8c0-e9d0-4cca-9eab-19db5d7f2532">
+<span class="eqno">(10)<a class="headerlink" href="#equation-5c81d8c0-e9d0-4cca-9eab-19db5d7f2532" title="Permalink to this equation">¶</a></span>\[\begin{align}
+-\oint \int_{-H}^\eta \pd{\phi}{x} dx dz = - {\oint \pd{}{x} \left ( \int_{-H}^\eta \pd{\phi}{x} dz \right ) dx} -  {\oint \phi_s \pd{\eta}{x} dx} + \oint \phi_b \pd{}{x}(-H)dx 
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\phi_s\)</span> is the surface pressure and <span class="math notranslate nohighlight">\(\phi_b\)</span> is the bottom pressure. The first term cancels exactly via the fundamental theorem of calculus, since the integral is around a closed path. The second term cancels approximately because the surface pressure (the atmospheric load) is negligible. We are left with only the final term, the <em>topographic form stress</em>.</p>
+<p>We can simplify our notation a lot by defining a <em>zonal average</em>, i.e.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-82cac180-1114-4e6f-9d80-cb544d94da4d">
+<span class="eqno">(11)<a class="headerlink" href="#equation-82cac180-1114-4e6f-9d80-cb544d94da4d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\ab{ \ } = \frac{1}{L_x} \oint ( \ ) dx
+\end{align}\]</div>
+<p>which allows us to write the vertically and zonally integrated momentum balance as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a1629f55-0bb4-4e04-9c73-8fde6174ff8b">
+<span class="eqno">(12)<a class="headerlink" href="#equation-a1629f55-0bb4-4e04-9c73-8fde6174ff8b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\ab{\tau^x_s} =  \rho_0 \ab{\phi_b \pd{H}{x}} + \ab{\tau^x_b}\label{eq:mom}
+\end{align}\]</div>
+<p>This balance was first considered by Munk and Palmen (1951).
+They wondered whether friction played a strong role in the momentum balance of the ACC. If the bottom were flat, then the bottom frictional stress would have to balance the surface wind stress exactly. To see the consequences of this, we need an explicit formula for the bottom stress. We can use the same quadratic drag law that we used for surface stress, namely</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8ce9657a-7c35-4a95-a251-15967f3595e3">
+<span class="eqno">(13)<a class="headerlink" href="#equation-8ce9657a-7c35-4a95-a251-15967f3595e3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\tau_b = \rho_0 C_D u_b^2
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(u_b\)</span> is the flow in the bottom boundary layer. We can use this to make an estimate for the zonal transport of the ACC. Since the flow was assumed to be barotropic, it cannot vary with depth; <span class="math notranslate nohighlight">\(u(z) = u_b\)</span>. The zonal transport of the ACC can then be approximated as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6901fcc0-4d2e-4973-a40a-681ee301d676">
+<span class="eqno">(14)<a class="headerlink" href="#equation-6901fcc0-4d2e-4973-a40a-681ee301d676" title="Permalink to this equation">¶</a></span>\[\begin{align}
+T_{ACC} = H L_y \sqrt{ \frac{ \ab{\tau^x_s} }{ \rho_0 C_D } }
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(L_y\)</span> is the meridional extent of the current. Plugging in some rough numbers <span class="math notranslate nohighlight">\(H = 4000\)</span> m, <span class="math notranslate nohighlight">\(L_y = 800\)</span> km, <span class="math notranslate nohighlight">\(\tau_0 = 0.2\)</span> N m<span class="math notranslate nohighlight">\(^{-2}\)</span>, <span class="math notranslate nohighlight">\(\rho_0 = 1030\)</span> kg m<span class="math notranslate nohighlight">\(^{-3}\)</span>, <span class="math notranslate nohighlight">\(C_D = 1.2 \times 10^{-3}\)</span>, we find <span class="math notranslate nohighlight">\(T_{ACC} \simeq 1200 \)</span> Sv. This is about ten times larger than the observed ACC transport! Although just a rough estimate, this calculation tells us that bottom friction can’t be the main sink of momentum in the ACC; it has to be topographic form stress.</p>
+<p>Now assuming that <span class="math notranslate nohighlight">\(\tau^x_b\)</span> is negligible, what does \eqref{eq:mom} tell us about the relationship between bottom pressure and topography? Since the wind stress is westerly (<span class="math notranslate nohighlight">\(\tau^x_s &gt; 0\)</span>) over the ACC, we must have a positive correlation between <span class="math notranslate nohighlight">\(\phi_b\)</span> and <span class="math notranslate nohighlight">\(\partial H / \partial x\)</span>. In other words, we need high pressure where the bottom is sloping up towards the east, and low pressure where the bottom is sloping down. A configuration that fulfills this requirement is shown in Fig.~\ref{fig:cartoon}. This configuration generates a form stress term that transfers eastward momentum from the ocean to the solid earth below.</p>
+<div class="figure align-default" id="so-side">
+<img alt="Southern Ocean Side View" src="_images/SO_side.png" />
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">View of the barotropic ACC model from the south, looking towards the equator.</span><a class="headerlink" href="#so-side" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="the-wind-driven-overturning">
+<h2>The Wind-Driven Overturning<a class="headerlink" href="#the-wind-driven-overturning" title="Permalink to this headline">¶</a></h2>
+<p>Although we eliminated the coriolis force on the meridional flow (<span class="math notranslate nohighlight">\(-fv\)</span>) from our budget by integrating over the full depth of the water column, \eqref{eq:mom} also tells us a lot about the meridional overturning circulation. Let’s now decompose the vertical integral into three regions: the surface Ekman layer, the interior below the Ekman layer and above the topography, and the abyss below the topographic level.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-87307500-47e4-4e76-abfd-467bf8de88e7">
+<span class="eqno">(15)<a class="headerlink" href="#equation-87307500-47e4-4e76-abfd-467bf8de88e7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+-f \int_{-h_{Ek}}^\eta \ab{v} dz&amp;&amp; = -f \ab{V_{Ek}} =&amp;&amp; \frac{1}{\rho_0} \ab{\tau^x_s} \\ 
+-f \int_{-H_{min}}^{-h_{Ek}} \ab{v} dz&amp;&amp; =&amp;&amp; 0  \\
+-f \int_{-H_{max}}^{-H_{min}} \ab{v} dz&amp;&amp; = -f \ab{V_g} =&amp;&amp; \ab{\phi_b \pd{H}{x}}
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\ab{V_{Ek}}\)</span> is the zonally averaged Ekman transport and <span class="math notranslate nohighlight">\(\ab{V_g}\)</span> is the zonally averaged geostrophic transport below topography. Mass conservation can be expressed as <span class="math notranslate nohighlight">\(\ab{V_{Ek}} + \ab{V_g} = 0\)</span>; the Ekman transport near the surface must be returned by an equal and opposite geostrophic flow in the abyss.</p>
+<p>The zonal wind stress is not constant with latitude, but rather decreases southward over the ACC latitudes from its maximum around 50S. This means that <span class="math notranslate nohighlight">\(\ab{V_{Ek}}\)</span> also decreases southward, and Ekman pumping is required to supply mass from below. This implies a zonal-mean overturning circulation as shown in Fig.~\ref{fig:cartoon_side}. Mass conservation of the zonally-averaged flow means that <span class="math notranslate nohighlight">\(\partial \ab{v} / \partial y + \partial \ab{w} / \partial z\)</span>. Consequently, we can express the overturning circulation using a single scalar {\em streamfunction}:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4a73c3d6-15f3-441a-97fd-818d0a0fba8b">
+<span class="eqno">(16)<a class="headerlink" href="#equation-4a73c3d6-15f3-441a-97fd-818d0a0fba8b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\ab{v} = - \pd{}{z}\psi_{Ek} \ , \ \ \ab{w} = \pd{}{y}\psi_{Ek} \ .
+\end{align}\]</div>
+<p>In the ocean interior (i.e.~<span class="math notranslate nohighlight">\(-H_{max} &lt; z &lt; h_{Ek}\)</span>),</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d6083e5b-46ec-44f4-8294-88f3cb42863b">
+<span class="eqno">(17)<a class="headerlink" href="#equation-d6083e5b-46ec-44f4-8294-88f3cb42863b" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\psi_{Ek} = -\frac{\tau_0}{f \rho_0} \ .
+\end{align}\]</div>
+<p>The subscript <span class="math notranslate nohighlight">\(_{Ek}\)</span> reminds us that this overturning circulation is fundamentally <em>wind driven</em> and proportional to the Ekman transport.</p>
+</div>
+<div class="section" id="stratification-and-eddy-flux">
+<h2>Stratification and Eddy Flux<a class="headerlink" href="#stratification-and-eddy-flux" title="Permalink to this headline">¶</a></h2>
+<p>This wind-driven overturning circulation <span class="math notranslate nohighlight">\(\psi_{Ek}\)</span> describes very strong upwelling in the ACC latitudes. Using typical values of wind stress and other parameters, we can estimate <span class="math notranslate nohighlight">\(w_{Ek} \simeq 2.5 \times 10^{-6}\)</span> m/s or about 75 m / year. This upwelling takes place over a strong stratified pycnocline. The question therefore arises: how is this strong advective flux of buoyancy balanced?</p>
+<p>In our discussion of advection and diffusion, we considered a one-dimensional balance between vertical advection and diffusion. The zonally-averaged version of this balance is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-637a4bad-894d-489e-8629-93caed0369bc">
+<span class="eqno">(18)<a class="headerlink" href="#equation-637a4bad-894d-489e-8629-93caed0369bc" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\ab{w} \pd{}{z} \ab{b} = \kappa_v \pd{^2}{z^2} \ab{b}
+\label{eq:b1d}
+\end{align}\]</div>
+<p>We found that such a system can be satisfied by a profile of the form</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2b0067fd-ef7a-4663-be9a-7900bb43ebb3">
+<span class="eqno">(19)<a class="headerlink" href="#equation-2b0067fd-ef7a-4663-be9a-7900bb43ebb3" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\ab{b} = b_0 e^{z/z^\ast} 
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(z^\ast = \kappa_v / \ab{w}\)</span> is a <em>scale depth</em> parameter, describing how rapidly the stratification changes with depth.</p>
+<div class="figure align-default" id="so-neutral-density">
+<img alt="Neutral Density Section" src="_images/I8_gam_with_winds.png" />
+<p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Neutral density surfaces in the Southern Indian Ocean (WOCE line I8), superimposed with arrows showing the sense of the wind-driven Ekman circulation.</span><a class="headerlink" href="#so-neutral-density" title="Permalink to this image">¶</a></p>
+</div>
+<p>One important characteristic of the Southern Ocean is the relatively deep scale depth of both its stratification and associated thermal wind currents. A section of density in the Southern Indian Ocean (Fig. \ref{fig:gamma}) illustrates this well.
+An exponential profile is actually not a bad fit; the “scale depth” can be estimated to be approx.~800 m. Plugging in our estimate of <span class="math notranslate nohighlight">\(w_{Ek} \simeq 2.5 \times 10^{-6}\)</span> m/s implies that a value of <span class="math notranslate nohighlight">\(\kappa_v \simeq 2 \times 10^{-3}\)</span> m s<span class="math notranslate nohighlight">\(^{-2}\)</span> would be required to satisfy the balance in \eqref{eq:b1d}.
+Clearly such a value is far beyond the typical level of turbulent mixing in the thermocline (<span class="math notranslate nohighlight">\(\kappa_v \simeq 1 \times 10^{-5}\)</span> m s<span class="math notranslate nohighlight">\(^{-2}\)</span>). Therefore another mechanism is required to balance the wind-driven vertical advection of buoyancy.</p>
+<p>That other mechanism is widely believed to be mesoscale eddy transport. It turns out that \eqref{eq:b1d} is an inadequate description of the buoyancy budget in the Southern Ocean; it neglects strong correlations between transient and small-scale motions which can contribute substantial buoyancy fluxes. To understand how these correlations arise, we must use a buoyancy budget that properly accounts for eddy fluxes.</p>
+<p>We start by taking a time and zonal average of \eqref{eq:b}. After some algebra, we can reduce the result to</p>
+<div class="amsmath math notranslate nohighlight" id="equation-182ea79d-dd85-4c07-bcbc-4bf3f2506f2d">
+<span class="eqno">(20)<a class="headerlink" href="#equation-182ea79d-dd85-4c07-bcbc-4bf3f2506f2d" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\ab{\ol{v}} \pd{}{y} \ab{\ol{b}} + \ab{\ol{w}} \pd{}{z} \ab{\ol{b}} = - \pd{F^y_b}{y}  - \pd{F^z_b}{z} + \pd{}{z}\ab{\ol{B}}
+\label{eq:b1}
+\end{align}\]</div>
+<p>where</p>
+<div class="amsmath math notranslate nohighlight" id="equation-cec3c14d-2159-496a-9aae-089f0403f489">
+<span class="eqno">(21)<a class="headerlink" href="#equation-cec3c14d-2159-496a-9aae-089f0403f489" title="Permalink to this equation">¶</a></span>\[\begin{align}
+F^y_b = &amp;\ab{\ol{v'b'}} + \ab{v^\dagger b^\dagger} \\
+F^z_b = &amp; \ab{\ol{w'b'}} + \ab{w^\dagger b^\dagger}
+\end{align}\]</div>
+<p>are the eddy fluxes of buoyancy in the meridional and zonal directions. We have introduced the symbol <span class="math notranslate nohighlight">\(\ol{( \ )}\)</span> to indicate a time average. The deviations from the time average are indicated by a prime, and the deviations from the time and zonal average are indicated by a dagger, i.e.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6052be28-a1c9-4678-b40f-c08a33a94244">
+<span class="eqno">(22)<a class="headerlink" href="#equation-6052be28-a1c9-4678-b40f-c08a33a94244" title="Permalink to this equation">¶</a></span>\[\begin{align}
+a' = a - \ol{a} \ , \ \ \ a^\dagger = \ab{\ol{a}} - \ol{a} \ .
+\end{align}\]</div>
+<p>The prime terms are associated with {\em transient} eddy fluctuations (turbulent flow), while the dagger terms are associated with {\em stationary} eddies, a.k.a.~steady meanders of the ACC. Both types of motion can transport buoyancy meridionally and vertically. If the zonal average is reinterpreted as a “streamwise” average around a circumpolar contour which follows the ACC path, the dagger terms will vanish. In practice, the buoyancy budget is generally dominated by the vertical flux terms, i.e.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-14355b90-2378-4bbb-8cfd-1cfe850e33eb">
+<span class="eqno">(23)<a class="headerlink" href="#equation-14355b90-2378-4bbb-8cfd-1cfe850e33eb" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\ab{\ol{w}} \ab{\ol{b}} \simeq -\ab{\ol{w'b'}} \ .
+\end{align}\]</div>
+<p>In our discussion of advection and diffusion, we learned that mesoscale eddies tend to transport properties {\em along} rather than across isopycnals. This results from fundamental dynamical and energetic constrains on the eddy motion. As a result, the eddy buoyancy flux is oriented {\em perpendicular} to the mean buoyancy gradient, i.e.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-85f4a0c4-3a43-4005-a555-f6d61e7a84ac">
+<span class="eqno">(24)<a class="headerlink" href="#equation-85f4a0c4-3a43-4005-a555-f6d61e7a84ac" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\frac{F^z_b}{F^y_b} \simeq - \frac{\pd{}{y} \ab{\ol{b}}}{\pd{}{z} \ab{\ol{b}} } \ .
+\label{eq:adiabatic}
+\end{align}\]</div>
+<p>When \eqref{eq:adiabatic} is satisfied, the eddy fluxes are usually termed “adiabatic.” Given this fact, an ingenious way to simplify \eqref{eq:b1} emerges if we make the following definitions:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-18810984-3dde-4d87-a223-b5a08c7de1c7">
+<span class="eqno">(25)<a class="headerlink" href="#equation-18810984-3dde-4d87-a223-b5a08c7de1c7" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\psi_{eddy} = - \frac{F^z_b}{\pd{}{y} \ab{\ol{b}}}
+\label{eq:psi_eddy}
+\end{align}\]</div>
+<p>and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-46a9c9e1-bfce-4d8b-84d6-31b32bfbbb6e">
+<span class="eqno">(26)<a class="headerlink" href="#equation-46a9c9e1-bfce-4d8b-84d6-31b32bfbbb6e" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\psi_{res} = \psi_{Ek} + \psi_{eddy} \ , \ \ v_{res} = - \pd{}{z}\psi_{res} \ , \ \ w_{res} = \pd{}{y}\psi_{res} 
+\end{align}\]</div>
+<p>Using \eqref{eq:adiabatic}, we can now write \eqref{eq:b1} as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8e10cab5-0003-43b9-85d6-477d6bcd74ff">
+<span class="eqno">(27)<a class="headerlink" href="#equation-8e10cab5-0003-43b9-85d6-477d6bcd74ff" title="Permalink to this equation">¶</a></span>\[\begin{align}
+v_{res} \pd{}{y} \ab{\ol{b}} + w_{res} \pd{}{z} \ab{\ol{b}} =  \pd{}{z}\ab{\ol{B}} \ .
+\label{eq:bres}
+\end{align}\]</div>
+<p>In \eqref{eq:psi_eddy}, we defined an {\em eddy-induced} overturning streamfunction <span class="math notranslate nohighlight">\(\psi_{eddy}\)</span>. We then defined a {\em residual} overturning streamfunction <span class="math notranslate nohighlight">\(\psi_{res}\)</span> as the sum of this and the wind-driven overturning. What this means is that, when the eddy fluxes are adiabatic and \eqref{eq:adiabatic} is satisfied, we can represent their contribution to the buoyancy budget as {\em advection}, not diffusion! The eddy-induced overturning has the opposite sense as the wind-driven component; hence the net overturning is a small residual (<span class="math notranslate nohighlight">\(\psi_{res}\)</span> between the two opposing terms.</p>
+<p>It was clear that the wind stress determines <span class="math notranslate nohighlight">\(\psi_{Ek}\)</span>, but it is not so clear what determines <span class="math notranslate nohighlight">\(\psi_{res}\)</span>. In general this is a difficult problem, since in involves mesoscale eddy turbulence. However, there is one powerful constraint we can use: the air-sea buoyancy flux.</p>
+<p>Assume there is a surface mixed layer of depth <span class="math notranslate nohighlight">\(h_m &gt; h_{Ek}\)</span>, within which <span class="math notranslate nohighlight">\(\partial b / \partial z = 0\)</span>. At the surface (<span class="math notranslate nohighlight">\(z=0\)</span>), both <span class="math notranslate nohighlight">\(\psi_{Ek}\)</span> and <span class="math notranslate nohighlight">\(\psi_{eddy}\)</span> go to zero. We will further assume that <span class="math notranslate nohighlight">\(B\)</span>, the vertical buoyancy flux due to mixing, is vanishingly small in the interior—this is consistent with weak values of <span class="math notranslate nohighlight">\(\kappa_v\)</span> that have been measured in the upper Southern Ocean. We can then integrate \eqref{eq:bres} in the vertical over the surface mixed layer to find</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b6868d20-81d4-4609-9c67-c07457aa0748">
+<span class="eqno">(28)<a class="headerlink" href="#equation-b6868d20-81d4-4609-9c67-c07457aa0748" title="Permalink to this equation">¶</a></span>\[\begin{align}
+\psi_{res}(z=h_m) \pd{}{y} \ab{\ol{b_s}} = \ab{\ol{B_s}}
+\label{eq:psi}
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(b_s\)</span> is the surface buoyancy and <span class="math notranslate nohighlight">\(B_s\)</span> is the surface air-sea buoyancy flux.</p>
+<div class="figure align-default" id="id1">
+<img alt="Overturning Cartoon" src="_images/moc.png" />
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Idealized view of Southern Ocean residual circulation and mixing</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
+    <a class='left-prev' id="prev-link" href="AMOC_theory.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">The theory of the Atlantic Meridional Overturning Circulation (AMOC)</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="ECCO-state-estimate.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Ocean State Estimation</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer">
+    <div class="container">
+      <p>
+        
+          By Ryan Abernathey<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
+
+  </body>
+</html>
